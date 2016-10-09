@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+h1{
+    font-size:55px;
+    text-align:center;
+    color: #7fb2ff;
+    font-family:Helvetica;
+    margin:8% 0 2px 0;
+
+}
+h2{
+    color: #82828d;font-family:Helvetica;  text-align:center;
+    font-size:20px;
+}
+.index-slide-nav{
+    text-align:center;
+    font-size:20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.slide-bar1{
+    left: 4em;
+}
+.index-slide-nav a.active{
+    opacity: 1;
+    color: #0f88eb;
+}
+.index-slide-nav a.hover{
+    color: #dce0f1;
+    opacity: 1;
+}
+.form{
+    float: none;
+    margin: auto;
+
+    width: 300px;
+}
+.form .group{
+    padding: 1px 0;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+}
+.form .group .group-ipt{
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+.form .group .group-ipt input{
+    padding: 1em .8em;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: rgba(255,255,255,0.5);
+    font-family: 'Microsoft Yahei';
+    font-size:12px;
+    color: #666;
+    position: relative;
+}
+#password,#verify,#user,#password1{
+    border-top: 1px solid #e8e8e8;
+}
+.button{
+    margin-top:18px;
+    text-align:center;
+}
+#button{
+    margin-left:38%;
+    width: 24%;
+    background: #0f88eb;
+    box-shadow: none;
+    border: 0;
+    border-radius: 3px;
+    line-height: 41px;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Microsoft Yahei';
+}
+#button:hover{
+    background: #80c3f7;
+}
+.footer{
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    color: #999;
+    z-index: 2;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
