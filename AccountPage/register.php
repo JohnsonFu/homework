@@ -21,11 +21,11 @@
 <form name="form1" method="post" action="../dataprocess/regist.php">
 <div class="form" align="center">
     <div class="group">
-        <div class="group-ipt">
+        <div class="group-ipt email">
             <input type="text"  name="username" class="ipt" placeholder="用户名" required>
         </div>
-        <div class="group-ipt"><input type="text" name="password" name="password" class="ipt" placeholder="设置您的登录密码" required>
-      </div>
+        <div class="group-ipt password"><input type="text" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required>
+        </div>
 </div>
     <div align="left">
         <label>性&nbsp;&nbsp;别:&nbsp;&nbsp;&nbsp;</label>
