@@ -16,13 +16,14 @@
 </div>
 <div class="index-slide-nav">
     <a href="login.html" class="hover">登录</a>
-    <a href="register.html" class="active">注册</a>
+    <a href="AccountPage/register.php" class="active">注册</a>
     <div class="slide-bar slide-bar1"></div>
 </div>
+<form name="form" action="dataprocess/login.php" method="post">
 <div class="form" align="center">
     <div class="group">
         <div class="group-ipt email">
-           <input type="text"  id="username" class="ipt" placeholder="用户名" required>
+           <input type="text"  name="username" class="ipt" placeholder="用户名" required>
         </div>
         <div class="group-ipt password"><input type="password" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required>
         </div>
@@ -31,6 +32,7 @@
 <div class="button">
     <button type="submit" class="login-btn register-btn" id="button">登录</button>
 </div>
+    </form>
 <div class="footer">
     <p>爱运动 - isport</p>
     <p>Designed By FuLinhua 2016</p>

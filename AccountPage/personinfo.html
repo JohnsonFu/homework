@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
+        body{
+            background-color: #eaf2f2;
+        }
         #menu ul{
             magrin-top:0;
             padding:0;
@@ -45,6 +48,43 @@
         #menu ul li ul li a{
             color: #daddf0;
         }
+
+        #vertmenu ul{
+            margin-top:20px;
+            padding:0;
+            list-style-type: none;
+            margin-left: 30%;
+        }
+        #vertmenu ul li {
+            margin-top:25px;
+            float:none;
+            font-family:Helvetica;
+            margin-right: 20px;
+            font-size:22px;
+
+        }
+        #vertmenu ul li a{
+            color: #a6e0ff;
+            width:100px;
+            text-decoration:none;
+            display:block;
+            width:100px;
+            padding-left:10px;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        #vertmenu ul li a:hover{
+            color: #daddf0;
+            background-color: #555555;
+        }
+        #header{
+            font-family:Helvetica;
+            margin-left: 100px;
+            margin-top:30px;
+            font-size:30px;
+            color: rgba(95, 91, 94, 0.98);
+        }
+
         #top_bg{
             height:40px;
             top:0;
@@ -56,12 +96,35 @@
             left:0;
             border-bottom:#C6C6C6 solid 1px;
         }
+        #leftbar{
+            height:100%;
+            top:50px;
+            width:30%;
+            background-color: #eaf2f2;
+            position:fixed;
+            left:0;
+        }
+        #content{
+            left:30%;
+            height:100%;
+            top:45px;
+            background-color: #ffffff;
+            position:fixed;
+            width:60%;
 
+            border-radius:40px 40px 40px 40px;
+        }
+        #splitbar{
+            width:100%;
+            height:10px;
+            background-color: #eaf2f2;
+            top:45px;
+        }
         .logo_l{
             width:145px;
             height:40px;
             float:left;
-            background:url(logo.png) no-repeat left;
+            background:url(../logo.png) no-repeat left;
         }
         .footer{
             margin-top:45%;
@@ -94,26 +157,37 @@
 <body>
 <div id="top_bg">
     <div class="logo_l"></div>
-<div id="menu">
-    <ul >
-        <li><a href="homepage.html"style="color:#9eff9d;">首页</a></li>
-        <li><a href="sport.html">运动</a></li>
-        <li><a href="#">竞赛</a></li>
-        <li><a href="#">俱乐部</a></li>
-        <li><a href="#">朋友圈</a></li>
-        <li><a href="#">个人账户</a>
-        <ul>
-            <li><a href="AccountPage/personinfo.html">个人设置</a></li>
-            <li><a href="#">我的好友</a></li>
-            <li><a href="#">退出登录</a></li>
+    <div id="menu">
+        <ul >
+            <li><a href="../homepage.html">首页</a></li>
+            <li><a href="../sport.html" >运动</a></li>
+            <li><a href="#">竞赛</a></li>
+            <li><a href="#">俱乐部</a></li>
+            <li><a href="#">朋友圈</a></li>
+            <li><a href="#" style="color:#9eff9d;">个人账户</a>
+                <ul>
+                    <li><a href="#">个人设置</a></li>
+                    <li><a href="#">我的好友</a></li>
+                    <li><a href="#">退出登录</a></li>
+                </ul>
+            </li>
         </ul>
-        </li>
-    </ul>
-</div>
     </div>
+</div>
+<div id="leftbar">
+    <div id="header">个人设置</div>
+    <div id="vertmenu">
+        <ul>
+            <li><a href="#">基本信息</a></li>
+            <li><a href="#">头像设置</a></li>
+        </ul>
+    </div>
+</div>
+
 <div class="footer">
     <p>爱运动 - isport</p>
     <p>Designed By FuLinhua 2016</p>
 </div>
+<div id="content"></div>
 </body>
 </html>
