@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css"
-          href="../logregis.css"/>
+          href="../css/logregis.css"/>
 </head>
 <body>
 <div >
@@ -27,7 +27,7 @@
         <div class="group-ipt password"><input type="text" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required>
         </div>
 </div>
-    <div align="left">
+    <div align="left" style="margin-top:20px; margin-bottom:20px;">
         <label>性&nbsp;&nbsp;别:&nbsp;&nbsp;&nbsp;</label>
         <input type="radio" name="sex" value="male" checked>男 <input type="radio" name="sex" value="female">女
     </div>
