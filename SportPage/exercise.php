@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+
+    <link rel="stylesheet" type="text/css" href="../css/htmleaf-demo.css">
+    <link rel="stylesheet" href="../css/jquery-pie-loader.css">
     <style type="text/css">
         body{
             background-color: #eaf2f2;
@@ -73,6 +77,14 @@
             border-radius: 10px 10px 10px 10px;
         }
 
+        .mylabel{
+            font-size:40px;
+            text-align:left;
+            color: #7fb2ff;
+            font-family:Helvetica;
+            margin-top:-50px;
+        }
+
         #vertmenu ul li a:hover{
             color: #daddf0;
             background-color: #abe2ff;
@@ -138,6 +150,19 @@
             padding-bottom: 10px;
             font-size: 10px;
         }
+        .insidecontent{
+            margin-top:7%;
+            margin-left:10%;
+            height:100%;
+            font-size:25px;
+        }
+        .insidecontent2{
+            margin-right:50px;
+            height:500px;
+            font-size:25px;
+            background-color:#eaf2f2;
+            border-radius:10px 10px 10px 10px;
+        }
     </style>
     <script>
         function menuFix(){
@@ -176,20 +201,83 @@
 </div>
 <div id="leftbar">
     <div id="header">健康管理</div>
-<div id="vertmenu">
-    <ul>
-        <li><a href="MySport.php">我的运动</a></li>
-        <li><a href="#">身体管理</a></li>
-        <li><a href="#">健身追踪</a></li>
-        <li><a href="#">睡眠分析</a></li>
-    </ul>
-</div>
+    <div id="vertmenu">
+        <ul>
+            <li><a href="MySport.php">我的运动</a></li>
+            <li><a href="#">身体管理</a></li>
+            <li><a href="#" style="color:#daddf0; background-color: #80c3f7;">健身追踪</a></li>
+            <li><a href="#">睡眠分析</a></li>
+        </ul>
+    </div>
 </div>
 
 <div class="footer">
     <p>爱运动 - isport</p>
     <p>Designed By FuLinhua 2016</p>
 </div>
-<div id="content"></div>
+<div id="content">
+    <div class="insidecontent">
+        <div class="mylabel">健身追踪</div><hr style="margin-right: 50px;">
+        <div class="insidecontent2">
+            <label style="margin-left:10px; font-family:微软雅黑;font-size:20px;color:#55555c;">运动目标完成</label>
+
+            <div >
+                <figure id="pie" name=<?PHP echo 6; ?> data-behavior="pie-chart1" style="margin-right:50px;"></figure>
+
+                <figure id="pie2" name=<?PHP echo 7; ?> data-behavior="pie-chart1">9</figure>
+
+            </div>
+            <input type="button" style="margin-top:-100px;" value="fd">
+
+           </div>
+  </div>
+
+
+</div>
+<script src="../jquery-1.8.3/jquery.js" type="text/javascript"></script>
+
+    <script  src="../js/demo.js"></script>
+</script>
+
+<script>window.jQuery || document.write('<script src="../js/jquery-2.1.1.min.js"><\/script>')</script>
+<script src="../js/jquery-pie-loader.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $('*[data-behavior="pie-chart1"]').each(function() {
+
+            $(this).svgPie({
+                percentage: $(this).attr('name')
+            });
+
+        });
+
+   /*    var rand2 = function() {
+            var i=($("#mess2").html());
+            alert( i);
+        }
+
+        $('*[data-behavior="pie-chart2"]').each(function() {
+            $(this).svgPie({
+                percentage: rand2()
+            });
+
+*/
+
+
+    });
+
+
+</script>
+<script language="JavaScript">
+
+
+
+
+</script>
+
 </body>
+
+
 </html>

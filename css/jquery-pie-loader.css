@@ -1,0 +1,154 @@
+body {
+  background-color: #fcfcfd;
+}
+
+#pie, #pie2, #pie3, #pie4, #pie5, #pie6, #pie7, #pie8 {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#pie svg, #pie2 svg, #pie3 svg, #pie4 svg, #pie5 svg, #pie6 svg, #pie7 svg, #pie8 svg {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  overflow: visible;
+}
+#pie .percentage, #pie2 .percentage, #pie3 .percentage, #pie4 .percentage, #pie5 .percentage, #pie6 .percentage, #pie7 .percentage, #pie8 .percentage {
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  font-family: Helvetica;
+  font-size: 2rem;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.rendered#pie, .rendered#pie2, .rendered#pie3, .rendered#pie4, .rendered#pie5, .rendered#pie6, .rendered#pie7, .rendered#pie8 {
+  background: none;
+}
+.rendered#pie .percentage, .rendered#pie2 .percentage, .rendered#pie3 .percentage, .rendered#pie4 .percentage, .rendered#pie5 .percentage, .rendered#pie6 .percentage, .rendered#pie7 .percentage, .rendered#pie8 .percentage {
+  opacity: 1;
+}
+
+#pie {
+  box-shadow: none;
+  background: #1ABC9C;
+}
+#pie circle:nth-child(1) {
+  fill: #1ABC9C;
+}
+#pie circle:nth-child(2) {
+  fill: #1ABC9C;
+  stroke: #3498DB;
+}
+#pie .percentage {
+  color: white;
+}
+
+#pie2 {
+  box-shadow: none;
+  background: #C0392B;
+}
+#pie2 circle:nth-child(1) {
+  fill: #C0392B;
+}
+#pie2 circle:nth-child(2) {
+  fill: #C0392B;
+  stroke: #D35400;
+}
+#pie2 .percentage {
+  color: white;
+}
+
+#pie3 {
+  box-shadow: none;
+  background: #F39C12;
+}
+#pie3 circle:nth-child(1) {
+  fill: #F39C12;
+}
+#pie3 circle:nth-child(2) {
+  fill: #F39C12;
+  stroke: #E74C3C;
+}
+#pie3 .percentage {
+  color: white;
+}
+
+#pie4 {
+  box-shadow: none;
+  background: #BDC3C7;
+}
+#pie4 circle:nth-child(1) {
+  fill: #BDC3C7;
+}
+#pie4 circle:nth-child(2) {
+  fill: #BDC3C7;
+  stroke: #3498DB;
+}
+#pie4 .percentage {
+  color: white;
+}
+
+#pie5 {
+  box-shadow: none;
+  background: #2980B9;
+}
+#pie5 circle:nth-child(1) {
+  fill: #2980B9;
+}
+#pie5 circle:nth-child(2) {
+  fill: #2980B9;
+  stroke: #8E44AD;
+}
+#pie5 .percentage {
+  color: white;
+}
+
+#pie6 {
+  box-shadow: none;
+  background: #C0392B;
+}
+#pie6 circle:nth-child(1) {
+  fill: #C0392B;
+}
+#pie6 circle:nth-child(2) {
+  fill: #C0392B;
+  stroke: #BDC3C7;
+}
+#pie6 .percentage {
+  color: white;
+}
+
+#pie7 {
+  box-shadow: none;
+  background: #2ECC71;
+}
+#pie7 circle:nth-child(1) {
+  fill: #2ECC71;
+}
+#pie7 circle:nth-child(2) {
+  fill: #2ECC71;
+  stroke: #D35400;
+}
+#pie7 .percentage {
+  color: white;
+}
+
+#pie8 {
+  box-shadow: none;
+  background: #C0392B;
+}
+#pie8 circle:nth-child(1) {
+  fill: #C0392B;
+}
+#pie8 circle:nth-child(2) {
+  fill: #C0392B;
+  stroke: #16A085;
+}
+#pie8 .percentage {
+  color: white;
+}

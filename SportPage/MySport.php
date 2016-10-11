@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
-
-    <link href="../css/base.css"  rel="stylesheet" type="text/css" />
-    <link href="../css/project_base.css"  rel="stylesheet" type="text/css" />
     <link href="../css/radialindicator.css"  rel="stylesheet" type="text/css" />
     <style type="text/css">
         body{
@@ -80,7 +76,7 @@
 
         #vertmenu ul li a:hover{
             color: #daddf0;
-            background-color: #555555;
+            background-color: #abe2ff;
         }
         #header{
             font-family:Helvetica;
@@ -185,7 +181,7 @@
         <ul>
             <li><a href="MySport.php" style="color:#daddf0; background-color: #80c3f7;">我的运动</a></li>
             <li><a href="#">身体管理</a></li>
-            <li><a href="#">健身追踪</a></li>
+            <li><a href="exercise.php">健身追踪</a></li>
             <li><a href="#">睡眠分析</a></li>
         </ul>
     </div>
@@ -199,12 +195,12 @@
     <div class="prg-cont rad-prg" id="indicatorContainer2" style="margin-left:100px;">
       <p hidden id="test"><?PHP echo 33; ?></p>
     </div>
-<label style="margin-left:100px; font-family:Helvetica;font-size:25px;color:#ffe611;">运动目标完成</label>
+<label style="margin-left:100px; font-family:微软雅黑;font-size:25px;color:#ffe611;">运动目标完成</label>
 
 
 </div>
 
-
+<script type="text/javascript" src="../js/demo.js"></script>
 <script type="text/javascript"  src="../js/base.js"></script>
 <script type="text/javascript"  src="../js/project_base.js"></script>
 <script>
