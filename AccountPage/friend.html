@@ -142,17 +142,25 @@
             font-size: 10px;
         }
         .insidecontent{
-           margin-top:7%;
+            margin-top:7%;
             margin-left:10%;
             height:100%;
             font-size:25px;
-  }
+        }
         .textview{
             border-radius: 1px 1px 1px 1px;
             font-size:18px;
             width:150px;
             background-color: #f7f7f7;
             margin-bottom:20px;
+        }
+
+        .mylabel{
+            font-size:40px;
+            text-align:left;
+            color: #7fb2ff;
+            font-family:Helvetica;
+            margin-top:-50px;
         }
         input::-webkit-input-placeholder {
             color: #999;
@@ -161,6 +169,25 @@
         input:focus::-webkit-input-placeholder, input:hover::-webkit-input-placeholder {
             color: #c2c2c2;
             -webkit-transition: color.5s;
+        }
+        .mybutton{
+            height:35px;
+            width:70px;
+            vertical-align: text-top;
+            margin-left:40px;
+            background: #0f88eb;
+            box-shadow: none;
+            border: 0;
+            border-radius: 3px;
+            line-height: 41px;
+            color: #fff;
+
+            font-size: 15px;
+            cursor: pointer;
+            font-family: 'Microsoft Yahei';
+        }
+        .mybutton:hover{
+            background: #80c3f7;
         }
     </style>
     <script>
@@ -199,22 +226,19 @@
     </div>
 </div>
 <div id="leftbar">
-    <div id="header">个人设置</div>
+    <div id="header">好友关系</div>
     <div id="vertmenu">
         <ul>
-            <li><a href="#" style=" color: #daddf0; background-color: #80c3f7;">基本信息</a></li>
-            <li><a href="#">头像设置</a></li>
+            <li><a href="../AccountPage/friend.html" style=" color: #daddf0; background-color: #80c3f7;" >关注</a></li>
+            <li><a href="../AccountPage/fans.html" >粉丝</a></li>
         </ul>
     </div>
 </div>
 <div id="content">
     <div class="insidecontent">
-    <label>用户名&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="johnsonfu" name="username" ><br>
-    <label>密&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="mangguo" name="password" ><br>
-        <label>年&nbsp;&nbsp;&nbsp;&nbsp;龄&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="29" name="age" style="width:60px;"><br>
-        <label style="vertical-align: top;margin-left:-10px;">个性签名&nbsp;&nbsp;</label><textarea style="width:400px;height:50px;padding:5px 5px 5px 5px;  border-radius: 2px 2px 2px 2px;
-            font-size:18px;background-color: #f7f7f7;" ></textarea>
-        <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:15%;width:70px;">保存</button>
+        <div class="mylabel">我的关注</div><hr style="margin-right: 50px;">
+       <div style="margin-left:53%;"><input type="text" class="textview" name="friendname" placeholder="请输入昵称"><input type="button" class="mybutton" value="搜索">
+
 
     </div>
 </div>
@@ -224,4 +248,5 @@
 </div>
 
 </body>
+
 </html>

@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css"
-          href="../cssown/logregis.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+
+    <link href="../css/base.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/project_base.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/radialindicator.css"  rel="stylesheet" type="text/css" />
     <style type="text/css">
         body{
             background-color: #eaf2f2;
@@ -77,7 +80,7 @@
 
         #vertmenu ul li a:hover{
             color: #daddf0;
-            background-color: #abe2ff;
+            background-color: #555555;
         }
         #header{
             font-family:Helvetica;
@@ -113,8 +116,7 @@
             background-color: #ffffff;
             position:fixed;
             width:60%;
-            color: #848989;
-            font-family:Helvetica;
+
             border-radius:40px 40px 40px 40px;
         }
         #splitbar{
@@ -141,27 +143,6 @@
             padding-bottom: 10px;
             font-size: 10px;
         }
-        .insidecontent{
-           margin-top:7%;
-            margin-left:10%;
-            height:100%;
-            font-size:25px;
-  }
-        .textview{
-            border-radius: 1px 1px 1px 1px;
-            font-size:18px;
-            width:150px;
-            background-color: #f7f7f7;
-            margin-bottom:20px;
-        }
-        input::-webkit-input-placeholder {
-            color: #999;
-            -webkit-transition: color.5s;
-        }
-        input:focus::-webkit-input-placeholder, input:hover::-webkit-input-placeholder {
-            color: #c2c2c2;
-            -webkit-transition: color.5s;
-        }
     </style>
     <script>
         function menuFix(){
@@ -184,13 +165,13 @@
     <div id="menu">
         <ul >
             <li><a href="../homepage.html">首页</a></li>
-            <li><a href="../SportPage/sport.html" >运动</a></li>
+            <li><a href="sport.html" style="color:#9eff9d;">运动</a></li>
             <li><a href="#">竞赛</a></li>
             <li><a href="#">俱乐部</a></li>
             <li><a href="#">朋友圈</a></li>
-            <li><a href="#" style="color:#9eff9d;">个人账户</a>
+            <li><a href="#">个人账户</a>
                 <ul>
-                    <li><a href="#">个人设置</a></li>
+                    <li><a href="../AccountPage/personinfo.html">个人设置</a></li>
                     <li><a href="../AccountPage/friend.html">我的好友</a></li>
                     <li><a href="#">退出登录</a></li>
                 </ul>
@@ -199,29 +180,58 @@
     </div>
 </div>
 <div id="leftbar">
-    <div id="header">个人设置</div>
+    <div id="header">健康管理</div>
     <div id="vertmenu">
         <ul>
-            <li><a href="#" style=" color: #daddf0; background-color: #80c3f7;">基本信息</a></li>
-            <li><a href="#">头像设置</a></li>
+            <li><a href="MySport.php" style="color:#daddf0; background-color: #80c3f7;">我的运动</a></li>
+            <li><a href="#">身体管理</a></li>
+            <li><a href="#">健身追踪</a></li>
+            <li><a href="#">睡眠分析</a></li>
         </ul>
     </div>
 </div>
-<div id="content">
-    <div class="insidecontent">
-    <label>用户名&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="johnsonfu" name="username" ><br>
-    <label>密&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="mangguo" name="password" ><br>
-        <label>年&nbsp;&nbsp;&nbsp;&nbsp;龄&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="29" name="age" style="width:60px;"><br>
-        <label style="vertical-align: top;margin-left:-10px;">个性签名&nbsp;&nbsp;</label><textarea style="width:400px;height:50px;padding:5px 5px 5px 5px;  border-radius: 2px 2px 2px 2px;
-            font-size:18px;background-color: #f7f7f7;" ></textarea>
-        <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:15%;width:70px;">保存</button>
 
-    </div>
-</div>
 <div class="footer">
     <p>爱运动 - isport</p>
     <p>Designed By FuLinhua 2016</p>
 </div>
+<div id="content">
+    <div class="prg-cont rad-prg" id="indicatorContainer2" style="margin-left:100px;">
+      <p hidden id="test"><?PHP echo 33; ?></p>
+    </div>
+<label style="margin-left:100px; font-family:Helvetica;font-size:25px;color:#ffe611;">运动目标完成</label>
 
+
+</div>
+
+
+<script type="text/javascript"  src="../js/base.js"></script>
+<script type="text/javascript"  src="../js/project_base.js"></script>
+<script>
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();
+</script>
+
+<script src="../js/radialindicator.js"></script>
+<script language="JavaScript">
+
+
+
+      // var i=document.getElementById("index").value;
+var i=document.getElementById("test").innerHTML;
+       $('#indicatorContainer2').radialIndicator({
+
+           barColor: '#87CEEB',
+           barWidth: 10,
+           initValue: i,
+           roundCorner: true,
+           percentage: true
+       });
+
+
+</script>
+<script src="../js/demo.js"></script>
 </body>
+
+
 </html>

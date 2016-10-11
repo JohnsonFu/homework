@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css"
-          href="../css/logregis.css"/>
+          href="../cssown/logregis.css"/>
 </head>
 <body>
 <div >
