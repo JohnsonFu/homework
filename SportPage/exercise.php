@@ -219,15 +219,25 @@
     <div class="insidecontent">
         <div class="mylabel">健身追踪</div><hr style="margin-right: 50px;">
         <div class="insidecontent2">
-            <label style="margin-left:10px; font-family:微软雅黑;font-size:20px;color:#55555c;">运动目标完成</label>
+            <label style="margin-left:5%; font-family:微软雅黑;font-size:20px;color:#55555c;">运动目标完成</label>
 
-            <div >
+            <div  >
                 <figure id="pie" name=<?PHP echo 6; ?> data-behavior="pie-chart1" style="margin-right:50px;"></figure>
+<label style="font-size:18px;margin-left:-50px;color:#55555c;font-family: 微软雅黑;">运动距离:</label>
+                <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">公里</label>
+                <label style="font-family:微软雅黑;font-size:50px; margin-top:20px;color:lightgrey">|</label>
+                <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动时长:</label>
+                <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">小时</label>
+                <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">分钟</label>
+<br>
+                <label style="font-size:18px;margin-left:207px;color:#55555c;font-family: 微软雅黑;">燃烧热量:</label>
+                <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">大卡</label>
+                <label style="font-family:微软雅黑;font-size:50px; margin-top:20px;color:lightgrey">|</label>
+                <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动步数:</label>
+                <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">步</label>
 
-                <figure id="pie2" name=<?PHP echo 7; ?> data-behavior="pie-chart1">9</figure>
 
             </div>
-            <input type="button" style="margin-top:-100px;" value="fd">
 
            </div>
   </div>
@@ -253,17 +263,7 @@
 
         });
 
-   /*    var rand2 = function() {
-            var i=($("#mess2").html());
-            alert( i);
-        }
 
-        $('*[data-behavior="pie-chart2"]').each(function() {
-            $(this).svgPie({
-                percentage: rand2()
-            });
-
-*/
 
 
     });

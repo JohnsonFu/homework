@@ -12,7 +12,10 @@ html, body {
     color: #555;
     font-size: 15px;
     line-height: 1.7;
+
+    background-color: #eaf2f2;
 }
+
 
 input:focus {
     outline: none;
