@@ -158,7 +158,7 @@
         }
         .insidecontent2{
             margin-right:50px;
-            height:500px;
+            height:800px;
             font-size:25px;
             background-color:#eaf2f2;
             border-radius:10px 10px 10px 10px;
