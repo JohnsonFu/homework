@@ -74,6 +74,14 @@
             border-radius: 10px 10px 10px 10px;
         }
 
+        .mylabel{
+            font-size:40px;
+            text-align:left;
+            color: #7fb2ff;
+            font-family:Helvetica;
+            margin-top:-50px;
+        }
+
         #vertmenu ul li a:hover{
             color: #daddf0;
             background-color: #abe2ff;
@@ -139,6 +147,19 @@
             padding-bottom: 10px;
             font-size: 10px;
         }
+        .insidecontent{
+            margin-top:7%;
+            margin-left:10%;
+            height:100%;
+            font-size:25px;
+        }
+        .insidecontent2{
+            margin-right:50px;
+            height:500px;
+            font-size:25px;
+            background-color:#eaf2f2;
+            border-radius:10px 10px 10px 10px;
+        }
     </style>
     <script>
         function menuFix(){
@@ -192,23 +213,18 @@
     <p>Designed By FuLinhua 2016</p>
 </div>
 <div id="content">
-    <div class="prg-cont rad-prg" id="indicatorContainer2" style="margin-left:100px;">
-      <p hidden id="test"><?PHP echo 33; ?></p>
+    <div class="insidecontent">
+        <div class="mylabel">我的运动</div><hr style="margin-right: 50px;">
+        <div class="insidecontent2">
+            <div id="main" style="width: 600px;height:400px;"></div>
+        </div>
     </div>
-<label style="margin-left:100px; font-family:微软雅黑;font-size:25px;color:#ffe611;">运动目标完成</label>
-
-
+</div>
 </div>
 
-<script type="text/javascript" src="../js/demo.js"></script>
-<script type="text/javascript"  src="../js/base.js"></script>
-<script type="text/javascript"  src="../js/project_base.js"></script>
-<script>
-    SyntaxHighlighter.defaults['toolbar'] = false;
-    SyntaxHighlighter.all();
-</script>
 
-<script src="../js/radialindicator.js"></script>
+
+<script src="../js/echarts.min.js" type="text/javascript"></script>
 <script language="JavaScript">
 
 
@@ -225,6 +241,60 @@ var i=document.getElementById("test").innerHTML;
        });
 
 
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:335, name:'直接访问'},
+                    {value:310, name:'邮件营销'},
+                    {value:234, name:'联盟广告'},
+                    {value:135, name:'视频广告'},
+                    {value:1548, name:'搜索引擎'}
+                ]
+            }
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
 </script>
 <script src="../js/demo.js"></script>
 </body>
