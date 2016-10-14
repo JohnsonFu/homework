@@ -66,7 +66,7 @@
 
         }
         #vertmenu ul li a{
-            color: #a6e0ff;
+            color: #a3cfff;
             width:100px;
             text-decoration:none;
             display:block;
@@ -86,13 +86,7 @@
             font-size:30px;
             color: rgba(95, 91, 94, 0.98);
         }
-        .mylabel{
-            font-size:40px;
-            text-align:left;
-            color: #7fb2ff;
-            font-family:Helvetica;
-            margin-top:-50px;
-        }
+
         #top_bg{
             height:40px;
             top:0;
@@ -119,8 +113,7 @@
             background-color: #ffffff;
             position:fixed;
             width:60%;
-            color: #848989;
-            font-family:Helvetica;
+
             border-radius:40px 40px 40px 40px;
         }
         #splitbar{
@@ -147,12 +140,31 @@
             padding-bottom: 10px;
             font-size: 10px;
         }
+        .infobar{
+            font-size:20px;margin-left:27%;color:#55555c;
+            width:150px;
+
+
+        }
+        .infobar label{
+            margin-top:25px;
+            float:none;
+            font-family:Helvetica;
+            font-size:22px;
+        }
+        .mylabel{
+            font-size:40px;
+            text-align:left;
+            color: #7fb2ff;
+            font-family:Helvetica;
+            margin-top:-50px;
+        }
         .insidecontent{
-           margin-top:7%;
+            margin-top:7%;
             margin-left:10%;
             height:100%;
             font-size:25px;
-  }
+        }
         .textview{
             border-radius: 1px 1px 1px 1px;
             font-size:18px;
@@ -160,14 +172,17 @@
             background-color: #f7f7f7;
             margin-bottom:20px;
         }
-        input::-webkit-input-placeholder {
-            color: #999;
-            -webkit-transition: color.5s;
+        .mytabel{
+            margin-top:20px;
+            align:center;
+            width:93%;
+            font-size:15px;
         }
-        input:focus::-webkit-input-placeholder, input:hover::-webkit-input-placeholder {
-            color: #c2c2c2;
-            -webkit-transition: color.5s;
+        .mytabel tr{
+            text-align:center;
+
         }
+
     </style>
     <script>
         function menuFix(){
@@ -188,15 +203,15 @@
 <div id="top_bg">
     <div class="logo_l"></div>
     <div id="menu">
-        <ul >
+        <ul>
             <li><a href="../homepage.html">首页</a></li>
-            <li><a href="../SportPage/sport.html" >运动</a></li>
-            <li><a href="#">竞赛</a></li>
+            <li><a href="sport.html">运动</a></li>
+            <li><a href="#"  style="color:#c3ffa2;">竞赛</a></li>
             <li><a href="#">俱乐部</a></li>
             <li><a href="#">朋友圈</a></li>
-            <li><a href="#" style="color:#9eff9d;">个人账户</a>
+            <li><a href="#">个人账户</a>
                 <ul>
-                    <li><a href="#">个人设置</a></li>
+                    <li><a href="../AccountPage/personinfo.html">个人设置</a></li>
                     <li><a href="../AccountPage/friend.html">我的好友</a></li>
                     <li><a href="#">退出登录</a></li>
                 </ul>
@@ -205,30 +220,50 @@
     </div>
 </div>
 <div id="leftbar">
-    <div id="header">个人设置</div>
+    <div align="center" class="infobar">
+        <label>JohnsonFu</label><br>
+        <label>战斗等级:</label><br>
+        <label style="margin-left:-40px;">胜率:</label><hr>
+        <button type="button"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发起竞赛</button>
+        <a href="#" style="font-size:18px;">规则介绍</a>
+    </div>
     <div id="vertmenu">
         <ul>
-            <li><a href="#" style=" color: #daddf0; background-color: #80c3f7;">基本信息</a></li>
-            <li><a href="#">头像设置</a></li>
+            <li style="margin-top:10px; "><a href="gameboard.php" >竞赛场</a></li>
+            <li style="margin-top:10px;"><a href="#">我的竞赛</a></li>
+            <li style="margin-top:10px;"><a href="#">战书</a></li>
+            <li style="margin-top:10px;"><a href="#">单人PK</a></li>
+            <li style="margin-top:10px;"><a href="#">群体PK</a></li>
         </ul>
     </div>
+
 </div>
 <div id="content">
     <div class="insidecontent">
-        <div class="mylabel">基本信息</div><hr style="margin-right: 50px;">
-    <label>用户名&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="johnsonfu" name="username" ><br>
-    <label>密&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="mangguo" name="password" ><br>
-        <label>年&nbsp;&nbsp;&nbsp;&nbsp;龄&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="29" name="age" style="width:60px;"><br>
-        <label style="vertical-align: top;margin-left:-10px;">个性签名&nbsp;&nbsp;</label><textarea style="width:400px;height:50px;padding:5px 5px 5px 5px;  border-radius: 2px 2px 2px 2px;
-            font-size:18px;background-color: #f7f7f7;" ></textarea>
-               <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:15%;width:70px;">保存</button>
+        <div class="mylabel">发起竞赛</div><hr style="margin-right: 50px;">
+        <label style="margin-left:-10px;">运动类型</label>
+        <select style="margin-left:30px;"  name="type">
+          <option value="追踪器">追踪器</option>
+</select><br>
+            <label style="vertical-align: top;margin-left:-10px;">竞赛介绍</label><textarea style="margin-top:30px;margin-left:30px;width:400px;height:50px;padding:5px 5px 5px 5px;  border-radius: 2px 2px 2px 2px;
+            font-size:18px;background-color: #f7f7f7;"></textarea>
+        <br><label>保证金&nbsp;&nbsp;&nbsp;</label><input type="text" class="textview" placeholder="300" name="count" style="width:60px; margin-left:30px;"><label>金币</label>
 
-    </div>
+            <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:17.5%;width:70px;">建立竞赛</button>
+
+        </div>
+
 </div>
+
 <div class="footer">
     <p>爱运动 - isport</p>
     <p>Designed By FuLinhua 2016</p>
 </div>
+<script language="javascript">
+    function jump(){
+        window.location.href="SetGame.html";
+    }
 
+</script>
 </body>
 </html>
