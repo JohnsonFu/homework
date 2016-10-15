@@ -18,14 +18,17 @@
     <a href="register.php" class="hover">注册</a>
     <div class="slide-bar slide-bar1"></div>
 </div>
-<form name="form1" method="post" action="../dataprocess/regist.php">
+<form name="form1" method="post" action="../dataprocess/regist.php" onsubmit="return check()">
 <div class="form" align="center">
     <div class="group">
         <div class="group-ipt email">
-            <input type="text"  name="username" class="ipt" placeholder="用户名" required>
+            <input type="text"  name="username" class="ipt" placeholder="账号名(6-12位)" required>
         </div>
-        <div class="group-ipt password"><input type="text" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required>
+        <div class="group-ipt password"><input type="text" name="nickname" id="nickname" class="ipt" placeholder="输入您的昵称" required>
         </div>
+        <div class="group-ipt password"><input type="text" name="password" id="password" class="ipt" placeholder="输入您的登录密码(由6-18位包含字母和数字的字符组成)" required>
+        </div>
+
 </div>
     <div align="left" style="margin-top:20px; margin-bottom:20px;">
         <label>性&nbsp;&nbsp;别:&nbsp;&nbsp;&nbsp;</label>
@@ -46,9 +49,35 @@
 </div>
 
 <div class="button">
-    <button type="submit"  class="login-btn register-btn" id="button">注册</button>
+    <button type="submit"  class="login-btn register-btn"  id="button">注册</button>
 </div>
     </form>
+<script language="javascript">
+    function check(){
+        var name=document.getElementsByName("username")[0].value;
+  var reg1 = /[a-zA-Z0-9]{6,12}/;
+                     if(!reg1.test(name))
+                         {
+                             alert("不符合规范的账户名");
+                             return false;
+                         }
+        var password=document.getElementById("password").value;
+        var reg2=/[a-zA-Z0-9]{6,18}/;
+        if(!reg2.test(password)){
+            alert("不符合规范的密码");
+            return false;
+        }
+        var nickname=document.getElementById("nickname").value;
+        if(nickname.length==0){
+            alert("昵称不得为空");
+            return false;
+        }
+
+
+
+        return true;
+    }
+</script>
 <div class="footer">
     <p>爱运动 - isport</p>
     <p>Designed By FuLinhua 2016</p>
