@@ -22,7 +22,7 @@
 <div class="form" align="center">
     <div class="group">
         <div class="group-ipt email">
-            <input type="text"  name="username" class="ipt" placeholder="账号名(6-12位)" required>
+            <input type="text"  name="username" class="ipt" placeholder="账号名(6-18)" required>
         </div>
         <div class="group-ipt password"><input type="text" name="nickname" id="nickname" class="ipt" placeholder="输入您的昵称" required>
         </div>
@@ -55,7 +55,7 @@
 <script language="javascript">
     function check(){
         var name=document.getElementsByName("username")[0].value;
-  var reg1 = /[a-zA-Z0-9]{6,12}/;
+  var reg1 = /[a-zA-Z0-9]{6,18}/;
                      if(!reg1.test(name))
                          {
                              alert("不符合规范的账户名");
