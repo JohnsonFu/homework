@@ -19,12 +19,12 @@ if ($db){
   // }
    if($idcheck>0){
 
-      echo "该账户已被注册";
+      echo "账户名".$name."已被注册";
 
 
    }
    else if($nickcheck>0){
-       echo "改昵称已被注册";
+       echo "昵称".$nickname."已被注册";
    }
    else {
        $result = $db->query("insert into users(id,password,sex,age,nickname) values ('$name','$password','$sex','$age','$nickname')");

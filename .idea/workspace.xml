@@ -4,8 +4,10 @@
     <list default="true" id="d873dfbb-9bb4-4c07-8125-3bc64292ce6e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataprocess/mydatabase.sqlite" afterPath="$PROJECT_DIR$/dataprocess/mydatabase.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AccountPage/register.php" afterPath="$PROJECT_DIR$/AccountPage/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataprocess/login.php" afterPath="$PROJECT_DIR$/dataprocess/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GamePage/GameIndex.html" afterPath="$PROJECT_DIR$/GamePage/GameIndex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GamePage/gameboard.php" afterPath="$PROJECT_DIR$/GamePage/gameboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SportPage/exercise.php" afterPath="$PROJECT_DIR$/SportPage/exercise.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataprocess/regist.php" afterPath="$PROJECT_DIR$/dataprocess/regist.php" />
     </list>
     <ignored path="homework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,58 +33,50 @@
         <entry file="file://$PROJECT_DIR$/GamePage/gameboard.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="156" column="17" selection-start-line="154" selection-start-column="7" selection-end-line="160" selection-end-column="9" />
+              <caret line="259" column="12" selection-start-line="259" selection-start-column="12" selection-end-line="259" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SetGame.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GamePage/SetGame.html">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GamePage/test.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personinfo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AccountPage/personinfo.html">
+      <file leaf-file-name="GameIndex.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GamePage/GameIndex.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="210" column="87" selection-start-line="210" selection-start-column="87" selection-end-line="210" selection-end-column="87" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="exercise.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SportPage/exercise.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="216" column="6" selection-start-line="216" selection-start-column="6" selection-end-line="216" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AccountPage/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="19.0">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            <state vertical-scroll-proportion="1.0591133">
+              <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -91,7 +85,7 @@
       <file leaf-file-name="testconnect.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataprocess/testconnect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
               <folding>
                 <marker date="1476540924000" expanded="true" signature="154:173" placeholder="select * fro..users..." />
@@ -103,14 +97,14 @@
       <file leaf-file-name="regist.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataprocess/regist.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.75">
-              <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state vertical-scroll-proportion="-6.25">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding>
-                <marker date="1476524418000" expanded="true" signature="340:383" placeholder="select count..users..." />
-                <marker date="1476524418000" expanded="true" signature="432:485" placeholder="select nickn..users..." />
-                <marker date="1476524418000" expanded="true" signature="701:719" placeholder="insert into users..." />
-                <marker date="1476524418000" expanded="true" signature="701:748" placeholder="insert into users..." />
-                <marker date="1476524418000" expanded="true" signature="701:803" placeholder="insert into users..." />
+                <marker date="1476600763000" expanded="true" signature="340:383" placeholder="select count..users..." />
+                <marker date="1476600763000" expanded="true" signature="432:485" placeholder="select nickn..users..." />
+                <marker date="1476600763000" expanded="true" signature="722:740" placeholder="insert into users..." />
+                <marker date="1476600763000" expanded="true" signature="722:769" placeholder="insert into users..." />
+                <marker date="1476600763000" expanded="true" signature="722:824" placeholder="insert into users..." />
               </folding>
             </state>
           </provider>
@@ -119,13 +113,13 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataprocess/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="20" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="44" />
               <folding>
-                <marker date="1476543386000" expanded="true" signature="480:499" placeholder="select * fro..users..." />
-                <marker date="1476543386000" expanded="true" signature="480:500" placeholder="select * fro..users..." />
-                <marker date="1476543386000" expanded="true" signature="480:539" placeholder="select * fro..users..." />
-                <marker date="1476543386000" expanded="true" signature="480:541" placeholder="select * fro..users..." />
+                <marker date="1476545382000" expanded="true" signature="480:499" placeholder="select * fro..users..." />
+                <marker date="1476545382000" expanded="true" signature="480:500" placeholder="select * fro..users..." />
+                <marker date="1476545382000" expanded="true" signature="480:539" placeholder="select * fro..users..." />
+                <marker date="1476545382000" expanded="true" signature="480:541" placeholder="select * fro..users..." />
               </folding>
             </state>
           </provider>
@@ -134,8 +128,8 @@
       <file leaf-file-name="tt.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataprocess/tt.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -144,18 +138,8 @@
       <file leaf-file-name="MySport.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SportPage/MySport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="7.5">
-              <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31034482">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="268" column="27" selection-start-line="268" selection-start-column="27" selection-end-line="268" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -194,22 +178,23 @@
         <option value="$PROJECT_DIR$/js/demo.js" />
         <option value="$PROJECT_DIR$/css/htmleaf-demo.css" />
         <option value="$PROJECT_DIR$/cssown/logregis.css" />
-        <option value="$PROJECT_DIR$/SportPage/exercise.php" />
-        <option value="$PROJECT_DIR$/GamePage/GameIndex.html" />
         <option value="$PROJECT_DIR$/AccountPage/friend.html" />
         <option value="$PROJECT_DIR$/SportPage/MySport.php" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/GamePage/gameboard.html" />
-        <option value="$PROJECT_DIR$/GamePage/gameboard.php" />
         <option value="$PROJECT_DIR$/AccountPage/personinfo.html" />
         <option value="$PROJECT_DIR$/GamePage/SetGame.html" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/Database/testdatabase.php" />
-        <option value="$PROJECT_DIR$/dataprocess/regist.php" />
         <option value="$PROJECT_DIR$/dataprocess/testconnect.php" />
         <option value="$PROJECT_DIR$/AccountPage/register.php" />
         <option value="$PROJECT_DIR$/dataprocess/login.php" />
         <option value="$PROJECT_DIR$/dataprocess/tt.php" />
+        <option value="$PROJECT_DIR$/GamePage/gameboard.php" />
+        <option value="$PROJECT_DIR$/SportPage/exercise.php" />
+        <option value="$PROJECT_DIR$/GamePage/GameIndex.html" />
+        <option value="$PROJECT_DIR$/GamePage/test.html" />
+        <option value="$PROJECT_DIR$/dataprocess/regist.php" />
       </list>
     </option>
   </component>
@@ -249,7 +234,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -265,6 +250,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="homework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SportPage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GamePage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -306,13 +319,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="cssown" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="AccountPage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -423,13 +450,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SportPage/sport.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="164" column="40" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -655,13 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cssown/logregis.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/echarts.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -676,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SportPage/exercise.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.20689656">
-          <caret line="238" column="0" selection-start-line="238" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AccountPage/friend.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33497536">
@@ -690,54 +696,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GamePage/GameIndex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="197" column="28" selection-start-line="2" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GamePage/gameboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="156" column="17" selection-start-line="154" selection-start-column="7" selection-end-line="160" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GamePage/SetGame.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -745,11 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="210" column="87" selection-start-line="210" selection-start-column="87" selection-end-line="210" selection-end-column="87" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,9 +717,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataprocess/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="44" />
+          <folding>
+            <marker date="1476545382000" expanded="true" signature="480:499" placeholder="select * fro..users..." />
+            <marker date="1476545382000" expanded="true" signature="480:500" placeholder="select * fro..users..." />
+            <marker date="1476545382000" expanded="true" signature="480:539" placeholder="select * fro..users..." />
+            <marker date="1476545382000" expanded="true" signature="480:541" placeholder="select * fro..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataprocess/tt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SportPage/MySport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="268" column="27" selection-start-line="268" selection-start-column="27" selection-end-line="268" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SportPage/exercise.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="216" column="6" selection-start-line="216" selection-start-column="6" selection-end-line="216" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dataprocess/testconnect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
           <folding>
             <marker date="1476540924000" expanded="true" signature="154:173" placeholder="select * fro..users..." />
@@ -770,61 +771,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AccountPage/register.php">
+    <entry file="file://$PROJECT_DIR$/cssown/logregis.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="19.0">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.098522164">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GamePage/GameIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GamePage/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GamePage/gameboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="259" column="12" selection-start-line="259" selection-start-column="12" selection-end-line="259" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataprocess/regist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
           <folding>
-            <marker date="1476524418000" expanded="true" signature="340:383" placeholder="select count..users..." />
-            <marker date="1476524418000" expanded="true" signature="432:485" placeholder="select nickn..users..." />
-            <marker date="1476524418000" expanded="true" signature="701:719" placeholder="insert into users..." />
-            <marker date="1476524418000" expanded="true" signature="701:748" placeholder="insert into users..." />
-            <marker date="1476524418000" expanded="true" signature="701:803" placeholder="insert into users..." />
+            <marker date="1476600763000" expanded="true" signature="340:383" placeholder="select count..users..." />
+            <marker date="1476600763000" expanded="true" signature="432:485" placeholder="select nickn..users..." />
+            <marker date="1476600763000" expanded="true" signature="722:740" placeholder="insert into users..." />
+            <marker date="1476600763000" expanded="true" signature="722:769" placeholder="insert into users..." />
+            <marker date="1476600763000" expanded="true" signature="722:824" placeholder="insert into users..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SportPage/MySport.php">
+    <entry file="file://$PROJECT_DIR$/AccountPage/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.5">
-          <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataprocess/tt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataprocess/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding>
-            <marker date="1476543386000" expanded="true" signature="480:499" placeholder="select * fro..users..." />
-            <marker date="1476543386000" expanded="true" signature="480:500" placeholder="select * fro..users..." />
-            <marker date="1476543386000" expanded="true" signature="480:539" placeholder="select * fro..users..." />
-            <marker date="1476543386000" expanded="true" signature="480:541" placeholder="select * fro..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31034482">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        <state vertical-scroll-proportion="1.0591133">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
           <folding />
         </state>
       </provider>

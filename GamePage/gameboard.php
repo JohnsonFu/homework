@@ -220,7 +220,7 @@
         <button type="button"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发起竞赛</button>
         <a href="#" style="font-size:18px;">规则介绍</a>
     </div>
-    <div id="vertmenu">
+    <div id="vertmenu" >
         <ul>
             <li style="margin-top:10px; "><a href="gameboard.php" style="color:#daddf0; background-color: #80c3f7;">竞赛场</a></li>
             <li style="margin-top:10px;"><a href="#">我的竞赛</a></li>

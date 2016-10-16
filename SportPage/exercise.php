@@ -221,7 +221,7 @@
         <div class="insidecontent2">
             <label style="margin-left:5%; font-family:微软雅黑;font-size:20px;color:#55555c;">运动目标完成</label>
 
-            <div  >
+            <div  style="display:inline-block">
                 <figure id="pie" name=<?PHP echo 6; ?> data-behavior="pie-chart1" style="margin-right:50px;"></figure>
 <label style="font-size:18px;margin-left:-50px;color:#55555c;font-family: 微软雅黑;">运动距离:</label>
                 <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">公里</label>
