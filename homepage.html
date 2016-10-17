@@ -3,79 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style type="text/css">
-        #menu ul{
-            magrin-top:0;
-            padding:0;
-            list-style-type: none;
-            margin-left: 30%;
-            margin-bottom:-18px;
-        }
-        #menu li{
-            float:left;
-            font-family:Helvetica;
-            margin-right: 20px;
-            font-size:22px;
-            color: #ffffff;
-        }
-        #menu ul li a{
-            color: #ffffff;
-            width:100px;
-            text-decoration:none;
-            display:block;
-            position:relative;
+    <link rel="stylesheet" type="text/css" href="homestyle.css">
 
-        }
-        #menu ul li a:hover{
-            color: #e7ecff;
-        }
-        #menu ul li ul{
-            display:none;
-        }
-        #menu ul li.listshow ul{
-            display:block;
-        }
-        #menu ul li ul li {
-
-            float:none;
-            margin-left:-30px;
-
-        }
-
-        #menu ul li ul li a{
-            color: #daddf0;
-        }
-        #top_bg{
-            height:40px;
-            top:0;
-            width:100%;
-            background: #b3ccff;
-            box-shadow:1px 1px 7px #999;
-            position:fixed;
-            z-index:999;
-            left:0;
-            border-bottom:#C6C6C6 solid 1px;
-        }
-
-        .logo_l{
-            width:145px;
-            height:40px;
-            float:left;
-            background:url(logo.png) no-repeat left;
-        }
-        .footer{
-            margin-top:45%;
-            width: 100%;
-            height: 40px;
-            bottom: 0;
-            left: 0;
-            text-align: center;
-            color: #999;
-            z-index: 2;
-            padding-bottom: 10px;
-            font-size: 10px;
-        }
-    </style>
     <script>
         function menuFix(){
             var self=document.getElementById("menu").getElementsByTagName("li");
