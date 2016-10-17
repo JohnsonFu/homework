@@ -10,7 +10,7 @@ $username=$_POST['username'];
 $password=$_POST['password'];
 
 if($username && $password){
-    if(login($username,$password)){
+    if(login($username,$password)==true){
         $_SESSION['userid']=$username;
         echo '登陆成功';
         echo "<a href='tt.php'>返回</a>";

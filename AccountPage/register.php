@@ -18,11 +18,11 @@
     <a href="register.php" class="hover">注册</a>
     <div class="slide-bar slide-bar1"></div>
 </div>
-<form name="form1" method="post" action="../dataprocess/regist.php" onsubmit="return check()">
+<form name="form1" method="post" action="../DataProcess/AccountInfo/regist.php" onsubmit="return check()">
 <div class="form" align="center">
     <div class="group">
         <div class="group-ipt email">
-            <input type="text"  name="username" class="ipt" placeholder="账号名(6-18)" required>
+            <input type="text"  name="username" class="ipt" placeholder="账号名(6-18位)" required>
         </div>
         <div class="group-ipt password"><input type="text" name="nickname" id="nickname" class="ipt" placeholder="输入您的昵称" required>
         </div>
@@ -42,7 +42,20 @@
             <option value =<?PHP echo($s) ?>><?PHP echo($s) ?></option>
            <?PHP } ?>
         </select>
+
+        <label style="margin-left:30px;">身&nbsp;&nbsp;高:&nbsp;&nbsp;&nbsp;</label>
+        <select name="height"><?PHP for($s=140;$s<220;$s++){
+                if($s==170){
+                ?>
+                <option value =<?PHP echo($s) ?> selected><?PHP echo($s) ?></option>
+            <?PHP }else{ ?>
+            <option value =<?PHP echo($s) ?> ><?PHP echo($s) ?></option>
+            <?PHP }} ?>
+        </select>
+
     </div>
+
+
 
     </div>
 
