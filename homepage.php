@@ -21,6 +21,16 @@
         window.onload=menuFix;
     </script>
 </head>
+<?PHP session_start();
+include('DataProcess/AccountInfo/Account.php');
+$id=$_SESSION['userid'];
+$dbaddr="sqlite:DataProcess/AccountInfo/mydatabase.sqlite";
+$account= new Account($id,$dbaddr);
+$nickname=$account->getNick();
+$level=$account->getLevel();
+$money=$account->getMoney();
+$sig=$account->getSig();
+?>
 <body>
 <div id="top_bg">
     <div class="logo_l"></div>
@@ -43,10 +53,11 @@
 </div>
 <div id="leftbar">
     <div align="center" class="infobar" >
-        <label>JohnsonFu</label><br>
-        <label style="margin-left:-40px;">等级:</label><br>
+        <label>用户名:<?PHP echo $nickname ?></label><br>
+        <label style="margin-left:-40px;">等级:Level<?PHP echo $level ?></label><br>
         <label style="margin-left:-40px;">胜率:</label><br>
-        <label>我的金币:</label>
+        <label>我的金币:<?PHP echo $money ?></label>
+        <label>个性签名:<?PHP echo $sig ?></label>
 
 
 

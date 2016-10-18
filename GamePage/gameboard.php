@@ -26,7 +26,7 @@
     <div class="logo_l"></div>
     <div id="menu">
         <ul>
-            <li><a href="../homepage.html">首页</a></li>
+            <li><a href="../homepage.php">首页</a></li>
             <li><a href="sport.html">运动</a></li>
             <li><a href="#"  style="color:#c3ffa2;">竞赛</a></li>
             <li><a href="#">俱乐部</a></li>

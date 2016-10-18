@@ -12,10 +12,10 @@ $password=$_POST['password'];
 if($username && $password){
     if(login($username,$password)==true){
         $_SESSION['userid']=$username;
-        echo '登陆成功';
-        echo "<a href='tt.php'>返回</a>";
+        Header("Location:../../homepage.php ");
+
     }else{
-        echo '登录失败';
+        echo "<a href='../../login.html'>登录失败!返回</a>";
     }
 }
 
