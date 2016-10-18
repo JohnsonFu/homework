@@ -101,7 +101,7 @@ body{
 }
 #content{
     margin-left:30%;
-    height:auto;
+    height:100%;
     margin-top:7%;
     background-color: #ffffff;
 
@@ -155,7 +155,7 @@ body{
 .insidecontent{
     margin-top:7%;
     margin-left:10%;
-    height:auto;
+    height:100%;
     font-size:25px;
 }
 .mytabel{

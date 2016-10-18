@@ -31,13 +31,8 @@
             <li><a href="#"  style="color:#c3ffa2;">竞赛</a></li>
             <li><a href="#">俱乐部</a></li>
             <li><a href="#">朋友圈</a></li>
-            <li><a href="#">个人账户</a>
-                <ul>
-                    <li><a href="../AccountPage/personinfo.php">个人设置</a></li>
-                    <li><a href="../AccountPage/friend.html">我的好友</a></li>
-                    <li><a href="#">退出登录</a></li>
-                </ul>
-            </li>
+            <li><a href="#">个人账户</a></li>
+            <li><a href="#">退出登录</a></li>
         </ul>
     </div>
 </div>
@@ -83,7 +78,7 @@
 </div>
 <script language="javascript">
     function jump(){
-        window.location.href="SetGame.html";
+        window.location.href="SetGame.php";
     }
 
 </script>

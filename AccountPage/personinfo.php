@@ -43,6 +43,7 @@ $money=$_SESSION['money'];
             <li><a href="#">俱乐部</a></li>
             <li><a href="#">朋友圈</a></li>
             <li><a href="#" style="color:#9eff9d;">个人账户</a>
+            <li><a href="#">退出登录</a></li>
             </li>
         </ul>
     </div>
