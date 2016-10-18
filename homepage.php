@@ -34,6 +34,8 @@ $password=$account->getPassword();
 $_SESSION['nickname']=$nickname;
 $_SESSION['sig']=$sig;
 $_SESSION['password']=$password;
+$_SESSION['level']=$level;
+$_SESSION['money']=$money;
 ?>
 <body>
 <div id="top_bg">
@@ -45,9 +47,9 @@ $_SESSION['password']=$password;
             <li><a href="#">竞赛</a></li>
             <li><a href="#">俱乐部</a></li>
             <li><a href="#">朋友圈</a></li>
-            <li><a href="#">个人账户</a>
+            <li><a href="AccountPage/personinfo.php">个人账户</a>
                 <ul>
-                    <li><a href="../AccountPage/personinfo.html">个人设置</a></li>
+                    <li><a href="../AccountPage/personinfo.php">个人设置</a></li>
                     <li><a href="../AccountPage/friend.html">我的好友</a></li>
                     <li><a href="#">退出登录</a></li>
                 </ul>
