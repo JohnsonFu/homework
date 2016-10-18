@@ -6,21 +6,7 @@
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
    <link rel="stylesheet" type="text/css" href="gamecss.css">
-    <script>
-        function menuFix(){
-            var self=document.getElementById("menu").getElementsByTagName("li");
-            for(var i=0;i<self.length;i++){
-                self[i].onmouseover=function(){
-                    this.className+=(this.className.length>0?" ":"")+"listshow";
-                }
-                self[i].onmouseout=function(){
-                    this.className=this.className.replace("listshow","");
-                }
-            }
-        }
-        window.onload=menuFix;
-    </script>
-</head>
+
 <body>
 <div id="top_bg">
     <div class="logo_l"></div>
@@ -58,29 +44,30 @@
 <div id="content">
     <div class="insidecontent">
         <div class="mylabel">发起竞赛</div><hr style="margin-right: 50px;">
+        <label style="margin-left:-10px;">竞赛名称</label><input type="text" style="margin-left:30px;height:20px;"><br>
         <label style="margin-left:-10px;">运动类型</label>
-        <select style="margin-left:30px;"  name="type">
-          <option value="追踪器">追踪器</option>
-</select><br>
-            <label style="vertical-align: top;margin-left:-10px;">竞赛介绍</label><textarea style="margin-top:30px;margin-left:30px;width:400px;height:50px;padding:5px 5px 5px 5px;  border-radius: 2px 2px 2px 2px;
+        <select style="margin-left:30px;width:100px;height:30px;"  name="type">
+            <option value="单人PK">单人PK</option>
+            <option value="群体PK">群体PK</option>
+        </select><br>
+        <label style="margin-left:-10px;">开始时间</label><br>
+        <label style="margin-left:-10px;">结束时间</label><input type="datetime" value="2014-01-13"/><br>
+        <label style="margin-left:-10px;">保&nbsp;证&nbsp;金&nbsp;&nbsp;&nbsp;</label><input type="text" class="textview" placeholder="300" name="count" style="width:60px; margin-left:30px;height:20px;margin-right:20px;"><label style="font-size:15px;">金币</label>
+<br>
+            <label style="vertical-align: top;margin-left:-10px;">竞赛介绍</label><textarea style="margin-top:5px;margin-left:30px;width:400px;height:50px;padding:5px 5px 5px 5px;  border-radius: 2px 2px 2px 2px;
             font-size:18px;background-color: #f7f7f7;"></textarea>
-        <br><label>保证金&nbsp;&nbsp;&nbsp;</label><input type="text" class="textview" placeholder="300" name="count" style="width:60px; margin-left:30px;"><label>金币</label>
 
-            <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:17.5%;width:70px;">建立竞赛</button>
+            <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:67%;width:70px;">建立竞赛</button>
 
         </div>
 
 </div>
 
+
 <div class="footer">
     <p>爱运动 - isport</p>
     <p>Designed By FuLinhua 2016</p>
 </div>
-<script language="javascript">
-    function jump(){
-        window.location.href="SetGame.php";
-    }
 
-</script>
 </body>
 </html>

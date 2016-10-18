@@ -92,7 +92,7 @@
     <div class="insidecontent" style="height:auto">
 
         <div class="mylabel">竞赛场</div><hr style="margin-right: 50px;">
-
+<?PHP for($i=0;$i<10;$i++) { ?>
         <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
             <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000">奔跑吧兄弟  <input type="button" value="退出" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
             </div>
@@ -119,7 +119,7 @@
                 </tr>
             </table>
              </div>
-
+<?PHP } ?>
 
         </div>
 
