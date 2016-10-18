@@ -37,6 +37,9 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
   public  function getSig(){
         return $this->infolist['signature'];
     }
+    public function getPassword(){
+        return $this->infolist['password'];
+    }
 
 }
 

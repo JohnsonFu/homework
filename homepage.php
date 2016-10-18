@@ -30,6 +30,10 @@ $nickname=$account->getNick();
 $level=$account->getLevel();
 $money=$account->getMoney();
 $sig=$account->getSig();
+$password=$account->getPassword();
+$_SESSION['nickname']=$nickname;
+$_SESSION['sig']=$sig;
+$_SESSION['password']=$password;
 ?>
 <body>
 <div id="top_bg">
@@ -65,6 +69,7 @@ $sig=$account->getSig();
     </div>
     <div id="vertmenu">
         <ul>
+            <li style="margin-top:10px;"><a href="AccountPage/personinfo.php">账户设置</a></li>
             <li style="margin-top:10px;"><a href="gameboard.php">我的好友</a></li>
             <li style="margin-top:10px;"><a href="#">我的活动</a></li>
             <li style="margin-top:10px;"><a href="#">战书</a></li>

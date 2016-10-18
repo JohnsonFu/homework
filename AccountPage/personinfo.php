@@ -22,6 +22,12 @@
     </script>
 </head>
 <body>
+<?PHP
+
+
+?>
+
+
 <div id="top_bg">
     <div class="logo_l"></div>
     <div id="menu">
@@ -53,10 +59,10 @@
 <div id="content">
     <div class="insidecontent">
         <div class="mylabel">基本信息</div><hr style="margin-right: 50px;">
-    <label>用户名&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="johnsonfu" name="username" ><br>
+    <label>用户名&nbsp;&nbsp;&nbsp;&nbsp;JohnsonFu</label><br>
+        <label>昵&nbsp;&nbsp;&nbsp;&nbsp;称&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="华哥" name="nickname" ><br>
     <label>密&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="mangguo" name="password" ><br>
-        <label>年&nbsp;&nbsp;&nbsp;&nbsp;龄&nbsp;&nbsp;&nbsp;</label> <input type="text" class="textview" placeholder="29" name="age" style="width:60px;"><br>
-        <label style="vertical-align: top;margin-left:-10px;">个性签名&nbsp;&nbsp;</label><textarea style="width:400px;height:50px;padding:5px 5px 5px 5px;  border-radius: 2px 2px 2px 2px;
+          <label style="vertical-align: top;margin-left:-10px;">个性签名&nbsp;&nbsp;</label><textarea style="width:400px;height:50px;padding:5px 5px 5px 5px;  border-radius: 2px 2px 2px 2px;
             font-size:18px;background-color: #f7f7f7;" ></textarea>
                <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:15%;width:70px;">保存</button>
 

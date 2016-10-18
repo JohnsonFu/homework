@@ -32,7 +32,7 @@
             <li><a href="#">朋友圈</a></li>
             <li><a href="#">个人账户</a>
                 <ul>
-                    <li><a href="../AccountPage/personinfo.html">个人设置</a></li>
+                    <li><a href="../AccountPage/personinfo.php">个人设置</a></li>
                     <li><a href="../AccountPage/friend.html">我的好友</a></li>
                     <li><a href="#">退出登录</a></li>
                 </ul>

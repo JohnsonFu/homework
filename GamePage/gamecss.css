@@ -1,5 +1,6 @@
 body{
     background-color: #eaf2f2;
+    height:auto;
 }
 #menu ul{
     magrin-top:0;
@@ -99,11 +100,11 @@ body{
     left:0;
 }
 #content{
-    left:30%;
-    height:100%;
-    top:45px;
+    margin-left:30%;
+    height:auto;
+    margin-top:7%;
     background-color: #ffffff;
-    position:fixed;
+
     width:60%;
 
     border-radius:40px 40px 40px 40px;
@@ -154,7 +155,7 @@ body{
 .insidecontent{
     margin-top:7%;
     margin-left:10%;
-    height:100%;
+    height:auto;
     font-size:25px;
 }
 .mytabel{
