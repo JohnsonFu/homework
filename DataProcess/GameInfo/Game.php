@@ -26,3 +26,15 @@ public $type;
 
 
 }
+
+function getGameList($addr){
+    $db = new PDO($addr);
+    $result=$db->query("select * from game");
+    if(!$result){
+        return null;
+    }
+    else{
+        return $result->fetchAll();
+    }
+
+}

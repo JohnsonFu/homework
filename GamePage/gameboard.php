@@ -47,8 +47,13 @@ if(!isset($_SESSION['userid'])) {
    $id=$_SESSION['userid'];
 $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
-
-
+include('../DataProcess/GameInfo/Game.php');
+$list=getGameList('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+function getNick($id){
+    $db=new PDO('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+    $res=$db->query("select nickname from users where id='$id'")->fetchAll()[0][0];
+    return $res;
+}
 ?>
 <body>
 <div id="top_bg">
@@ -90,9 +95,9 @@ $level=$_SESSION['level'];
     <div class="insidecontent" style="height:auto">
 
         <div class="mylabel">竞赛场</div><hr style="margin-right: 50px;">
-<?PHP for($i=0;$i<10;$i++) { ?>
+<?PHP for($i=0;$i<count($list);$i++) { ?>
         <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
-            <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000">奔跑吧兄弟  <input type="button" value="退出" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+            <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?><input type="button" value="退出" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
             </div>
             <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                 <tr style="font-size:13px;">
@@ -101,9 +106,9 @@ $level=$_SESSION['level'];
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">类型</td>
                 </tr>
                 <tr style="font-size:13px;background-color:#ececec;">
-                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">蛤蛤酱</td>
-                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">跑得比谁都快</td>
-                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">群体PK</td>
+                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo(getNick($list[$i]['masterid']))?></td>
+                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo($list[$i]['gamename'])?></td>
+                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;"><?PHP echo($list[$i]['gametype'])?></td>
                 </tr>
                 <tr style="font-size:13px;">
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">人数</td>
