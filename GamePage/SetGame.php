@@ -6,7 +6,18 @@
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
    <link rel="stylesheet" type="text/css" href="gamecss.css">
+     <script type="text/javascript">
+        $(function () {
 
+            $('.form_datetime').datetimepicker({
+                format: 'yyyy-mm-dd hh:ii'
+            });
+            $('#datetimepicker').datetimepicker({
+                format: 'yyyy-mm-dd hh:ii'
+            });
+        })//end document.ready
+
+    </script>
 <body>
 <div id="top_bg">
     <div class="logo_l"></div>
@@ -44,21 +55,22 @@
 <div id="content">
     <div class="insidecontent">
         <div class="mylabel">发起竞赛</div><hr style="margin-right: 50px;">
-        <label style="margin-left:-10px;">竞赛名称</label><input type="text" style="margin-left:30px;height:20px;"><br>
+        <div style="margin-left:20px;">
+        <label style="margin-left:-10px;">竞赛名称</label><input type="text" style="margin-left:30px;height:20px;font-family:Helvetica;font-size:15px;"><br>
         <label style="margin-left:-10px;">运动类型</label>
         <select style="margin-left:30px;width:100px;height:30px;"  name="type">
             <option value="单人PK">单人PK</option>
             <option value="群体PK">群体PK</option>
         </select><br>
-        <label style="margin-left:-10px;">开始时间</label><br>
-        <label style="margin-left:-10px;">结束时间</label><input type="datetime" value="2014-01-13"/><br>
-        <label style="margin-left:-10px;">保&nbsp;证&nbsp;金&nbsp;&nbsp;&nbsp;</label><input type="text" class="textview" placeholder="300" name="count" style="width:60px; margin-left:30px;height:20px;margin-right:20px;"><label style="font-size:15px;">金币</label>
+        <label style="margin-left:-10px;">开始时间</label><input style="margin-left:30px;"   type="datetime" value="2016-10-13"/><br>
+        <label style="margin-left:-10px;">结束时间</label><input style="margin-left:30px;" type="datetime" value="2016-10-28"/><br>
+        <label style="margin-left:-10px;">保&nbsp;证&nbsp;金&nbsp;&nbsp;&nbsp;</label><input type="text" class="textview"  name="count" style="width:60px; margin-left:25px;height:20px;margin-right:20px;"><label style="font-size:15px;">金币</label>
 <br>
             <label style="vertical-align: top;margin-left:-10px;">竞赛介绍</label><textarea style="margin-top:5px;margin-left:30px;width:400px;height:50px;padding:5px 5px 5px 5px;  border-radius: 2px 2px 2px 2px;
             font-size:18px;background-color: #f7f7f7;"></textarea>
 
-            <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:67%;width:70px;">建立竞赛</button>
-
+            <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:69%;width:70px;">建立竞赛</button>
+</div>
         </div>
 
 </div>
