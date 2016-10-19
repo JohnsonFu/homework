@@ -6,24 +6,14 @@
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
 <link rel="stylesheet" type="text/css" href="AccountCss.css">
-    <script>
-        function menuFix(){
-            var self=document.getElementById("menu").getElementsByTagName("li");
-            for(var i=0;i<self.length;i++){
-                self[i].onmouseover=function(){
-                    this.className+=(this.className.length>0?" ":"")+"listshow";
-                }
-                self[i].onmouseout=function(){
-                    this.className=this.className.replace("listshow","");
-                }
-            }
-        }
-        window.onload=menuFix;
-    </script>
 </head>
 <body>
 <?PHP
 session_start();
+if(!isset($_SESSION['userid'])){
+    echo "<script>alert('未登录!将返回登录界面....');</script>";
+    echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
+}else{
 $id=$_SESSION['userid'];
 $nickname=$_SESSION['nickname'];
 $password=$_SESSION['password'];
@@ -76,7 +66,7 @@ $money=$_SESSION['money'];
     <p>爱运动 - isport</p>
     <p>Designed By FuLinhua 2016</p>
 </div>
-
+<?PHP } ?>
 <script language="JavaScript">
 function check() {
 

@@ -16,36 +16,28 @@
             border-radius:10px 10px 10px 10px;
         }
     </style>
-    <script>
-        function menuFix(){
-            var self=document.getElementById("menu").getElementsByTagName("li");
-            for(var i=0;i<self.length;i++){
-                self[i].onmouseover=function(){
-                    this.className+=(this.className.length>0?" ":"")+"listshow";
-                }
-                self[i].onmouseout=function(){
-                    this.className=this.className.replace("listshow","");
-                }
-            }
-        }
-        window.onload=menuFix;
-    </script>
 </head>
 <?PHP session_start();
-include('DataProcess/AccountInfo/Account.php');
-$id=$_SESSION['userid'];
-$dbaddr="sqlite:DataProcess/AccountInfo/mydatabase.sqlite";
-$account= new Account($id,$dbaddr);
-$nickname=$account->getNick();
-$level=$account->getLevel();
-$money=$account->getMoney();
-$sig=$account->getSig();
-$password=$account->getPassword();
-$_SESSION['nickname']=$nickname;
-$_SESSION['sig']=$sig;
-$_SESSION['password']=$password;
-$_SESSION['level']=$level;
-$_SESSION['money']=$money;
+if(!isset($_SESSION['userid'])){
+    echo "<script>alert('未登录!将返回登录界面....');</script>";
+    echo "<meta http-equiv='Refresh' content='0;URL=login.html'>";
+}
+else {
+    include('DataProcess/AccountInfo/Account.php');
+    $id = $_SESSION['userid'];
+    $dbaddr = "sqlite:DataProcess/AccountInfo/mydatabase.sqlite";
+    $account = new Account($id, $dbaddr);
+    $nickname = $account->getNick();
+    $level = $account->getLevel();
+    $money = $account->getMoney();
+    $sig = $account->getSig();
+    $password = $account->getPassword();
+    $_SESSION['nickname'] = $nickname;
+    $_SESSION['sig'] = $sig;
+    $_SESSION['password'] = $password;
+    $_SESSION['level'] = $level;
+    $_SESSION['money'] = $money;
+
 ?>
 <body>
 <div id="top_bg">
@@ -54,7 +46,7 @@ $_SESSION['money']=$money;
         <ul >
             <li><a href="../homepage.html"style="color:#9eff9d;">首页</a></li>
             <li><a href="sport.html">运动</a></li>
-            <li><a href="#">竞赛</a></li>
+            <li><a href="GamePage/gameboard.php">竞赛</a></li>
             <li><a href="#">俱乐部</a></li>
             <li><a href="#">朋友圈</a></li>
             <li><a href="AccountPage/personinfo.php">个人账户</a></li>
@@ -108,7 +100,7 @@ $_SESSION['money']=$money;
         </div>
     </div>
 </div>
-
+<?PHP }?>
 
 
 <script src="js/echarts.min.js" type="text/javascript"></script>

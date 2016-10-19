@@ -6,19 +6,20 @@
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
    <link rel="stylesheet" type="text/css" href="gamecss.css">
-     <script type="text/javascript">
-        $(function () {
 
-            $('.form_datetime').datetimepicker({
-                format: 'yyyy-mm-dd hh:ii'
-            });
-            $('#datetimepicker').datetimepicker({
-                format: 'yyyy-mm-dd hh:ii'
-            });
-        })//end document.ready
-
-    </script>
 <body>
+<?PHP
+session_start();
+if(!isset($_SESSION['userid'])){
+    echo "<script>alert('未登录!将返回登录界面....');</script>";
+    echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
+}else{
+    $id=$_SESSION['userid'];
+    $nickname=$_SESSION['nickname'];
+    $level=$_SESSION['level'];
+
+
+?>
 <div id="top_bg">
     <div class="logo_l"></div>
     <div id="menu">
@@ -35,8 +36,8 @@
 </div>
 <div id="leftbar">
     <div align="center" class="infobar">
-        <label>JohnsonFu</label><br>
-        <label>战斗等级:</label><br>
+        <label><?PHP echo $nickname ?></label><br>
+        <label>等级:Level<?PHP echo $level ?></label><br>
         <label style="margin-left:-40px;">胜率:</label><hr>
         <button type="button"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发起竞赛</button>
         <a href="#" style="font-size:18px;">规则介绍</a>
@@ -76,10 +77,6 @@
 </div>
 
 
-<div class="footer">
-    <p>爱运动 - isport</p>
-    <p>Designed By FuLinhua 2016</p>
-</div>
-
+<?PHP } ?>
 </body>
 </html>

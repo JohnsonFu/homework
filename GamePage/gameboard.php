@@ -37,21 +37,19 @@
         }
 
     </style>
-    <script>
-        function menuFix(){
-            var self=document.getElementById("menu").getElementsByTagName("li");
-            for(var i=0;i<self.length;i++){
-                self[i].onmouseover=function(){
-                    this.className+=(this.className.length>0?" ":"")+"listshow";
-                }
-                self[i].onmouseout=function(){
-                    this.className=this.className.replace("listshow","");
-                }
-            }
-        }
-        window.onload=menuFix;
-    </script>
 </head>
+<?PHP
+session_start();
+if(!isset($_SESSION['userid'])) {
+    echo "<script>alert('未登录!将返回登录界面....');</script>";
+    echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
+}else{
+   $id=$_SESSION['userid'];
+$nickname=$_SESSION['nickname'];
+$level=$_SESSION['level'];
+
+
+?>
 <body>
 <div id="top_bg">
     <div class="logo_l"></div>
@@ -63,7 +61,7 @@
             <li><a href="#">俱乐部</a></li>
             <li><a href="#">朋友圈</a></li>
             <li><a href="#">个人账户</a></li>
-                <li><a href="#">退出登录</a></li>
+            <li><a href="#">退出登录</a></li>
 
 
         </ul>
@@ -71,8 +69,8 @@
 </div>
 <div id="leftbar">
     <div align="center" class="infobar">
-        <label>JohnsonFu</label><br>
-        <label>战斗等级:</label><br>
+        <label><?PHP echo $nickname ?></label><br>
+        <label>等级:Level<?PHP echo $level; ?></label><br>
         <label style="margin-left:-40px;">胜率:</label><hr>
         <button type="button"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发起竞赛</button>
         <a href="#" style="font-size:18px;">规则介绍</a>
@@ -125,6 +123,7 @@
 
 
     </div>
+<?PHP } ?>
 
 <script language="javascript">
     function jump(){
