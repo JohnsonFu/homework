@@ -70,6 +70,10 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
             return 0;
         }
     }
+    public function getAllUsers(){
+        $res=$this->db->query("select * from users")->fetchAll();
+        return $res;
+    }
 
 }
 

@@ -9,32 +9,35 @@
   <style type="text/css">
       .peopleitem{
           width:91%;
-          height:70px;
-          background-color: #d5efc7;
+          height:75px;
+          margin-bottom:20px;
       }
-      .name{
-          display:inline-block;
-          width:15%;
-          height:70px;
-          background-color: #abeb55;
-          text-align:center;
-          word-wrap:break-word;
+      .ilabel{
+          font-family:"Yuanti SC";
+          color:whitesmoke;
+          font-size:15px;
       }
-      .bar{
-          display:inline-block;
-          width:15%;
-          height:70px;
-          background-color: #74ebd5;
-          text-align:center;
-          word-wrap:break-word;
+      .ilabel2{
+          font-family:"Yuanti SC";
+          color:whitesmoke;
+          font-size:18px;
       }
-
-
-
-
-
   </style>
 </head>
+<?PHP
+session_start();
+if(!isset($_SESSION['userid'])){
+    echo "<script>alert('未登录!将返回登录界面....');</script>";
+    echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
+}else{
+$id=$_SESSION['userid'];
+include('../DataProcess/AccountInfo/Account.php');
+    $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+$list=$account->getAllUsers();
+}
+
+
+?>
 <body>
 <div id="top_bg">
     <div class="logo_l"></div>
@@ -61,16 +64,22 @@
 </div>
 <div id="content">
     <div class="insidecontent">
-        <div class="mylabel">我的粉丝</div><hr style="margin-right: 50px;">
+        <div class="mylabel">用户搜索</div><hr style="margin-right: 50px;">
         <div style="margin-left:53%;"><input type="text" class="textview" name="friendname" placeholder="请输入昵称"><input type="button" class="mybutton" value="搜索">
   </div>
+<?PHP for($i=0;$i<count($list);$i++){?>
         <div class="peopleitem">
-            <div class="name">dfadasfdas</div>
-            <div class="bar" >cccdddddd</div>
+            <table  style="width:100%;height:100%;word-break:break-all;"cellspacing="0" cellpadding="0">
+                <tr style="text-align: center;font-size:15px;" >
+                    <td style="background-color: #61c5f0;width:20%;"><label class="ilabel" style="font-size:16px;">用户名</label><br><label class="ilabel2" style="font-size:15px;"><?PHP echo ($list[$i]['nickname'])?></label></td>
+                    <td style="background-color: #67d0fd;width:15%"><label class="ilabel">等级</label><br><label class="ilabel2">LEVEL&nbsp;<?PHP echo ($list[$i]['level'])?></label></td>
+                    <td style="background-color: #8de0ff;width:30%"><label class="ilabel">个性签名</label><br><label class="ilabel2" style="font-size:15px;"><?PHP echo ($list[$i]['signature'])?></label></td>
+                    <td style="background-color: #8dd0ff;width:20%"><label class="ilabel">加为好友</label></td>
+                    <td style="background-color: #80c4ff;width:15%"><label class="ilabel">发私信</label></td>
+                </tr>
+            </table>
         </div>
-
-    </div>
-
+       <?PHP } ?>
 </div>
 </body>
 

@@ -99,14 +99,13 @@ body{
     left:0;
 }
 #content{
-    left:30%;
+    margin-left:30%;
     height:100%;
-    top:45px;
+    margin-top:7%;
     background-color: #ffffff;
-    position:fixed;
+
     width:60%;
-    color: #848989;
-    font-family:Helvetica;
+
     border-radius:40px 40px 40px 40px;
 }
 #splitbar{
