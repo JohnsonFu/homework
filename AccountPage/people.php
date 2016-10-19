@@ -6,7 +6,34 @@
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
 <link rel="stylesheet" type="text/css" href="AccountCss.css">
-  
+  <style type="text/css">
+      .peopleitem{
+          width:91%;
+          height:70px;
+          background-color: #d5efc7;
+      }
+      .name{
+          display:inline-block;
+          width:15%;
+          height:70px;
+          background-color: #abeb55;
+          text-align:center;
+          word-wrap:break-word;
+      }
+      .bar{
+          display:inline-block;
+          width:15%;
+          height:70px;
+          background-color: #74ebd5;
+          text-align:center;
+          word-wrap:break-word;
+      }
+
+
+
+
+
+  </style>
 </head>
 <body>
 <div id="top_bg">
@@ -36,15 +63,14 @@
     <div class="insidecontent">
         <div class="mylabel">我的粉丝</div><hr style="margin-right: 50px;">
         <div style="margin-left:53%;"><input type="text" class="textview" name="friendname" placeholder="请输入昵称"><input type="button" class="mybutton" value="搜索">
-
-
-
+  </div>
+        <div class="peopleitem">
+            <div class="name">dfadasfdas</div>
+            <div class="bar" >cccdddddd</div>
         </div>
+
     </div>
-    <div class="footer">
-        <p>爱运动 - isport</p>
-        <p>Designed By FuLinhua 2016</p>
-    </div>
+
 </div>
 </body>
 
