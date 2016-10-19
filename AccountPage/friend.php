@@ -6,20 +6,6 @@
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
 <link rel="stylesheet" type="text/css" href="AccountCss.css">
-    <script>
-        function menuFix(){
-            var self=document.getElementById("menu").getElementsByTagName("li");
-            for(var i=0;i<self.length;i++){
-                self[i].onmouseover=function(){
-                    this.className+=(this.className.length>0?" ":"")+"listshow";
-                }
-                self[i].onmouseout=function(){
-                    this.className=this.className.replace("listshow","");
-                }
-            }
-        }
-        window.onload=menuFix;
-    </script>
 </head>
 <body>
 <div id="top_bg">
@@ -40,22 +26,18 @@
     <div id="header">好友关系</div>
     <div id="vertmenu">
         <ul>
-            <li><a href="../AccountPage/friend.html" style=" color: #daddf0; background-color: #80c3f7;" >关注</a></li>
-            <li><a href="../AccountPage/fans.html" >粉丝</a></li>
+            <li><a href="friend.php" style=" color: #daddf0; background-color: #80c3f7;" >我的好友</a></li>
+            <li><a href="people.php" >用户搜索</a></li>
         </ul>
     </div>
 </div>
 <div id="content">
     <div class="insidecontent">
-        <div class="mylabel">我的关注</div><hr style="margin-right: 50px;">
+        <div class="mylabel">我的好友</div><hr style="margin-right: 50px;">
        <div style="margin-left:53%;"><input type="text" class="textview" name="friendname" placeholder="请输入昵称"><input type="button" class="mybutton" value="搜索">
 
 
     </div>
-</div>
-<div class="footer">
-    <p>爱运动 - isport</p>
-    <p>Designed By FuLinhua 2016</p>
 </div>
 </div>
 </body>
