@@ -45,7 +45,7 @@ else {
     <div id="menu">
         <ul >
             <li><a href="../homepage.html"style="color:#9eff9d;">首页</a></li>
-            <li><a href="sport.html">运动</a></li>
+            <li><a href="SportPage/sport.html">运动</a></li>
             <li><a href="GamePage/gameboard.php">竞赛</a></li>
             <li><a href="#">俱乐部</a></li>
             <li><a href="#">朋友圈</a></li>
@@ -57,6 +57,7 @@ else {
 <div id="leftbar">
     <div align="center" class="infobar" >
         <label>用户名:<?PHP echo $nickname ?></label><br>
+        <img src="headpics/13.gif"  alt="找不到头像" /><br>
         <label>等级:Level<?PHP echo $level ?></label><br>
         <label>胜率:</label><br>
         <label>我的金币:<?PHP echo $money ?></label>
