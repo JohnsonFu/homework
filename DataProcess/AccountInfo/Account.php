@@ -70,6 +70,14 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
             return 0;
         }
     }
+    public function getPicId(){
+        return $this->infolist['picid'];
+    }
+    public function getFriend(){
+        $res=$this->db->query("select * from friend where id='$this->id'")->fetchAll();
+        return $res;
+
+    }
     public function getAllUsers(){
         $res=$this->db->query("select * from users")->fetchAll();
         return $res;

@@ -48,6 +48,8 @@ if(!isset($_SESSION['userid'])) {
 $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
 include('../DataProcess/GameInfo/Game.php');
+include('../DataProcess/AccountInfo/Account.php');
+$account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 $list=getGameList('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 function getNick($id){
     $db=new PDO('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
@@ -74,6 +76,7 @@ function getNick($id){
 </div>
 <div id="leftbar">
     <div align="center" class="infobar">
+        <img src="../headpics/<?PHP echo($account->getPicId())?>.gif"><br>
         <label><?PHP echo $nickname ?></label><br>
         <label>等级:Level<?PHP echo $level; ?></label><br>
         <label style="margin-left:-40px;">胜率:</label><hr>
@@ -94,7 +97,10 @@ function getNick($id){
     <div class="insidecontent" style="height:auto">
 
         <div class="mylabel">竞赛场</div><hr style="margin-right: 50px;">
-<?PHP for($i=0;$i<count($list);$i++) { ?>
+<?PHP for($i=0;$i<count($list);$i++) {
+    $a=new Account($list[$i]['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+    $picid=$a->getPicId();
+    ?>
         <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
             <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?><input type="button" value="退出" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
             </div>
@@ -105,7 +111,7 @@ function getNick($id){
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">类型</td>
                 </tr>
                 <tr style="font-size:13px;background-color:#ececec;">
-                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo(getNick($list[$i]['masterid']))?></td>
+                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"> <img src="../headpics/<?PHP echo($picid)?>.gif" style="margin-top:4px;" width="20px;" height="20px'"><?PHP echo(getNick($list[$i]['masterid']))?></td>
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo($list[$i]['gamename'])?></td>
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;"><?PHP echo($list[$i]['gametype'])?></td>
                 </tr>
