@@ -43,11 +43,11 @@ if(!isset($_SESSION['userid'])){
         <ul >
             <li><a href="../homepage.php">首页</a></li>
             <li><a href="../SportPage/sport.html" >运动</a></li>
-            <li><a href="#">竞赛</a></li>
+            <li><a href="../GamePage/gameboard.php">竞赛</a></li>
             <li><a href="#">俱乐部</a></li>
-            <li><a href="#">朋友圈</a></li>
-            <li><a href="#" >个人账户</a></li>
-            <li><a href="#">退出登录</a></li>
+            <li><a href="../CirclePage/mycircle.php">朋友圈</a></li>
+            <li><a href="personinfo.php" >个人账户</a></li>
+            <li><a href="../DataProcess/AccountInfo/Logout.php">退出登录</a></li>
         </ul>
     </div>
 </div>
@@ -66,7 +66,7 @@ if(!isset($_SESSION['userid'])){
        <div style="margin-left:53%;"><input type="text" class="textview" name="friendname" placeholder="请输入昵称"><input type="button" class="mybutton" value="搜索">
 </div>
            <?PHP for($i=0;$i<count($list);$i++){
-    $fid=$list[$i]['friendid'];
+    $fid=$list[$i];
     $faccount=new Account($fid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $fnick=$faccount->getNick();
     $flevel=$faccount->getLevel();
@@ -81,7 +81,7 @@ if(!isset($_SESSION['userid'])){
                        <td style="background-color: #61c5f0;width:17%;"><img src="../headpics/<?PHP echo($fpicid); ?>.gif" width="63px" height="63px" style="margin:5px 5px 0px 5px"><br><div style="font-size:13px;"><?PHP echo ($fnick)?></div></td>
                        <td style="background-color: #67d0fd;width:15%"><label class="ilabel">等级</label><br><label class="ilabel2">LEVEL&nbsp;<?PHP echo ($flevel)?></label></td>
                        <td style="background-color: #8de0ff;width:30%"><label class="ilabel">个性签名</label><br><label class="ilabel2" style="font-size:15px;"><?PHP echo ($fsig)?></label></td>
-                       <td style="background-color: #8dd0ff;width:20%"  ><label class="ilabel"><img id="mypic" src="../img/delete.png" width="40px" height="40px"   onclick="add(this.name)"><br>删除好友</label></td>
+                       <td style="background-color: #8dd0ff;width:20%"  ><label class="ilabel"><img id="mypic" src="../img/delete.png" width="40px" height="40px"  name=<?PHP echo $list[$i].'__'.$id;?>   onclick="add(this.name)"><br>删除好友</label></td>
                        <td style="background-color: #80c4ff;width:15%"><label class="ilabel">发私信</label></td>
                    </tr>
                </table>
@@ -90,6 +90,65 @@ if(!isset($_SESSION['userid'])){
 <?PHP } ?>
 
 </div>
-</body>
 
+</body>
+<script type="text/javascript" >
+
+    var xmlHttp
+
+    function add(str)
+    {
+        if (str.length==0)
+        {
+            document.getElementById("txtHint").innerHTML=""
+            return
+        }
+        xmlHttp=GetXmlHttpObject()
+        if (xmlHttp==null)
+        {
+            alert ("Browser does not support HTTP Request")
+            return
+        }
+        var url="../DataProcess/AccountInfo/RemoveFriend.php"
+        url=url+"?q="+str
+        url=url+"&sid="+Math.random()
+        xmlHttp.onreadystatechange=stateChanged
+        xmlHttp.open("GET",url,true)
+        xmlHttp.send(null)
+    }
+
+    function stateChanged()
+    {
+        if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+        {
+            window.location.reload();
+        }
+    }
+
+    function GetXmlHttpObject()
+    {
+        var xmlHttp=null;
+        try
+        {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            // Internet Explorer
+            try
+            {
+                xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+        return xmlHttp;
+    }
+
+
+
+</script>
 </html>

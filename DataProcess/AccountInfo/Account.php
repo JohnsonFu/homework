@@ -74,14 +74,43 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         return $this->infolist['picid'];
     }
     public function getFriend(){
-        $res=$this->db->query("select * from friend where id='$this->id'")->fetchAll();
-        return $res;
+        $res1=$this->db->query("select * from friend where id='$this->id'")->fetchAll();
+        $res2=$this->db->query("select * from friend where friendid='$this->id'")->fetchAll();
+        $arr1=array();
+        $arr2=array();
+        for($i=0;$i<count($res1);$i++){
+            $arr1[$i]=$res1[$i]['friendid'];
+        }
+        for($i=0;$i<count($res2);$i++){
+            $arr2[$i]=$res2[$i]['id'];
+        }
+        for($i=0;$i<count($arr1);$i++){
+            for($j=0;$j<count($arr2);$j++){
+                if($arr1[$i]==$arr2[$j]){
+                    unset($arr1[$i]);
+                }
+            }
+        }
+         $arr=array_merge($arr1,$arr2);
 
+        return $arr;
     }
+    public function deleteFriend($friendid){
+        $res1=$this->db->query("delete from friend where id='$this->id' and friendid='$friendid' ");
+        $res2=$this->db->query("delete from friend where friendid='$this->id' and id='$friendid' ");
+        if($res1||$res2){
+            echo true;
+        }
+        else{
+            echo false;
+        }
+    }
+
     public function getAllUsers(){
         $res=$this->db->query("select * from users")->fetchAll();
         return $res;
     }
 
 }
+
 

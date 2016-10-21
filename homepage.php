@@ -44,11 +44,11 @@ else {
     <div class="logo_l"></div>
     <div id="menu">
         <ul >
-            <li><a href="../homepage.html"style="color:#9eff9d;">首页</a></li>
+            <li><a href="#"style="color:#9eff9d;">首页</a></li>
             <li><a href="SportPage/sport.html">运动</a></li>
             <li><a href="GamePage/gameboard.php">竞赛</a></li>
             <li><a href="#">俱乐部</a></li>
-            <li><a href="#">朋友圈</a></li>
+            <li><a href="CirclePage/mycircle.php">朋友圈</a></li>
             <li><a href="AccountPage/personinfo.php">个人账户</a></li>
             <li><a href="DataProcess/AccountInfo/Logout.php">退出登录</a></li>
         </ul>
@@ -71,7 +71,7 @@ else {
     <div id="vertmenu">
         <ul>
             <li style="margin-top:10px;"><a href="AccountPage/personinfo.php">账户设置</a></li>
-            <li style="margin-top:10px;"><a href="gameboard.php">我的好友</a></li>
+            <li style="margin-top:10px;"><a href="AccountPage/friend.php">我的好友</a></li>
             <li style="margin-top:10px;"><a href="#">我的活动</a></li>
             <li style="margin-top:10px;"><a href="#">战书</a></li>
             <li style="margin-top:10px;"><a href="#">单人PK</a></li>
