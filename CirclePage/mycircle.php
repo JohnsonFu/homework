@@ -65,8 +65,7 @@
         <div id="content">
         <div class="insidecontent">
         <div class="mylabel">好友动态</div><hr style="margin-right: 50px;">
-        <div style="margin-left:53%;"><input type="text" class="textview" name="friendname" placeholder="请输入昵称"><input type="button" class="mybutton" value="搜索">
-</div>
+
 
  <table>
                 <tr>

@@ -84,26 +84,52 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         for($i=0;$i<count($res2);$i++){
             $arr2[$i]=$res2[$i]['id'];
         }
+
+         $arr=array_intersect($arr1,$arr2);
+        $result=array();
+        foreach($arr as $item){
+            array_push($result,$item);
+        }
+
+        return $result;
+    }
+    public function getMyfollow(){
+        $res1=$this->db->query("select * from friend where id='$this->id'")->fetchAll();
+        for($i=0;$i<count($res1);$i++){
+            $arr1[$i]=$res1[$i]['friendid'];
+        }
+        $res2=$this->getFriend();
         for($i=0;$i<count($arr1);$i++){
-            for($j=0;$j<count($arr2);$j++){
-                if($arr1[$i]==$arr2[$j]){
-                    unset($arr1[$i]);
+            for($j=0;$j<count($res2);$j++){
+                if($arr1[$i]==$res2[$j]){
+                    array_splice($arr1,$i,1);
                 }
             }
         }
-         $arr=array_merge($arr1,$arr2);
-
-        return $arr;
+        return $arr1;
     }
+
+    public function getFollowme(){
+        $res1=$this->db->query("select * from friend where friendid='$this->id'")->fetchAll();
+        $arr1=array();
+        for($i=0;$i<count($res1);$i++){
+            $arr1[$i]=$res1[$i]['id'];
+        }
+        $res2=$this->getFriend();
+         for ($i = 0; $i < count($arr1); $i++) {
+                for ($j = 0; $j < count($res2); $j++) {
+                    if ($arr1[$i] == $res2[$j]) {
+                       array_splice($arr1,$i,1);
+                    }
+                }
+            }
+            return $arr1;
+
+    }
+
     public function deleteFriend($friendid){
         $res1=$this->db->query("delete from friend where id='$this->id' and friendid='$friendid' ");
-        $res2=$this->db->query("delete from friend where friendid='$this->id' and id='$friendid' ");
-        if($res1||$res2){
-            echo true;
-        }
-        else{
-            echo false;
-        }
+
     }
 
     public function getAllUsers(){
@@ -113,4 +139,7 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
 
 }
 
+//$account=new Account('jackjack','sqlite:mydatabase.sqlite');
+//$friend=$account->getFriend();
+//print_r($friend);
 
