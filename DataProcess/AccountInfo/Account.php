@@ -74,7 +74,7 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         return $this->infolist['picid'];
     }
     public function getFriend(){
-        $res1=$this->db->query("select * from friend where id='$this->id'")->fetchAll();
+        $res1=$this->db->query("select * from friend f1 where f1.id='$this->id'")->fetchAll();
         $res2=$this->db->query("select * from friend where friendid='$this->id'")->fetchAll();
         $arr1=array();
         $arr2=array();
@@ -136,10 +136,14 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         $res=$this->db->query("select * from users")->fetchAll();
         return $res;
     }
+    public function getMyFollowPosts(){
+        $result= $this->db->query("select * from post where exists (select * from friend where post.masterid=friend.friendid and friend.id='$this->id')")->fetchAll();
+        return $result;
+    }
 
 }
 
-//$account=new Account('jackjack','sqlite:mydatabase.sqlite');
-//$friend=$account->getFriend();
-//print_r($friend);
 
+//$account=new Account('huahua','sqlite:mydatabase.sqlite');
+//$res1=$account->getMyFollowPosts();
+//echo $res1[0]['tittle'];

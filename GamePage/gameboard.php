@@ -8,7 +8,8 @@
    <link rel="stylesheet" type="text/css" href="gamecss.css">
     <style type="text/css">
         .gameinfo{
-            margin-top:20px;
+            margin-top:10px;
+            margin-bottom:10px;
           width:93%;
             align:center;
             height:auto;
@@ -102,7 +103,7 @@ function getNick($id){
     $picid=$a->getPicId();
     ?>
         <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
-            <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?><input type="button" value="退出" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+            <div class="gameheader" style="padding-bottom:3px; border-bottom-style:solid;font-size:18px; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?><input type="button" value="退出" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
             </div>
             <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                 <tr style="font-size:13px;">

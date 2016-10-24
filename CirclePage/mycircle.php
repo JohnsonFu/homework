@@ -38,6 +38,21 @@
 </head>
 
 <body>
+<?PHP
+session_start();
+if(!isset($_SESSION['userid'])){
+    echo "<script>alert('未登录!将返回登录界面....');</script>";
+    echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
+}else{
+    $id=$_SESSION['userid'];
+    include('../DataProcess/AccountInfo/Account.php');
+    $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+
+    $list=$account->getMyFollowPosts();
+}
+
+
+?>
 <div id="top_bg">
         <div class="logo_l"></div>
         <div id="menu">
@@ -53,8 +68,8 @@
         </div>
         </div>
         <div id="leftbar">
-            <img style="margin-left:32%;" src="../headpics/13.gif"><br>
-            <label style="margin-left:36%;">且听风吟</label>
+            <img style="margin-left:32%;" src="../headpics/<?PHP echo($account->getPicId()); ?>.gif"><br>
+            <label style="margin-left:36%;"><?PHP echo($account->getNick()); ?></label>
         <div id="header" style="margin-left:33%;">朋友圈</div>
         <div id="vertmenu">
         <ul>
@@ -66,48 +81,28 @@
         <div class="insidecontent">
         <div class="mylabel">好友动态</div><hr style="margin-right: 50px;">
 
+<?PHP for($i=0;$i<count($list);$i++){
+    $a=new Account($list[$i]['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+    $fpicid=$a->getPicId();
+    $fnickname=$a->getNick();
 
+    ?>
  <table>
                 <tr>
-                    <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/17.gif" style="margin:5px 5px 5px 5px"><br>且听风吟</th>
-                    <th style="font-size:12px;text-align: left;">标题:今天是个好日子&nbsp;&nbsp;&nbsp;&nbsp;时间:2016-10-10&nbsp;&nbsp;14:20<input type="button" value="点赞" style="float:right;"><br>
+                    <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/<?PHP echo($fpicid);?>.gif" style="margin:5px 5px 5px 5px"><br><?PHP echo($fnickname); ?></th>
+                    <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><input type="button" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;"><br>
                         运动距离:5KM&nbsp;&nbsp;&nbsp;朋友圈排名:2<input type="button" value="评论" style="float: right"></th>
 
                 </tr>
                 <tr>
 
-                    <td style="width:80%;font-size:16px;">今天在操场跑了五圈,挺累的.</td>
+                    <td style="width:80%;font-size:16px;"><?PHP echo($list[$i]['content']); ?>.</td>
                 </tr>
 
             </table>
+    <?PHP } ?>
 
-            <table>
-                <tr>
-                    <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2" ><img src="../headpics/18.gif" style="margin:5px 5px 5px 5px"><br>酷炫男孩</th>
-                    <th style="font-size:12px;text-align: left;">标题:今天是个好日子&nbsp;&nbsp;&nbsp;&nbsp;时间:2016-10-10&nbsp;&nbsp;14:20<input type="button" value="点赞" style="float:right;"><br>
-                        运动距离:5KM&nbsp;&nbsp;&nbsp;朋友圈排名:2<input type="button" value="评论" style="float: right"></th>
 
-                </tr>
-                <tr>
-
-                    <td style="width:80%;font-size:16px;">今天在操场跑了五圈,挺累的.</td>
-                </tr>
-
-            </table>
-
-            <table>
-                <tr>
-                    <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/19.gif" style="margin:5px 5px 5px 5px"><br>跑男</th>
-                    <th style="font-size:12px;text-align: left;">标题:今天是个好日子&nbsp;&nbsp;&nbsp;&nbsp;时间:2016-10-10&nbsp;&nbsp;14:20<input type="button" value="点赞" style="float:right;"><br>
-                        运动距离:5KM&nbsp;&nbsp;&nbsp;朋友圈排名:2<input type="button" value="评论" style="float: right"></th>
-
-                </tr>
-                <tr>
-
-                    <td style="width:80%;font-size:16px;">今天在操场跑了五圈,挺累的.</td>
-                </tr>
-
-            </table>
 </div>
 </body>
 
