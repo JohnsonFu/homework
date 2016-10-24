@@ -71,15 +71,16 @@ if(!isset($_SESSION['userid'])){
             <img style="margin-left:32%;" src="../headpics/<?PHP echo($account->getPicId()); ?>.gif"><br>
             <label style="margin-left:36%;"><?PHP echo($account->getNick()); ?></label>
         <div id="header" style="margin-left:33%;">朋友圈</div>
+            <button type="button"  style="margin-left:33%;"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发布状态</button>
         <div id="vertmenu">
         <ul>
-        <li><a href="friend.php" style=" color: #daddf0; background-color: #80c3f7;">好友动态</a></li>
+        <li><a href="#" style="font-size:19px; color: #daddf0; background-color: #80c3f7;">关注者动态</a></li>
         </ul>
         </div>
         </div>
         <div id="content">
         <div class="insidecontent">
-        <div class="mylabel">好友动态</div><hr style="margin-right: 50px;">
+        <div class="mylabel">关注者动态</div><hr style="margin-right: 50px;">
 
 <?PHP for($i=0;$i<count($list);$i++){
     $a=new Account($list[$i]['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
@@ -98,13 +99,18 @@ if(!isset($_SESSION['userid'])){
 
                     <td style="width:80%;font-size:16px;"><?PHP echo($list[$i]['content']); ?>.</td>
                 </tr>
-
+<tr style="font-size:16px;"><td style="text-align:center">评论者</td><td style="text-align:center">评论内容</td></tr>
             </table>
     <?PHP } ?>
 
 
 </div>
-</body>
+            <script language="javascript">
+                function jump(){
+                    window.location.href="SetCircle.php";
+                }
+
+            </script>
 
 
 </body>

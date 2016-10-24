@@ -29,7 +29,7 @@ public $type;
 
 function getGameList($addr){
     $db = new PDO($addr);
-    $result=$db->query("select * from game");
+    $result=$db->query("select * from game order by id ");
     if(!$result){
         return null;
     }

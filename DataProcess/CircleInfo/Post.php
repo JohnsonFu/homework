@@ -9,11 +9,11 @@
 class Post
 {
 public $db;
-public $id;
+public $masterid;
   function __construct($id,$dbaddr)
   {
       $this->db=new PDO($dbaddr);
-      $this->id=$id;
+      $this->masterid=$id;
   }
     function __destruct()
     {
@@ -21,9 +21,13 @@ public $id;
         $this->db=null;
     }
 
-    public function getMyFollowPosts(){
-       $result= $this->db->query("select * from post where exists (select * from friend where post.masterid=friend.friendid and $this->id=friend.id)")->fetchAll();
-        return $result;
+    public function AddPost($time,$tittle,$content){
+        $result=$this->db->query("insert into post(masterid,time,tittle,content)values('$this->masterid','$time','$tittle','$content')");
+        if($result){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
