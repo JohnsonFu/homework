@@ -15,6 +15,7 @@ public $masterid;
       $this->db=new PDO($dbaddr);
       $this->masterid=$id;
   }
+
     function __destruct()
     {
         // TODO: Implement __destruct() method.
@@ -29,6 +30,14 @@ public $masterid;
             return false;
         }
     }
+    public function getComment($pid){
+        $result=$this->db->query("select * from comment where pid='$pid'")->fetchAll();
+        return $result;
+    }
 
 }
+
+//$post=new Post("22222",'sqlite:../AccountInfo/mydatabase.sqlite');
+//$res=$post->getComment('1009');
+//echo($res[0]['content']);
 

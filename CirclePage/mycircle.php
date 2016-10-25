@@ -46,6 +46,7 @@ if(!isset($_SESSION['userid'])){
 }else{
     $id=$_SESSION['userid'];
     include('../DataProcess/AccountInfo/Account.php');
+    include('../DataProcess/CircleInfo/Post.php');
     $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 
     $list=$account->getMyFollowPosts();
@@ -101,9 +102,24 @@ if(!isset($_SESSION['userid'])){
                     <td style="width:80%;font-size:16px;"><?PHP echo($list[$i]['content']); ?>.</td>
                 </tr>
 <tr style="font-size:16px;"><td style="text-align:center">评论者</td><td style="text-align:center">评论内容</td></tr>
+<?PHP
+$post=new Post($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+$comments=$post->getComment($list[$i]['postid']);
+for($j=0;$j<count($comments);$j++){
+    $aa=new Account($comments[$j]['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+   $bb=new Account($comments[$j]['toid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+    $tonick=$bb->getNick();
+    $cnick=$aa->getNick();
+    $ccontent=$comments[$j]['content'];
+    $ctime=$comments[$j]['time'];
+    ?>
 
+    <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><?PHP echo($cnick)?>&nbsp;to&nbsp;<?PHP echo($tonick)?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?></div></td></tr>
+    <?PHP
+}
+?>
 
-     <tr  id="commentbar" style="visibility:hidden;font-size:16px;"><td style="text-align:center">我的评论<input type="text" name="postid" style="display: none" value="<?PHP echo($list[$i]['postid']) ?>"></td><td>评论内容<input type="text" name="comment"><input type="submit" value="提交" onclick="submit" style="float:right;"></td></tr>
+     <tr  id="commentbar" style="visibility:hidden;font-size:16px;"><td style="text-align:center">我的评论<input type="text" name="postid" style="display: none" value="<?PHP echo($list[$i]['postid']) ?>"><input type="text" name="toid" style="display: none" value="<?PHP echo($list[$i]['masterid']) ?>"></td><td>评论内容<input type="text" name="comment"><input type="submit" value="提交" onclick="submit" style="float:right;"></td></tr>
            </form>
             </table>
     <?PHP } ?>
