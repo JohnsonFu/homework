@@ -89,17 +89,22 @@ if(!isset($_SESSION['userid'])){
 
     ?>
  <table>
+
                 <tr>
                     <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/<?PHP echo($fpicid);?>.gif" style="margin:5px 5px 5px 5px"><br><?PHP echo($fnickname); ?></th>
-                    <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><input type="button" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;"><br>
-                        运动距离:5KM&nbsp;&nbsp;&nbsp;朋友圈排名:2<input type="button" value="评论" style="float: right"></th>
+                    <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><br>
+                        运动距离:5KM&nbsp;&nbsp;&nbsp;朋友圈排名:2<?PHP echo($list[$i]['postid'])?></label><input type="button" value="评论" onclick="comment()" style="float: right"><input type="button" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;"></th>
 
                 </tr>
                 <tr>
-
+                    <form method="post" action="../DataProcess/CircleInfo/AddComent.php">
                     <td style="width:80%;font-size:16px;"><?PHP echo($list[$i]['content']); ?>.</td>
                 </tr>
 <tr style="font-size:16px;"><td style="text-align:center">评论者</td><td style="text-align:center">评论内容</td></tr>
+
+
+     <tr  id="commentbar" style="visibility:hidden;font-size:16px;"><td style="text-align:center">我的评论<input type="text" name="postid" style="display: none" value="<?PHP echo($list[$i]['postid']) ?>"></td><td>评论内容<input type="text" name="comment"><input type="submit" value="提交" onclick="submit" style="float:right;"></td></tr>
+           </form>
             </table>
     <?PHP } ?>
 
@@ -108,6 +113,15 @@ if(!isset($_SESSION['userid'])){
             <script language="javascript">
                 function jump(){
                     window.location.href="SetCircle.php";
+                }
+                function comment(){
+
+                   if( document.getElementById('commentbar').style.visibility=="visible"){
+                       document.getElementById('commentbar').style.visibility="hidden"
+                   }
+                  else  if( document.getElementById('commentbar').style.visibility=="hidden"){
+                        document.getElementById('commentbar').style.visibility="visible"
+                    }
                 }
 
             </script>
