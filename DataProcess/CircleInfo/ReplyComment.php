@@ -14,7 +14,7 @@ $toid=$arr[0];
 $postid=$arr[2];
 
 $time =time()+8*60*60;
-$date='20'.date("y-m-d h:i",$time);
+$date='20'.date("y-m-d H:i",$time);
 $db=new PDO('sqlite:../AccountInfo/mydatabase.sqlite');
 $result=$db->query("insert into comment(masterid,pid,time,content,toid)values('$id','$postid','$date','$comment','$toid')");
 if($result==true){

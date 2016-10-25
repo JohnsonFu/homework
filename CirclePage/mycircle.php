@@ -99,7 +99,7 @@ if(!isset($_SESSION['userid'])){
 
                 </tr>
                 <tr>
-                    <form method="post" action="../DataProcess/CircleInfo/AddComent.php">
+                    <form method="post" action="../DataProcess/CircleInfo/AddComent.php" >
                     <td style="width:80%;font-size:16px;"><?PHP echo($list[$i]['content']); ?>.</td>
                 </tr>
      <tr  id="commentbar" style="font-size:16px;"><td style="text-align:center">我的评论<input type="text" name="postid" style="display: none" value="<?PHP echo($list[$i]['postid']) ?>"><input type="text" name="toid" style="display: none" value="<?PHP echo($list[$i]['masterid']) ?>"></td><td>评论内容<input type="text" name="comment"><input type="submit" value="评论" onclick="submit" style="float:right;"></td></tr>
@@ -113,11 +113,13 @@ for($j=0;$j<count($comments);$j++){
    $bb=new Account($comments[$j]['toid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $tonick=$bb->getNick();
     $cnick=$aa->getNick();
+    $cpicid=$aa->getPicId();
+    $topicid=$bb->getPicId();
     $ccontent=$comments[$j]['content'];
     $ctime=$comments[$j]['time'];
     ?>
 
-    <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;&nbsp;<?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?></div></td></tr>
+    <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><img src="../headpics/<?PHP echo($cpicid);?>.gif" width="10px;" height="10px" ><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;&nbsp;<img src="../headpics/<?PHP echo($topicid);?>.gif" width="10px;" height="10px" ><?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?></div></td></tr>
     <?PHP
 }
 ?>

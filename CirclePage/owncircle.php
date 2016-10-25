@@ -48,7 +48,7 @@ if(!isset($_SESSION['userid'])){
     include('../DataProcess/AccountInfo/Account.php');
     include('../DataProcess/CircleInfo/Post.php');
     $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
-
+$anick=$account->getNick();
     $list=$account->getMyPosts();
 }
 
@@ -110,16 +110,19 @@ if(!isset($_SESSION['userid'])){
                     $bb=new Account($comments[$j]['toid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
                     $tonick=$bb->getNick();
                     $cnick=$aa->getNick();
+                    $cpicid=$aa->getPicId();
+                    $topicid=$bb->getPicId();
                     $ccontent=$comments[$j]['content'];
                     $ctime=$comments[$j]['time'];
                     ?>
 
-                    <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;<?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?><input type="button" name=<?PHP echo($cnick.'-'.$comments[$j]['masterid'].'-'.$list[$i]['postid']);  ?>  onclick="comment(this.name)" value="回复" > </div></td></tr>
+                    <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><img src="../headpics/<?PHP echo($cpicid);?>.gif" width="10px;" height="10px" ><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;<img src="../headpics/<?PHP echo($topicid);?>.gif" width="10px;" height="10px"> <?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?>
+                                <input type="button" name=<?PHP echo($cnick.'-'.$comments[$j]['masterid'].'-'.$list[$i]['postid'].'-'.$cpicid);  ?>  onclick="comment(this.name)" value="回复" > </div></td></tr>
                     <?PHP
                 }
                 ?>
 
-                <tr  id="commentbar" style="font-size:12px;visibility: hidden"><td style="text-align:center">回复-<label id="report"></label><label id="pid" style="visibility: hidden"></label><input type="text" id="postid" style="display: none" "><input type="text" name="toid" style="display: none" value="<?PHP echo($list[$i]['masterid']) ?>"></td><td>回复内容<input type="text" id="comments"><input type="button" value="提交" onclick="addcomment()" style="float:right;"></td></tr>
+                <tr  id="commentbar<?PHP  echo($list[$i]['postid']) ?>" style="font-size:12px;visibility: hidden"><td style=""><label id="report<?PHP echo $list[$i]['postid'] ?>"></label><label id="pid<?PHP echo $list[$i]['postid'] ?>" style="visibility: hidden"></label><input type="text" id="postid<?PHP echo $list[$i]['postid'] ?>" style="display: none" "><input type="text" name="toid" style="display: none" value="<?PHP echo($list[$i]['masterid']) ?>"></td><td>回复内容<input type="text" id="comments<?PHP echo $list[$i]['postid'] ?>"><input type="button" value="提交" onclick="addcomment(<?PHP echo $list[$i]['postid'] ?>)" style="float:right;"></td></tr>
 
             </table>
         <?PHP } ?>
@@ -131,22 +134,24 @@ if(!isset($_SESSION['userid'])){
             window.location.href="SetCircle.php";
         }
         function comment(i){
-
-            if( document.getElementById('commentbar').style.visibility=="visible"){
-                document.getElementById('commentbar').style.visibility="hidden"
+            var brr= i.split('-');
+            var addr='commentbar'+brr[2];
+            if( document.getElementById(addr).style.visibility=="visible"){
+                document.getElementById(addr).style.visibility="hidden"
             }
-            else  if( document.getElementById('commentbar').style.visibility=="hidden"){
-                document.getElementById('commentbar').style.visibility="visible"
+            else  if( document.getElementById(addr).style.visibility=="hidden"){
+                document.getElementById(addr).style.visibility="visible"
                 var arr= i.split('-');
-                document.getElementById('postid').value=arr[2];
-                document.getElementById('pid').innerHTML=arr[1];
-                document.getElementById('report').innerHTML= arr[0];
+                document.getElementById('postid'+arr[2]).value=arr[2];
+                document.getElementById('pid'+arr[2]).innerHTML=arr[1];
+                document.getElementById('report'+arr[2]).innerHTML= 'Reply '+'<img src="../headpics/'+arr[3]+'.gif" width="10px" height="10px">'+arr[0];
+
             }
         }
-        function addcomment(){
-           var toid=document.getElementById('pid').innerHTML;
-            var content=document.getElementById('comments').value;
-            var postid=document.getElementById('postid').value;
+        function addcomment(i){
+           var toid=document.getElementById('pid'+i).innerHTML;
+            var content=document.getElementById('comments'+i).value;
+            var postid=document.getElementById('postid'+i).value;
             var str=toid+'-'+content+'-'+postid;
 
 
