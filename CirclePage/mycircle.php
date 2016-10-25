@@ -75,7 +75,8 @@ if(!isset($_SESSION['userid'])){
             <button type="button"  style="margin-left:33%;"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发布状态</button>
         <div id="vertmenu">
         <ul>
-        <li><a href="#" style="font-size:19px; color: #daddf0; background-color: #80c3f7;">关注者动态</a></li>
+        <li><a href="#" style="font-size:19px; background-color: #80c3f7;">关注者动态</a></li>
+            <li><a href="owncircle.php" style="font-size:20px; ">我的动态</a></li>
         </ul>
         </div>
         </div>
@@ -94,7 +95,7 @@ if(!isset($_SESSION['userid'])){
                 <tr>
                     <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/<?PHP echo($fpicid);?>.gif" style="margin:5px 5px 5px 5px"><br><?PHP echo($fnickname); ?></th>
                     <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><br>
-                        运动距离:5KM&nbsp;&nbsp;&nbsp;朋友圈排名:2<?PHP echo($list[$i]['postid'])?></label><input type="button" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;"></th>
+                        运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($list[$i]['postid'])?></label><input type="button" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;"></th>
 
                 </tr>
                 <tr>
@@ -116,7 +117,7 @@ for($j=0;$j<count($comments);$j++){
     $ctime=$comments[$j]['time'];
     ?>
 
-    <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><?PHP echo($cnick)?>&nbsp;to&nbsp;<?PHP echo($tonick)?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?></div></td></tr>
+    <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;&nbsp;<?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?></div></td></tr>
     <?PHP
 }
 ?>

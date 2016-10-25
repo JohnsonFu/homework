@@ -91,7 +91,7 @@ if(!isset($_SESSION['userid'])){
     {
         if (str.length==0)
         {
-            document.getElementById("txtHint").innerHTML=""
+
             return
         }
         xmlHttp=GetXmlHttpObject()

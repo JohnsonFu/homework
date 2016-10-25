@@ -140,6 +140,10 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         $result= $this->db->query("select * from post where exists (select * from friend where post.masterid=friend.friendid and friend.id='$this->id')")->fetchAll();
         return $result;
     }
+    public function getMyPosts(){
+        $result= $this->db->query("select * from post where masterid='$this->id'")->fetchAll();
+        return $result;
+    }
 
 }
 
