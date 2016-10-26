@@ -152,11 +152,21 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         return false;
     }
     }
+    public function isJoinGame($gameid){
+        $result=$this->db->query("select * from gamejoiner where gameid='$gameid' and joinerid='$this->id'")->fetchAll();
+        if(count($result)>0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 
 }
 
 
 //$account=new Account('huahua','sqlite:mydatabase.sqlite');
+//$account->isJoinGame('10006');
 //$res1=$account->getMyFollowPosts();
 //echo $res1[0]['tittle'];
 //$account->isFriend('22222');

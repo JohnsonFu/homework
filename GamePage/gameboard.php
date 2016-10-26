@@ -89,7 +89,7 @@ function getNick($id){
             <li style="margin-top:10px; "><a href="gameboard.php" style="color:#daddf0; background-color: #80c3f7;">竞赛场</a></li>
             <li style="margin-top:10px;"><a href="#">我的战绩</a></li>
             <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="owngame.php">发起的竞赛</a></li>
-            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="#">参加的竞赛</a></li>
+            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="myjoingame.php">参加的竞赛</a></li>
         </ul>
     </div>
 
@@ -105,9 +105,11 @@ function getNick($id){
         <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
             <div class="gameheader" style="padding-bottom:3px; border-bottom-style:solid;font-size:18px; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?>
                <?PHP if($id!=$a->id){ ?>
-                <input type="button" value="退出" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
-                <input type="button" value="加入" class="tablebutton" name=<?PHP echo $id.'-' ?><?PHP echo $list[$i]['id']?> onclick="joingame(this.name)" style=";font-size:20px;width:70px;float:right;height:25px;margin-right:10px;">
-            <?PHP } ?>
+                   <?PHP if($account->isJoinGame($list[$i]['id'])){ ?>
+                <input type="button" value="退出" name=<?PHP echo $id.'-' ?><?PHP echo $list[$i]['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+                <?PHP }else{ ?>
+                       <input type="button" value="加入" class="tablebutton" name=<?PHP echo $id.'-' ?><?PHP echo $list[$i]['id']?> onclick="joingame(this.name)" style=";font-size:20px;width:70px;float:right;height:25px;">
+            <?PHP }} ?>
             </div>
             <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                 <tr style="font-size:13px;">
@@ -159,12 +161,12 @@ function getNick($id){
         var url="../DataProcess/GameInfo/JoinGame.php"
         url=url+"?q="+str
         url=url+"&sid="+Math.random()
-        xmlHttp.onreadystatechange=stateChanged
+        xmlHttp.onreadystatechange=stateChanged1
         xmlHttp.open("GET",url,true)
         xmlHttp.send(null)
     }
 
-    function stateChanged()
+    function stateChanged1()
     {
         if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
         {
@@ -173,6 +175,7 @@ function getNick($id){
             window.location.reload();
         }
     }
+
 
     function GetXmlHttpObject()
     {
@@ -196,6 +199,41 @@ function getNick($id){
         }
         return xmlHttp;
     }
+
+    function quitgame(str){
+
+        if (str.length==0)
+        {
+
+            return
+        }
+        xmlHttp=GetXmlHttpObject()
+        if (xmlHttp==null)
+        {
+            alert ("Browser does not support HTTP Request")
+            return
+        }
+        var url="../DataProcess/GameInfo/QuitGame.php"
+        url=url+"?q="+str
+        url=url+"&sid="+Math.random()
+        xmlHttp.onreadystatechange=stateChanged
+        xmlHttp.open("GET",url,true)
+        xmlHttp.send(null)
+    }
+
+    function stateChanged()
+    {
+        if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+        {
+            alert(xmlHttp.responseText);
+            if(xmlHttp.responseText=='退出成功')
+                window.location.reload();
+        }
+    }
+
+
+
+
 
 
 </script>

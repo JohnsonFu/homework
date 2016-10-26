@@ -18,9 +18,5 @@ $count=count($res2);
 if($result) {
     echo '参与成功';
 }else{
-    if($count>0){
-        echo '你已经加入了该竞赛';
-    }else {
-        echo '参与失败';
-    }
+    echo '参与失败';
 }

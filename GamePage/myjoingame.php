@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="gamecss.css">
     <style type="text/css">
         .gameinfo{
-            margin-top:20px;
+            margin-top:10px;
+            margin-bottom:10px;
             width:93%;
             align:center;
             height:auto;
@@ -45,14 +46,12 @@ if(!isset($_SESSION['userid'])) {
     echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
 }else{
 $id=$_SESSION['userid'];
-include('../DataProcess/AccountInfo/Account.php');
-$account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
-include('../DataProcess/GameInfo/mygame.php');
-//include('../DataProcess/AccountInfo/mydatabase.sqlite')
-$mygame=new mygame('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite',$id);
-$list=$mygame->getowngame();
+include('../DataProcess/GameInfo/Game.php');
+include('../DataProcess/AccountInfo/Account.php');
+$account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+$list=getGameList('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 function getNick($id){
     $db=new PDO('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $res=$db->query("select nickname from users where id='$id'")->fetchAll()[0][0];
@@ -66,7 +65,7 @@ function getNick($id){
         <ul>
             <li><a href="../homepage.php">首页</a></li>
             <li><a href="../SportPage/sport.html">运动</a></li>
-            <li><a href="gameboard.php"  style="color:#c3ffa2;">竞赛</a></li>
+            <li><a href="#"  style="color:#c3ffa2;">竞赛</a></li>
             <li><a href="../AccountPage/friend.php">社交</a></li>
             <li><a href="../CirclePage/mycircle.php">朋友圈</a></li>
             <li><a href="../AccountPage/personinfo.php">个人账户</a></li>
@@ -87,10 +86,10 @@ function getNick($id){
     </div>
     <div id="vertmenu" >
         <ul>
-            <li style="margin-top:10px; "><a href="gameboard.php">竞赛场</a></li>
+            <li style="margin-top:10px; "><a href="gameboard.php" >竞赛场</a></li>
             <li style="margin-top:10px;"><a href="#">我的战绩</a></li>
-            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="owngame.php"  style="color:#daddf0; background-color: #80c3f7;">发起的竞赛</a></li>
-            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="#">参加的竞赛</a></li>
+            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="owngame.php">发起的竞赛</a></li>
+            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="myjoingame.php" style="color:#daddf0; background-color: #80c3f7;">参加的竞赛</a></li>
         </ul>
     </div>
 
@@ -98,10 +97,17 @@ function getNick($id){
 <div id="content" style="height:auto">
     <div class="insidecontent" style="height:auto">
 
-        <div class="mylabel">我发起的竞赛</div><hr style="margin-right: 50px;">
-        <?PHP for($i=0;$i<count($list);$i++) { ?>
+        <div class="mylabel">参加的竞赛</div><hr style="margin-right: 50px;">
+        <?PHP for($i=0;$i<count($list);$i++) {
+            $a=new Account($list[$i]['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+            $picid=$a->getPicId();
+            ?>
+            <?PHP if($id!=$a->id){ ?>
+                <?PHP if($account->isJoinGame($list[$i]['id'])){ ?>
             <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
-                <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?><input type="button" name=<?PHP echo($list[$i]['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+                <div class="gameheader" style="padding-bottom:3px; border-bottom-style:solid;font-size:18px; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?>
+                    <input type="button" value="退出" name=<?PHP echo $id.'-' ?><?PHP echo $list[$i]['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+
                 </div>
                 <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                     <tr style="font-size:13px;">
@@ -110,7 +116,7 @@ function getNick($id){
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">类型</td>
                     </tr>
                     <tr style="font-size:13px;background-color:#ececec;">
-                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo(getNick($list[$i]['masterid']))?></td>
+                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"> <img src="../headpics/<?PHP echo($picid)?>.gif" style="margin-top:4px;" width="20px;" height="20px'"><?PHP echo(getNick($list[$i]['masterid']))?></td>
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo($list[$i]['gamename'])?></td>
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;"><?PHP echo($list[$i]['gametype'])?></td>
                     </tr>
@@ -126,6 +132,8 @@ function getNick($id){
                     </tr>
                 </table>
             </div>
+                <?PHP } ?>
+            <?PHP } ?>
         <?PHP } ?>
 
     </div>
@@ -138,7 +146,11 @@ function getNick($id){
     function jump(){
         window.location.href="SetGame.php";
     }
-    function deletegame(str){
+
+
+
+    function quitgame(str){
+
         if (str.length==0)
         {
 
@@ -150,19 +162,20 @@ function getNick($id){
             alert ("Browser does not support HTTP Request")
             return
         }
-        var url="../DataProcess/GameInfo/DeleteGame.php"
+        var url="../DataProcess/GameInfo/QuitGame.php"
         url=url+"?q="+str
         url=url+"&sid="+Math.random()
-        xmlHttp.onreadystatechange=stateChanged1
+        xmlHttp.onreadystatechange=stateChanged
         xmlHttp.open("GET",url,true)
         xmlHttp.send(null)
     }
 
-    function stateChanged1()
+    function stateChanged()
     {
         if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
         {
             alert(xmlHttp.responseText);
+            if(xmlHttp.responseText=='退出成功')
                 window.location.reload();
         }
     }
@@ -190,6 +203,7 @@ function getNick($id){
         }
         return xmlHttp;
     }
+
 
 
 </script>
