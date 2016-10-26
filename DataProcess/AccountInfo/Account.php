@@ -144,6 +144,14 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         $result= $this->db->query("select * from post where masterid='$this->id'")->fetchAll();
         return $result;
     }
+    public function isFriend($testid){
+        $result=$this->db->query("select * from friend f1 where f1.id='$this->id' and f1.friendid='$testid' and  exists(select * from friend f2 where f2.friendid='$this->id' and f2.id='$testid')")->fetchAll();
+    if(count($result)>0){
+        return true;
+    }else{
+        return false;
+    }
+    }
 
 }
 
@@ -151,3 +159,4 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
 //$account=new Account('huahua','sqlite:mydatabase.sqlite');
 //$res1=$account->getMyFollowPosts();
 //echo $res1[0]['tittle'];
+//$account->isFriend('22222');

@@ -90,12 +90,12 @@ $anick=$account->getNick();
             $fnickname=$a->getNick();
 
             ?>
-            <table>
+            <table width="92%">
 
                 <tr>
                     <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/<?PHP echo($fpicid);?>.gif" style="margin:5px 5px 5px 5px"><br><?PHP echo($fnickname); ?></th>
                     <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><br>
-                        运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($list[$i]['postid'])?></label><input type="button" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;"></th>
+                        运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($list[$i]['postid'])?></label></th>
 
                 </tr>
                 <tr>
@@ -130,6 +130,8 @@ $anick=$account->getNick();
 
     </div>
     <script language="javascript">
+
+
         function jump(){
             window.location.href="SetCircle.php";
         }

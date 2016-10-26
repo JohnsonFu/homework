@@ -90,19 +90,21 @@ if(!isset($_SESSION['userid'])){
     $fnickname=$a->getNick();
 
     ?>
- <table>
+ <table width="92%">
 
                 <tr>
                     <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/<?PHP echo($fpicid);?>.gif" style="margin:5px 5px 5px 5px"><br><?PHP echo($fnickname); ?></th>
                     <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><br>
-                        运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($list[$i]['postid'])?></label><input type="button" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;"></th>
+                        运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($list[$i]['postid'])?></label><input type="button" id=<?PHP echo($list[$i]['postid'])?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbup(this.name)" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;"></th>
 
                 </tr>
                 <tr>
                     <form method="post" action="../DataProcess/CircleInfo/AddComent.php" >
                     <td style="width:80%;font-size:16px;"><?PHP echo($list[$i]['content']); ?>.</td>
                 </tr>
+     <?PHP if($account->isFriend($list[$i]['masterid'])) {?>
      <tr  id="commentbar" style="font-size:16px;"><td style="text-align:center">我的评论<input type="text" name="postid" style="display: none" value="<?PHP echo($list[$i]['postid']) ?>"><input type="text" name="toid" style="display: none" value="<?PHP echo($list[$i]['masterid']) ?>"></td><td>评论内容<input type="text" name="comment"><input type="submit" value="评论" onclick="submit" style="float:right;"></td></tr>
+     <?PHP }?>
      <tr style="font-size:16px;"><td style="text-align:center">评论者</td><td style="text-align:center">评论内容</td></tr>
      </form>
 <?PHP
@@ -133,6 +135,69 @@ for($j=0;$j<count($comments);$j++){
             <script language="javascript">
                 function jump(){
                     window.location.href="SetCircle.php";
+                }
+                function thumbup(str){
+
+
+
+
+                    if (str.length==0)
+                    {
+
+                        return
+                    }
+                    xmlHttp=GetXmlHttpObject()
+                    if (xmlHttp==null)
+                    {
+                        alert ("Browser does not support HTTP Request")
+                        return
+                    }
+                    var url="../DataProcess/CircleInfo/thumbup.php"
+                    url=url+"?q="+str
+                    url=url+"&sid="+Math.random()
+                    xmlHttp.onreadystatechange=stateChanged
+                    xmlHttp.open("GET",url,true)
+                    xmlHttp.send(null)
+                }
+
+                function stateChanged()
+                {
+                    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+                    {
+                        var result=xmlHttp.responseText.split('-');
+
+                        var tid=result[2];
+                        document.getElementById(tid).value='点赞'+result[1];
+
+
+                    }
+                }
+
+                function GetXmlHttpObject()
+                {
+                    var xmlHttp=null;
+                    try
+                    {
+                        // Firefox, Opera 8.0+, Safari
+                        xmlHttp=new XMLHttpRequest();
+                    }
+                    catch (e)
+                    {
+                        // Internet Explorer
+                        try
+                        {
+                            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+                        }
+                        catch (e)
+                        {
+                            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                    }
+                    return xmlHttp;
+
+
+
+
                 }
                 function comment(){
 
