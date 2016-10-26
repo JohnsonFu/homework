@@ -61,7 +61,7 @@ $anick=$account->getNick();
             <li><a href="../homepage.php">首页</a></li>
             <li><a href="../SportPage/sport.html" >运动</a></li>
             <li><a href="../GamePage/gameboard.php">竞赛</a></li>
-            <li><a href="#">俱乐部</a></li>
+            <li><a href="../AccountPage/friend.php">社交</a></li>
             <li><a href="#" style="color:#9eff9d;">朋友圈</a></li>
             <li><a href="../AccountPage/personinfo.php" >个人账户</a></li>
             <li><a href="../DataProcess/AccountInfo/Logout.php">退出登录</a></li>
@@ -94,7 +94,7 @@ $anick=$account->getNick();
 
                 <tr>
                     <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/<?PHP echo($fpicid);?>.gif" style="margin:5px 5px 5px 5px"><br><?PHP echo($fnickname); ?></th>
-                    <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><br>
+                    <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><input type="button" name=<?PHP echo($list[$i]['postid'])?> onclick="deletecircle(this.name)" value="删除" style="float:right;" ><br>
                         运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($list[$i]['postid'])?></label></th>
 
                 </tr>
@@ -117,7 +117,7 @@ $anick=$account->getNick();
                     ?>
 
                     <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><img src="../headpics/<?PHP echo($cpicid);?>.gif" width="10px;" height="10px" ><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;<img src="../headpics/<?PHP echo($topicid);?>.gif" width="10px;" height="10px"> <?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?>
-                                <input type="button" name=<?PHP echo($cnick.'-'.$comments[$j]['masterid'].'-'.$list[$i]['postid'].'-'.$cpicid);  ?>  onclick="comment(this.name)" value="回复" > </div></td></tr>
+                 <?PHP  if($comments[$j]['masterid']!=$id){  ?>               <input type="button" name=<?PHP echo($cnick.'-'.$comments[$j]['masterid'].'-'.$list[$i]['postid'].'-'.$cpicid);  ?>  onclick="comment(this.name)" value="回复" > <?PHP } ?> </div></td></tr>
                     <?PHP
                 }
                 ?>
@@ -185,7 +185,7 @@ $anick=$account->getNick();
             }
         }
 
-        function GetXmlHttpObject()
+       function GetXmlHttpObject()
         {
             var xmlHttp=null;
             try
@@ -208,6 +208,60 @@ $anick=$account->getNick();
             return xmlHttp;
 
 
+        }
+
+
+      function  deletecircle(str){
+
+          if (str.length==0)
+          {
+
+              return
+          }
+          xmlHttp=GetXmlHttpObject()
+          if (xmlHttp==null)
+          {
+              alert ("Browser does not support HTTP Request")
+              return
+          }
+          var url="../DataProcess/CircleInfo/DeleteCircle.php"
+          url=url+"?q="+str
+          url=url+"&sid="+Math.random()
+          xmlHttp.onreadystatechange=stateChanged
+          xmlHttp.open("GET",url,true)
+          xmlHttp.send(null)
+      }
+
+        function stateChanged()
+        {
+            if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+            {
+                alert(xmlHttp.responseText);
+                window.location.reload();
+            }
+        }
+
+        function GetXmlHttpObject()
+        {
+            var xmlHttp=null;
+            try
+            {
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp=new XMLHttpRequest();
+            }
+            catch (e)
+            {
+                // Internet Explorer
+                try
+                {
+                    xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e)
+                {
+                    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            return xmlHttp;
         }
 
 
