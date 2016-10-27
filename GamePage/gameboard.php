@@ -50,6 +50,8 @@ $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
 include('../DataProcess/GameInfo/Game.php');
 include('../DataProcess/AccountInfo/Account.php');
+include('../DataProcess/GameInfo/mygame.php');
+$mygame=new mygame('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite',$id);
 $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 $list=getGameList('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 function getNick($id){
@@ -64,7 +66,7 @@ function getNick($id){
     <div id="menu">
         <ul>
             <li><a href="../homepage.php">首页</a></li>
-            <li><a href="../SportPage/sport.html">运动</a></li>
+            <li><a href="../SportPage/MySport.php">运动</a></li>
             <li><a href="#"  style="color:#c3ffa2;">竞赛</a></li>
             <li><a href="../AccountPage/friend.php">社交</a></li>
             <li><a href="../CirclePage/mycircle.php">朋友圈</a></li>
@@ -128,7 +130,7 @@ function getNick($id){
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">奖金</td>
                 </tr>
                 <tr style="font-size:13px;background-color:#ececec;">
-                    <td style=" border-width:1px;border-color:#000;border-right-style:solid;">6</td>
+                    <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($mygame->getgamejoiner($list[$i]['id']))?></td>
                     <td style="border-width:1px;border-color:#000;border-right-style:solid;">1天2小时3分</td>
                     <td style=" border-width:1px;border-color:#000;">1000</td>
                 </tr>

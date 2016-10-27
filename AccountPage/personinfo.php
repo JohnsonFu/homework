@@ -28,11 +28,11 @@ $money=$_SESSION['money'];
     <div id="menu">
         <ul >
             <li><a href="../homepage.php">首页</a></li>
-            <li><a href="../SportPage/sport.html" >运动</a></li>
+            <li><a href="../SportPage/MySport.php" >运动</a></li>
             <li><a href="../GamePage/gameboard.php">竞赛</a></li>
             <li><a href="friend.php">社交</a></li>
             <li><a href="../CirclePage/mycircle.php">朋友圈</a></li>
-            <li><a href="personinfo.php" >个人账户</a></li>
+            <li><a href="personinfo.php" style="color:#9eff9d;" >个人账户</a></li>
             <li><a href="../DataProcess/AccountInfo/Logout.php">退出登录</a></li>
 
         </ul>

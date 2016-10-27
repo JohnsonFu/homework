@@ -46,7 +46,7 @@ $picid=$account->getPicId();
     <div id="menu">
         <ul >
             <li><a href="#"style="color:#9eff9d;">首页</a></li>
-            <li><a href="SportPage/sport.html">运动</a></li>
+            <li><a href="SportPage/MySport.php">运动</a></li>
             <li><a href="GamePage/gameboard.php">竞赛</a></li>
             <li><a href="AccountPage/friend.php">社交</a></li>
             <li><a href="CirclePage/mycircle.php">朋友圈</a></li>

@@ -65,7 +65,7 @@ function getNick($id){
     <div id="menu">
         <ul>
             <li><a href="../homepage.php">首页</a></li>
-            <li><a href="../SportPage/sport.html">运动</a></li>
+            <li><a href="../SportPage/MySport.php">运动</a></li>
             <li><a href="gameboard.php"  style="color:#c3ffa2;">竞赛</a></li>
             <li><a href="../AccountPage/friend.php">社交</a></li>
             <li><a href="../CirclePage/mycircle.php">朋友圈</a></li>
@@ -90,7 +90,7 @@ function getNick($id){
             <li style="margin-top:10px; "><a href="gameboard.php">竞赛场</a></li>
             <li style="margin-top:10px;"><a href="#">我的战绩</a></li>
             <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="owngame.php"  style="color:#daddf0; background-color: #80c3f7;">发起的竞赛</a></li>
-            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="#">参加的竞赛</a></li>
+            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="myjoingame.php">参加的竞赛</a></li>
         </ul>
     </div>
 
@@ -99,7 +99,9 @@ function getNick($id){
     <div class="insidecontent" style="height:auto">
 
         <div class="mylabel">我发起的竞赛</div><hr style="margin-right: 50px;">
-        <?PHP for($i=0;$i<count($list);$i++) { ?>
+        <?PHP for($i=0;$i<count($list);$i++) {
+            $joinerist=$mygame->getgamejoiner($list[$i]['id']);
+            ?>
             <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
                 <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?><input type="button" name=<?PHP echo($list[$i]['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
                 </div>
@@ -120,9 +122,24 @@ function getNick($id){
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">奖金</td>
                     </tr>
                     <tr style="font-size:13px;background-color:#ececec;">
-                        <td style=" border-width:1px;border-color:#000;border-right-style:solid;">6</td>
+                        <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($joinerist);  ?></td>
                         <td style="border-width:1px;border-color:#000;border-right-style:solid;">1天2小时3分</td>
                         <td style=" border-width:1px;border-color:#000;">1000</td>
+                    </tr>
+                    <tr style="font-size:13px;">
+                        <td style=" border-width:1px;border-color:#000;border-right-style:solid;border-top-style:solid;">参与者</td>
+                        <td style="border-width:1px;border-color:#000;border-right-style:solid;border-top-style:solid;text-align:left">
+                            <?PHP for($k=0;$k<count($joinerist);$k++) {
+                                $kaccount = new Account($joinerist[$k]['joinerid'], 'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+                                $knick = $kaccount->getNick();
+                                $kpicid = $kaccount->getPicId();
+                                echo $knick . ' ';
+ ?>
+                            <img src="../headpics/<?PHP echo($kpicid)?>.gif" width="20px" height="20px">
+                            <?PHP } ?>
+                        <td style=" border-width:1px;border-color:#000;border-top-style:solid;"></td>
+                        </td>
+
                     </tr>
                 </table>
             </div>

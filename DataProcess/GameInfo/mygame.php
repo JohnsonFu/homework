@@ -32,7 +32,9 @@ public $id;
             return null;
         }
     }
-    public function getjoingame(){
+    public function getgamejoiner($gameid){
+        $result=$this->db->query("select joinerid from gamejoiner where gameid='$gameid'")->fetchAll();
+        return $result;
 
     }
 }
