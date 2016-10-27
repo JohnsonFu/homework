@@ -119,12 +119,12 @@ function getNick($id){
                     <tr style="font-size:13px;">
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">人数</td>
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">离竞赛开始还有</td>
-                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">奖金</td>
+                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">保证金</td>
                     </tr>
                     <tr style="font-size:13px;background-color:#ececec;">
                         <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($joinerist);  ?></td>
                         <td style="border-width:1px;border-color:#000;border-right-style:solid;">1天2小时3分</td>
-                        <td style=" border-width:1px;border-color:#000;">1000</td>
+                        <td style=" border-width:1px;border-color:#000;"><?PHP echo($list[$i]['joinmoney'])?></td>
                     </tr>
                     <tr style="font-size:13px;">
                         <td style=" border-width:1px;border-color:#000;border-right-style:solid;border-top-style:solid;">参与者</td>
@@ -137,7 +137,7 @@ function getNick($id){
  ?>
                             <img src="../headpics/<?PHP echo($kpicid)?>.gif" width="20px" height="20px">
                             <?PHP } ?>
-                        <td style=" border-width:1px;border-color:#000;border-top-style:solid;"></td>
+                        <td style=" border-width:1px;border-color:#000;border-top-style:solid;">总奖池:<?PHP echo($list[$i]['allmoney'])?></td>
                         </td>
 
                     </tr>

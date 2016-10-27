@@ -127,12 +127,12 @@ function getNick($id){
                 <tr style="font-size:13px;">
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">人数</td>
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">离竞赛开始还有</td>
-                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">奖金</td>
+                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">保证金</td>
                 </tr>
                 <tr style="font-size:13px;background-color:#ececec;">
                     <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($mygame->getgamejoiner($list[$i]['id']))?></td>
                     <td style="border-width:1px;border-color:#000;border-right-style:solid;">1天2小时3分</td>
-                    <td style=" border-width:1px;border-color:#000;">1000</td>
+                    <td style=" border-width:1px;border-color:#000;"><?PHP echo($list[$i]['joinmoney'])?></td>
                 </tr>
             </table>
              </div>
