@@ -15,11 +15,13 @@ if(!isset($_SESSION['userid'])){
     echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
 }else{
 $id=$_SESSION['userid'];
-$nickname=$_SESSION['nickname'];
-$password=$_SESSION['password'];
-$sig=$_SESSION['sig'];
-$level=$_SESSION['level'];
-$money=$_SESSION['money'];
+    include('../DataProcess/AccountInfo/Account.php');
+    $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+$nickname=$account->getNick();
+$password=$account->getPassword();
+$sig=$account->getSig();
+$level=$account->getLevel();
+$money=$account->getMoney();
 ?>
 
 

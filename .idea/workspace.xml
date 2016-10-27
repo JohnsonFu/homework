@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d873dfbb-9bb4-4c07-8125-3bc64292ce6e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AccountPage/personinfo.php" afterPath="$PROJECT_DIR$/AccountPage/personinfo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/AccountInfo/mydatabase.sqlite" afterPath="$PROJECT_DIR$/DataProcess/AccountInfo/mydatabase.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/GameInfo/JoinGame.php" afterPath="$PROJECT_DIR$/DataProcess/GameInfo/JoinGame.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/GameInfo/QuitGame.php" afterPath="$PROJECT_DIR$/DataProcess/GameInfo/QuitGame.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GamePage/gameboard.php" afterPath="$PROJECT_DIR$/GamePage/gameboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GamePage/owngame.php" afterPath="$PROJECT_DIR$/GamePage/owngame.php" />
     </list>
     <ignored path="homework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,62 +27,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Account.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataProcess/AccountInfo/Account.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-88.75">
-              <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-              <folding>
-                <marker date="1477489954000" expanded="true" signature="278:318" placeholder="select * fro..users..." />
-                <marker date="1477489954000" expanded="true" signature="934:983" placeholder="select count..users..." />
-                <marker date="1477489954000" expanded="true" signature="1104:1158" placeholder="update users..." />
-                <marker date="1477489954000" expanded="true" signature="1363:1417" placeholder="update users..." />
-                <marker date="1477489954000" expanded="true" signature="1605:1659" placeholder="update users..." />
-                <marker date="1477489954000" expanded="true" signature="1900:1947" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="1995:2042" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="2537:2578" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="3033:3080" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="3611:3650" placeholder="delete from ..." />
-                <marker date="1477489954000" expanded="true" signature="3611:3675" placeholder="delete from ..." />
-                <marker date="1477489954000" expanded="true" signature="3754:3773" placeholder="select * fro..users..." />
-                <marker date="1477489954000" expanded="true" signature="3891:4007" placeholder="select * fro..post..." />
-                <marker date="1477489954000" expanded="true" signature="3924:3985" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="3924:3997" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="3924:4003" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="3924:4006" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="4122:4167" placeholder="select * fro..post..." />
-                <marker date="1477489954000" expanded="true" signature="4286:4299" placeholder="select * fro..." />
-                <marker date="1477489954000" expanded="true" signature="4286:4364" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="4286:4446" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="4372:4445" placeholder="select * fro..friend..." />
-                <marker date="1477489954000" expanded="true" signature="4629:4667" placeholder="select * fro..gamejoiner..." />
-                <marker date="1477489954000" expanded="true" signature="4629:4669" placeholder="select * fro..gamejoiner..." />
-                <marker date="1477489954000" expanded="true" signature="4629:4680" placeholder="select * fro..gamejoiner..." />
-                <marker date="1477489954000" expanded="true" signature="4629:4691" placeholder="select * fro..gamejoiner..." />
-                <marker date="1477489954000" expanded="true" signature="4629:4698" placeholder="select * fro..gamejoiner..." />
-                <marker date="1477489954000" expanded="true" signature="4629:4701" placeholder="select * fro..gamejoiner..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameboard.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gameboard.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GamePage/gameboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875">
-              <caret line="127" column="127" selection-start-line="127" selection-start-column="127" selection-end-line="127" selection-end-column="127" />
+            <state vertical-scroll-proportion="0.31484503">
+              <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
               <folding>
-                <marker date="1477542245000" expanded="true" signature="1756:1797" placeholder="select nickn..users..." />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#td#0;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1477552734000" expanded="true" signature="1756:1797" placeholder="select nickn..users..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="owngame.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TimeProcess.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataProcess/GameInfo/TimeProcess.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+              <folding>
+                <element signature="e#6#90#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personinfo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AccountPage/personinfo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.4166667">
+              <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddComent.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataProcess/CircleInfo/AddComent.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <folding>
+                <marker date="1477393387000" expanded="true" signature="344:445" placeholder="insert into post..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AccountPage/register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-24.375">
+              <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="owngame.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GamePage/owngame.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41463414">
-              <caret line="139" column="130" selection-start-line="139" selection-start-column="130" selection-end-line="139" selection-end-column="130" />
+            <state vertical-scroll-proportion="-34.375">
+              <caret line="137" column="47" selection-start-line="137" selection-start-column="47" selection-end-line="137" selection-end-column="47" />
               <folding>
                 <marker date="1477543379000" expanded="true" signature="1692:1733" placeholder="select nickn..users..." />
               </folding>
@@ -141,8 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/AccountPage/fans.html" />
-        <option value="$PROJECT_DIR$/GamePage/SetGame.html" />
         <option value="$PROJECT_DIR$/DataProcess/AccountInfo/Logout.php" />
         <option value="$PROJECT_DIR$/GamePage/gamecss.css" />
         <option value="$PROJECT_DIR$/SportPage/testdate.html" />
@@ -187,11 +200,13 @@
         <option value="$PROJECT_DIR$/SportPage/exercise.php" />
         <option value="$PROJECT_DIR$/SportPage/MySport.php" />
         <option value="$PROJECT_DIR$/homepage.php" />
-        <option value="$PROJECT_DIR$/AccountPage/personinfo.php" />
-        <option value="$PROJECT_DIR$/GamePage/gameboard.php" />
         <option value="$PROJECT_DIR$/DataProcess/GameInfo/JoinGame.php" />
         <option value="$PROJECT_DIR$/DataProcess/GameInfo/QuitGame.php" />
         <option value="$PROJECT_DIR$/GamePage/owngame.php" />
+        <option value="$PROJECT_DIR$/AccountPage/personinfo.php" />
+        <option value="$PROJECT_DIR$/AccountPage/register.php" />
+        <option value="$PROJECT_DIR$/GamePage/gameboard.php" />
+        <option value="$PROJECT_DIR$/DataProcess/GameInfo/TimeProcess.php" />
       </list>
     </option>
   </component>
@@ -207,7 +222,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="736" />
+    <option name="height" value="734" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -329,10 +344,6 @@
               <option name="myItemId" value="DataProcess" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AccountInfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -443,7 +454,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="736" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="734" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -484,11 +495,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/headpics/10.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/headpics/7.gif">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -632,16 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/CircleInfo/AddComent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="17" column="9" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <marker date="1477393387000" expanded="true" signature="344:445" placeholder="insert into post..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess/CircleInfo/DeleteCircle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.375">
@@ -743,24 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AccountPage/people.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30731708">
-          <caret line="44" column="49" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
-          <folding>
-            <marker date="1477535772000" expanded="true" signature="3611:4811" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AccountPage/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CirclePage/mycircle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19512194">
@@ -840,14 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AccountPage/personinfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2617886">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homepage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7804878">
@@ -856,9 +826,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/GameInfo/JoinGame.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="92" />
+          <folding>
+            <marker date="1477542627000" expanded="true" signature="430:467" placeholder="select * fro..game..." />
+            <marker date="1477542627000" expanded="true" signature="586:683" placeholder="insert into gamejoiner..." />
+            <marker date="1477542627000" expanded="true" signature="703:744" placeholder="update users..." />
+            <marker date="1477542627000" expanded="true" signature="703:765" placeholder="update users..." />
+            <marker date="1477542627000" expanded="true" signature="785:847" placeholder="update game ..." />
+            <marker date="1477542627000" expanded="true" signature="875:926" placeholder="select * fro..gamejoiner..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/GameInfo/QuitGame.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="15" column="92" selection-start-line="15" selection-start-column="92" selection-end-line="15" selection-end-column="92" />
+          <folding>
+            <marker date="1477542901000" expanded="true" signature="398:435" placeholder="select * fro..game..." />
+            <marker date="1477542901000" expanded="true" signature="519:541" placeholder="delete from ..." />
+            <marker date="1477542901000" expanded="true" signature="519:576" placeholder="delete from ..." />
+            <marker date="1477542901000" expanded="true" signature="525:541" placeholder="insert into gamejoiner..." />
+            <marker date="1477542901000" expanded="true" signature="592:654" placeholder="update users..." />
+            <marker date="1477542901000" expanded="true" signature="670:732" placeholder="update game ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GamePage/owngame.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-34.375">
+          <caret line="137" column="47" selection-start-line="137" selection-start-column="47" selection-end-line="137" selection-end-column="47" />
+          <folding>
+            <marker date="1477543379000" expanded="true" signature="1692:1733" placeholder="select nickn..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AccountPage/people.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48939642">
+          <caret line="34" column="34" selection-start-line="33" selection-start-column="3" selection-end-line="34" selection-end-column="84" />
+          <folding>
+            <marker date="1477535772000" expanded="true" signature="3611:4811" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AccountPage/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.375">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess/AccountInfo/Account.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-88.75">
+        <state vertical-scroll-proportion="1.4159869">
           <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding>
             <marker date="1477489954000" expanded="true" signature="278:318" placeholder="select * fro..users..." />
@@ -893,52 +921,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/GameInfo/JoinGame.php">
+    <entry file="file://$PROJECT_DIR$/DataProcess/CircleInfo/AddComent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="92" />
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
-            <marker date="1477542627000" expanded="true" signature="430:467" placeholder="select * fro..game..." />
-            <marker date="1477542627000" expanded="true" signature="586:683" placeholder="insert into gamejoiner..." />
-            <marker date="1477542627000" expanded="true" signature="703:744" placeholder="update users..." />
-            <marker date="1477542627000" expanded="true" signature="703:765" placeholder="update users..." />
-            <marker date="1477542627000" expanded="true" signature="785:847" placeholder="update game ..." />
-            <marker date="1477542627000" expanded="true" signature="875:926" placeholder="select * fro..gamejoiner..." />
+            <marker date="1477393387000" expanded="true" signature="344:445" placeholder="insert into post..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/GameInfo/QuitGame.php">
+    <entry file="file://$PROJECT_DIR$/AccountPage/personinfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
-          <caret line="15" column="92" selection-start-line="15" selection-start-column="92" selection-end-line="15" selection-end-column="92" />
+        <state vertical-scroll-proportion="-2.4166667">
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/GameInfo/TimeProcess.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
           <folding>
-            <marker date="1477542901000" expanded="true" signature="398:435" placeholder="select * fro..game..." />
-            <marker date="1477542901000" expanded="true" signature="519:541" placeholder="delete from ..." />
-            <marker date="1477542901000" expanded="true" signature="519:576" placeholder="delete from ..." />
-            <marker date="1477542901000" expanded="true" signature="525:541" placeholder="insert into gamejoiner..." />
-            <marker date="1477542901000" expanded="true" signature="592:654" placeholder="update users..." />
-            <marker date="1477542901000" expanded="true" signature="670:732" placeholder="update game ..." />
+            <element signature="e#6#90#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GamePage/gameboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="127" column="127" selection-start-line="127" selection-start-column="127" selection-end-line="127" selection-end-column="127" />
+        <state vertical-scroll-proportion="0.31484503">
+          <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
           <folding>
-            <marker date="1477542245000" expanded="true" signature="1756:1797" placeholder="select nickn..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GamePage/owngame.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41463414">
-          <caret line="139" column="130" selection-start-line="139" selection-start-column="130" selection-end-line="139" selection-end-column="130" />
-          <folding>
-            <marker date="1477543379000" expanded="true" signature="1692:1733" placeholder="select nickn..users..." />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#td#0;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1477552734000" expanded="true" signature="1756:1797" placeholder="select nickn..users..." />
           </folding>
         </state>
       </provider>

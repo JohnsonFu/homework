@@ -59,6 +59,7 @@ function getNick($id){
     $res=$db->query("select nickname from users where id='$id'")->fetchAll()[0][0];
     return $res;
 }
+include('../DataProcess/GameInfo/TimeProcess.php');
 ?>
 <body>
 <div id="top_bg">
@@ -112,6 +113,9 @@ function getNick($id){
                 <?PHP }else{ ?>
                        <input type="button" value="加入" class="tablebutton" name=<?PHP echo $id.'-' ?><?PHP echo $list[$i]['id']?> onclick="joingame(this.name)" style=";font-size:20px;width:70px;float:right;height:25px;">
             <?PHP }} ?>
+                <?PHP if($id==$a->id){ ?>
+                <div style="float:right">我发起的竞赛</div>
+                <?PHP } ?>
             </div>
             <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                 <tr style="font-size:13px;">
@@ -126,12 +130,12 @@ function getNick($id){
                 </tr>
                 <tr style="font-size:13px;">
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">人数</td>
-                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">离竞赛开始还有</td>
+                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">时间</td>
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">保证金</td>
                 </tr>
                 <tr style="font-size:13px;background-color:#ececec;">
                     <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($mygame->getgamejoiner($list[$i]['id']))?></td>
-                    <td style="border-width:1px;border-color:#000;border-right-style:solid;">1天2小时3分</td>
+                    <td style="border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo getTimeMinus($list[$i]['starttime'],$list[$i]['endtime'])   ?></td>
                     <td style=" border-width:1px;border-color:#000;"><?PHP echo($list[$i]['joinmoney'])?></td>
                 </tr>
             </table>
