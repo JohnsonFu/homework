@@ -48,6 +48,7 @@ if(!isset($_SESSION['userid'])){
     include('../DataProcess/AccountInfo/Account.php');
     include('../DataProcess/CircleInfo/Post.php');
     $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+    $nick=$account->getNick();
 
     $list=$account->getMyFollowPosts();
 }
@@ -70,7 +71,7 @@ if(!isset($_SESSION['userid'])){
         </div>
         <div id="leftbar">
             <img style="margin-left:32%;" src="../headpics/<?PHP echo($account->getPicId()); ?>.gif"><br>
-            <label style="margin-left:36%;"><?PHP echo($account->getNick()); ?></label>
+            <label style="margin-left:36%;"><?PHP echo($nick); ?></label>
         <div id="header" style="margin-left:33%;">朋友圈</div>
             <button type="button"  style="margin-left:33%;"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发布状态</button>
         <div id="vertmenu">
@@ -95,9 +96,28 @@ if(!isset($_SESSION['userid'])){
                 <tr>
                     <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/<?PHP echo($fpicid);?>.gif" style="margin:5px 5px 5px 5px"><br><?PHP echo($fnickname); ?></th>
                     <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><br>
-                        运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($list[$i]['postid'])?></label><input type="button" id=<?PHP echo($list[$i]['postid'])?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbup(this.name)" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;"></th>
+                        运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($list[$i]['postid'])?></label>
+                        <?PHP $thumb=$account->getThumb($list[$i]['postid']) ;
+                        if(count($thumb)>0){
+                        ?>
+                        <div style="font-family: 'American Typewriter';float:right;">
+                            <?PHP
+                            for($k=0;$k<count($thumb);$k++) {
+                                echo $thumb[$k]['nick'] . ',';
+                            }
+                            ?>
+                           <label style="font-family:'Yuanti SC';"> 也觉得赞</label>
+                            <?PHP }
+                            if($account->hasThumb($list[$i]['postid'])==1){?>
+                 <input type="button" id=<?PHP echo($list[$i]['postid'].'2')?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbdown(this.name)" value="取消赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;" ></th>
+<?PHP } ?>
+                    <?PHP if($account->hasThumb($list[$i]['postid'])==0){?>
+                        <input type="button" id=<?PHP echo($list[$i]['postid'])?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbup(this.name)" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;" ></th>
+                   <?PHP }?>
+     </tr>
+                    </div>
 
-                </tr>
+
                 <tr>
                     <form method="post" action="../DataProcess/CircleInfo/AddComent.php" >
                     <td style="width:80%;font-size:16px;"><?PHP echo($list[$i]['content']); ?>.</td>
@@ -160,6 +180,44 @@ for($j=0;$j<count($comments);$j++){
                     xmlHttp.send(null)
                 }
 
+                function thumbdown(str){
+
+
+
+
+                    if (str.length==0)
+                    {
+
+                        return
+                    }
+                    xmlHttp=GetXmlHttpObject()
+                    if (xmlHttp==null)
+                    {
+                        alert ("Browser does not support HTTP Request")
+                        return
+                    }
+                    var url="../DataProcess/CircleInfo/thumbdown.php"
+                    url=url+"?q="+str
+                    url=url+"&sid="+Math.random()
+                    xmlHttp.onreadystatechange=stateChanged2
+                    xmlHttp.open("GET",url,true)
+                    xmlHttp.send(null)
+                }
+
+                function stateChanged2()
+                {
+                    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+                    {
+                        var result=xmlHttp.responseText.split('-');
+
+                        var tid=result[2];
+                        document.getElementById(tid+'2').value='点赞'+result[1];
+                       window.location.reload();
+
+                    }
+                }
+
+
                 function stateChanged()
                 {
                     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
@@ -168,7 +226,7 @@ for($j=0;$j<count($comments);$j++){
 
                         var tid=result[2];
                         document.getElementById(tid).value='点赞'+result[1];
-
+                        window.location.reload()
 
                     }
                 }

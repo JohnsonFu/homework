@@ -8,8 +8,10 @@
 session_start();
 $postid=$_GET['q'];
 $db=new PDO('sqlite:../AccountInfo/mydatabase.sqlite');
-$res1=$db->query("delete from post where postid='$postid'");
+//$db->exec("PRAGMA foreign_keys=ON");
 $res2=$db->query("delete from comment where pid='$postid'");
+$res1=$db->query("delete from post where postid='$postid'");
+
 
 if($res1==true){
     echo "删除成功!";

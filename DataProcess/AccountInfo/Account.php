@@ -161,12 +161,26 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         }
 
     }
+    public function getThumb($pid){
+        $result=$this->db->query("select * from thumb where pid='$pid'")->fetchAll();
+        return $result;
+    }
+    public function hasThumb($pid){
+        $result=$this->db->query("select * from thumb where pid='$pid'and uid='$this->id'")->fetchAll();
+       if(count($result)>0)
+        return 1;
+        else
+        return 0;
+    }
 
 }
 
 
-//$account=new Account('huahua','sqlite:mydatabase.sqlite');
-//$account->isJoinGame('10006');
+//$db=new PDO('sqlite:mydatabase.sqlite');
+//$db->exec("PRAGMA foreign_keys=ON");
+//$result=$db->query("insert into comment(pid,masterid)values('599d99','222d22')");
+//echo $result;
+//$account=new Account('22222','sqlite:mydatabase.sqlite');
 //$res1=$account->getMyFollowPosts();
 //echo $res1[0]['tittle'];
-//$account->isFriend('22222');
+//$account->hasThumb('1018');

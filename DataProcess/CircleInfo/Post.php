@@ -35,6 +35,7 @@ public $masterid;
         return $result;
     }
 
+
 }
 
 //$post=new Post("22222",'sqlite:../AccountInfo/mydatabase.sqlite');
