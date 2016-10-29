@@ -92,13 +92,23 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
            <?PHP echo $content ?>
             </td>
         </tr>
+        <?PHP $replymail=$account->getReplyMail($mid);
+        for($j=0;$j<count($replymail);$j++){
+
+        ?>
         <tr>
-            <td style="font-size:15px">我 回复:leihuang  <img src="../headpics/15.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
-               收到了,老师
-            </td>
+           <?PHP  if($replymail[$j]['fid']!=$id){  ?>
+                <td style="font-size:15px"><?PHP echo $fnick ?> 回复:我  <img src="../headpics/15.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
+                    <?PHP echo $replymail[$j]['contents'] ?>
+                </td>
+            <?PHP }else{?>
+                <td style="font-size:15px">我 回复:<?PHP echo $fnick ?>  <img src="../headpics/15.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
+                    <?PHP echo $replymail[$j]['contents'] ?>
+                </td>
         </tr>
+        <?PHP }} ?>
         <tr>
-            <td style="font-size:15px">回复:leihuang  <img src="../headpics/15.gif"width="15px"height="15px"><input type="text" style="width:60%;margin-left:60px;" placeholder="回复leihuang" >
+            <td style="font-size:15px">回复:<?PHP echo $fnick ?>  <img src="../headpics/15.gif"width="15px"height="15px"><input type="text" style="width:60%;margin-left:60px;" placeholder="回复leihuang" >
                 <input type="button"  value="回复">
             </td>
         </tr>

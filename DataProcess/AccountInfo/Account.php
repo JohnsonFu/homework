@@ -168,6 +168,10 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         $result=$this->db->query("select * from mail where tid='$this->id'")->fetchAll();
         return $result;
     }
+    public function getReplyMail($mid){
+        $result=$this->db->query("select * from replymail where mid='$mid'")->fetchAll();
+        return $result;
+    }
 
 }
 
