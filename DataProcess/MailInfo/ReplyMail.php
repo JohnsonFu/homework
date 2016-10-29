@@ -10,10 +10,11 @@ $arr=explode('-',$info);
 $db=new PDO('sqlite:../AccountInfo/mydatabase.sqlite');
 $mid=$arr[0];
 $fid=$arr[1];
-$contents=$arr[2];
+$tid=$arr[2];
+$contents=$arr[3];
 $time =time()+8*60*60;
 $date='20'.date("y-m-d H:i",$time);
-$result=$db->query("insert into replymail(mid,fid,time,contents)values('$mid','$fid','$date','$contents') ");
+$result=$db->query("insert into replymail(mid,fid,tid,time,contents)values('$mid','$fid','$tid','$date','$contents') ");
 if($result){
     echo '回复成功!';
 }

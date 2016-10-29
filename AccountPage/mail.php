@@ -91,9 +91,9 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
         $rfnick=$rfaccount->getNick();
         $rfpicid=$rfaccount->getPicId();
     ?>
-    <table style="margin-bottom:15px;width:100%;height:100%;word-break:break-all;"cellspacing="0" cellpadding="0"border="1">
+    <table style="margin-bottom:15px;width:80%;height:100%;word-break:break-all;"cellspacing="0" cellpadding="0"border="1">
         <tr>
-            <td style="font-size:15px"><?PHP if($hasread==0){echo '(未读)';afterread($mid);} ?>发信人:<?PHP echo $fnick ?><img src="../headpics/<?PHP echo($fpicid) ?>.gif"width="15px"height="15px"> <label>&nbsp;&nbsp;&nbsp;标题:<?PHP echo $tittle ?></label> <label style="float:right"><?PHP echo $time ?></label><br>
+            <td style="font-size:15px"><?PHP if($fid!=$id&&$hasread==0){echo '(未读)';afterread($mid);} ?>发信人:<?PHP echo $fnick ?><img src="../headpics/<?PHP echo($fpicid) ?>.gif"width="15px"height="15px"> <label>&nbsp;&nbsp;&nbsp;标题:<?PHP echo $tittle ?></label> <label style="float:right"><?PHP echo $time ?></label><br>
            <?PHP echo $content ?>
             </td>
         </tr>
@@ -112,35 +112,29 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
                     <?PHP echo $replymail[$j]['contents'] ?>
                 </td>
             <?PHP }else{
-                if($fid==$id){
+               $tfid=$replymail[$j]['tid'];
+               $tfaccount=new Account($tfid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+               $tfnick=$tfaccount->getNick();
+               $tfpicid=$tfaccount->getPicId();
 
                 ?>
-                <td style="font-size:15px">我 回复:<?PHP echo $rfnick ?>  <img src="../headpics/<?PHP echo($rfpicid) ?>.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
+                <td style="font-size:15px">我 回复:<?PHP echo $tfnick ?>  <img src="../headpics/<?PHP echo($tfpicid) ?>.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
                     <?PHP echo $replymail[$j]['contents'] ?>
                 </td>
-            <?PHP }else{ ?>
-                    <td style="font-size:15px">我 回复:<?PHP echo $fnick ?>  <img src="../headpics/<?PHP echo($fpicid) ?>.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
-                        <?PHP echo $replymail[$j]['contents'] ?>
-                    </td>
-             <?PHP   }?>
+            <?PHP } ?>
         </tr>
-        <?PHP }} ?>
+        <?PHP } ?>
         <?PHP if($fid==$id){
         ?>
         <tr>
-            <td style="font-size:15px">回复:<?PHP echo $rfnick ?>  <img src="../headpics/<?PHP echo($rfpicid) ?>.gif"width="15px"height="15px"><input type="text" id="replycontent<?PHP echo $mid?>" style="width:60%;margin-left:60px;" placeholder="回复<?PHP echo $rfnick ?>" >
-                <input type="button" name=<?PHP echo $mid.'-'.$id ?>  value="回复" onclick="reply(this.name)" >
+            <td style="font-size:15px">回复:<?PHP echo $rfnick ?>  <img src="../headpics/<?PHP echo($rfpicid) ?>.gif"width="15px"height="15px"><input type="text" id="replycontent<?PHP echo $mid?>" style="width:50%;margin-left:60px;" placeholder="回复<?PHP echo $rfnick ?>" >
+                <input type="button" name=<?PHP echo $mid.'-'.$id.'-'.$rfid ?>  value="回复" onclick="reply(this.name)" >
             </td>
         </tr>
-        <?PHP }else{
-            $tid=$mails[$k]['fid'];
-            $taccount=new Account($tid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
-            $tnick=$taccount->getNick();
-            $tpicid=$taccount->getPicId();
-            ?>
+        <?PHP }else{?>
             <tr>
-                <td style="font-size:15px">回复:<?PHP echo $tnick ?>  <img src="../headpics/<?PHP echo($tpicid) ?>.gif"width="15px"height="15px"><input type="text" id="replycontent<?PHP echo $mid?>" style="width:60%;margin-left:60px;" placeholder="回复<?PHP echo $tnick ?>" >
-                    <input type="button" name=<?PHP echo $mid.'-'.$id ?>  value="回复" onclick="reply(this.name)" >
+                <td style="font-size:15px">回复:<?PHP echo $fnick ?>  <img src="../headpics/<?PHP echo($fpicid) ?>.gif"width="15px"height="15px"><input type="text" id="replycontent<?PHP echo $mid?>" style="width:50%;margin-left:60px;" placeholder="回复<?PHP echo $fnick ?>" >
+                    <input type="button" name=<?PHP echo $mid.'-'.$id.'-'.$fid ?>  value="回复" onclick="reply(this.name)" >
                 </td>
             </tr>
 

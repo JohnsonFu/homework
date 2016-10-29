@@ -98,14 +98,7 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         for($i=0;$i<count($res1);$i++){
             $arr1[$i]=$res1[$i]['friendid'];
         }
-        $res2=$this->getFriend();
-        for($i=0;$i<count($arr1);$i++){
-            for($j=0;$j<count($res2);$j++){
-                if($arr1[$i]==$res2[$j]){
-                    array_splice($arr1,$i,1);
-                }
-            }
-        }
+
         return $arr1;
     }
 
