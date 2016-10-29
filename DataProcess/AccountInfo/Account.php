@@ -115,14 +115,6 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         for($i=0;$i<count($res1);$i++){
             $arr1[$i]=$res1[$i]['id'];
         }
-        $res2=$this->getFriend();
-         for ($i = 0; $i < count($arr1); $i++) {
-                for ($j = 0; $j < count($res2); $j++) {
-                    if ($arr1[$i] == $res2[$j]) {
-                       array_splice($arr1,$i,1);
-                    }
-                }
-            }
             return $arr1;
 
     }
@@ -171,6 +163,10 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         return 1;
         else
         return 0;
+    }
+    public function getMail(){
+        $result=$this->db->query("select * from mail where tid='$this->id'")->fetchAll();
+        return $result;
     }
 
 }
