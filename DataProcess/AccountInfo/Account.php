@@ -165,7 +165,7 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         return 0;
     }
     public function getMail(){
-        $result=$this->db->query("select * from mail where tid='$this->id'")->fetchAll();
+        $result=$this->db->query("select * from mail where tid='$this->id' or fid='$this->id'")->fetchAll();
         return $result;
     }
     public function getReplyMail($mid){

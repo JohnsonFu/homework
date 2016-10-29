@@ -85,6 +85,11 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
         $fnick=$faccount->getNick();
         $fpicid=$faccount->getPicId();
         $hasread=$mails[$k]['hasread'];
+
+        $rfid=$mails[$k]['tid'];
+        $rfaccount=new Account($rfid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+        $rfnick=$rfaccount->getNick();
+        $rfpicid=$rfaccount->getPicId();
     ?>
     <table style="margin-bottom:15px;width:100%;height:100%;word-break:break-all;"cellspacing="0" cellpadding="0"border="1">
         <tr>
@@ -97,23 +102,50 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
 
         ?>
         <tr>
-           <?PHP  if($replymail[$j]['fid']!=$id){  ?>
-                <td style="font-size:15px"><?PHP echo $fnick ?> 回复:我  <img src="../headpics/15.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
+           <?PHP  if($replymail[$j]['fid']!=$id){
+                $mfid=$replymail[$j]['fid'];
+                $mfaccount=new Account($mfid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+                $mfnick=$mfaccount->getNick();
+                $mfpicid=$mfaccount->getPicId();
+                ?>
+                <td style="font-size:15px"><?PHP echo $mfnick ?><img src="../headpics/<?PHP echo($mfpicid) ?>.gif"width="15px"height="15px"> 回复:我 <label style="float:right"> 昨天16:45</label><br>
                     <?PHP echo $replymail[$j]['contents'] ?>
                 </td>
-            <?PHP }else{?>
-                <td style="font-size:15px">我 回复:<?PHP echo $fnick ?>  <img src="../headpics/15.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
+            <?PHP }else{
+                if($fid==$id){
+
+                ?>
+                <td style="font-size:15px">我 回复:<?PHP echo $rfnick ?>  <img src="../headpics/<?PHP echo($rfpicid) ?>.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
                     <?PHP echo $replymail[$j]['contents'] ?>
                 </td>
+            <?PHP }else{ ?>
+                    <td style="font-size:15px">我 回复:<?PHP echo $fnick ?>  <img src="../headpics/<?PHP echo($fpicid) ?>.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
+                        <?PHP echo $replymail[$j]['contents'] ?>
+                    </td>
+             <?PHP   }?>
         </tr>
         <?PHP }} ?>
+        <?PHP if($fid==$id){
+        ?>
         <tr>
-            <td style="font-size:15px">回复:<?PHP echo $fnick ?>  <img src="../headpics/15.gif"width="15px"height="15px"><input type="text" style="width:60%;margin-left:60px;" placeholder="回复leihuang" >
-                <input type="button"  value="回复">
+            <td style="font-size:15px">回复:<?PHP echo $rfnick ?>  <img src="../headpics/<?PHP echo($rfpicid) ?>.gif"width="15px"height="15px"><input type="text" id="replycontent<?PHP echo $mid?>" style="width:60%;margin-left:60px;" placeholder="回复<?PHP echo $rfnick ?>" >
+                <input type="button" name=<?PHP echo $mid.'-'.$id ?>  value="回复" onclick="reply(this.name)" >
             </td>
         </tr>
+        <?PHP }else{
+            $tid=$mails[$k]['fid'];
+            $taccount=new Account($tid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+            $tnick=$taccount->getNick();
+            $tpicid=$taccount->getPicId();
+            ?>
+            <tr>
+                <td style="font-size:15px">回复:<?PHP echo $tnick ?>  <img src="../headpics/<?PHP echo($tpicid) ?>.gif"width="15px"height="15px"><input type="text" id="replycontent<?PHP echo $mid?>" style="width:60%;margin-left:60px;" placeholder="回复<?PHP echo $tnick ?>" >
+                    <input type="button" name=<?PHP echo $mid.'-'.$id ?>  value="回复" onclick="reply(this.name)" >
+                </td>
+            </tr>
+
     </table>
-    <?PHP } ?>
+    <?PHP }} ?>
 
 
 </div>
@@ -123,8 +155,17 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
 
 var xmlHttp
 
-function add(str)
+
+
+function reply(str)
 {
+    var k=str.split('-');
+    var addr=k[0]
+    var content=document.getElementById('replycontent'+addr).value;
+  if(content==''){
+      alert('回复不得为空');
+      return
+  }
     if (str.length==0)
     {
 
@@ -136,19 +177,22 @@ function add(str)
         alert ("Browser does not support HTTP Request")
         return
     }
-    var url="../DataProcess/AccountInfo/AddFriend.php"
-    url=url+"?q="+str
+    var url="../DataProcess/MailInfo/ReplyMail.php"
+    url=url+"?q="+str+'-'+content;
     url=url+"&sid="+Math.random()
     xmlHttp.onreadystatechange=stateChanged
     xmlHttp.open("GET",url,true)
     xmlHttp.send(null)
 }
 
+
+
 function stateChanged()
 {
     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
     {
         alert(xmlHttp.responseText);
+        window.location.reload();
     }
 }
 
