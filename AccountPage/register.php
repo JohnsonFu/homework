@@ -52,6 +52,16 @@
             <option value =<?PHP echo($s) ?> ><?PHP echo($s) ?></option>
             <?PHP }} ?>
         </select>
+        <div style="margin-top:20px;">
+        <label style="">头&nbsp;&nbsp;像:&nbsp;&nbsp;&nbsp;</label>
+        <select  size="1" id="logo" name="logos" onchange="showlogo()"><?PHP for($s=1;$s<21;$s++){
+                ?>
+                <option value =<?PHP echo($s) ?>><?PHP echo($s) ?></option>
+            <?PHP } ?>
+        </select>
+            <label style="font-size:10px;">&nbsp;&nbsp;(1-10为女性头像,11-20为男性头像)</label>
+            </div>
+            <img style="margin-left:125px;margin-top:20px" name="img" style="padding-top:30px;" src="../headpics/1.gif" width="50px" height="50px">
 
     </div>
 
@@ -86,15 +96,13 @@
             return false;
         }
 
-
-
-        return true;
+ return true;
+    }
+    function showlogo(){
+        document.images.img.src='../headpics/'+document.getElementById('logo').value.toString()+'.gif';
     }
 </script>
-<div class="footer">
-    <p>爱运动 - isport</p>
-    <p>Designed By FuLinhua 2016</p>
-</div>
+
 </body>
 </html>
 

@@ -9,6 +9,7 @@ $name=$_POST["username"];
 $password=$_POST['password'];
 $sex=$_POST['sex'];
 $age=$_POST['age'];
+$picid=$_POST['logos'];
 $nickname=$_POST['nickname'];
 $height=$_POST['height'];
 $db = new PDO("sqlite:mydatabase.sqlite"); //注意红字部分的路径格式，这样写会报错：new PDO('myDB.sqlite');
@@ -26,7 +27,7 @@ if ($db){
        echo "昵称".$nickname."已被注册";
    }
    else {
-       $result = $db->query("insert into users(id,password,sex,age,nickname,height) values ('$name','$password','$sex','$age','$nickname','$height')");
+       $result = $db->query("insert into users(id,password,sex,age,nickname,height,picid) values ('$name','$password','$sex','$age','$nickname','$height','$picid')");
        if($result){
            echo "注册成功";
        }

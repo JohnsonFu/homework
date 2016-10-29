@@ -106,7 +106,7 @@ if(!isset($_SESSION['userid'])){
                                 echo $thumb[$k]['nick'] . ',';
                             }
                             ?>
-                           <label style="font-family:'Yuanti SC';"> 也觉得赞</label>
+
                             <?PHP }
                             if($account->hasThumb($list[$i]['postid'])==1){?>
                  <input type="button" id=<?PHP echo($list[$i]['postid'].'2')?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbdown(this.name)" value="取消赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;" ></th>
