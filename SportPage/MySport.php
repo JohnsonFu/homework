@@ -40,7 +40,7 @@
     <div id="vertmenu">
         <ul>
             <li><a href="MySport.php" style="color:#daddf0; background-color: #80c3f7;">我的运动</a></li>
-            <li><a href="#">身体管理</a></li>
+            <li><a href="SetGoal.php">设定目标</a></li>
             <li><a href="exercise.php">健身追踪</a></li>
             <li><a href="#">睡眠分析</a></li>
         </ul>
