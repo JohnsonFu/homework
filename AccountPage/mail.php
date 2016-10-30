@@ -30,6 +30,10 @@ function afterread($mid){
     $db=new PDO('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $db->query("update mail set hasread='1' where mid='$mid'");
 }
+function afterreadreply($rid){
+    $db=new PDO('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+    $db->query("update replymail set hasread='1' where rid='$rid'");
+}
 if(!isset($_SESSION['userid'])){
     echo "<script>alert('未登录!将返回登录界面....');</script>";
 echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
@@ -61,7 +65,7 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
         <div id="vertmenu">
         <ul>
         <li><a href="#" style=" color: #daddf0; background-color: #80c3f7;">我的邮箱</a></li>
-        <li><a href="friend.php" >我的好友</a></li>
+        <li><a href="friend.php" >互相关注</a></li>
         <li><a href="myfollow.php">我的关注</a></li>
         <li><a href="followme.php">我的粉丝</a></li>
         <li><a href="people.php">用户搜索</a></li>
@@ -104,11 +108,13 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
         <tr>
            <?PHP  if($replymail[$j]['fid']!=$id){
                 $mfid=$replymail[$j]['fid'];
+               $replyid=$replymail[$j]['rid'];
                 $mfaccount=new Account($mfid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
                 $mfnick=$mfaccount->getNick();
+               $hasread2=$replymail[$j]['hasread'];
                 $mfpicid=$mfaccount->getPicId();
                 ?>
-                <td style="font-size:15px"><?PHP echo $mfnick ?><img src="../headpics/<?PHP echo($mfpicid) ?>.gif"width="15px"height="15px"> 回复:我 <label style="float:right"> 昨天16:45</label><br>
+                <td style="font-size:15px"> <?PHP if($hasread2==0){echo '(未读)';afterreadreply($replyid);}  echo $mfnick; ?><img src="../headpics/<?PHP echo($mfpicid) ?>.gif"width="15px"height="15px"> 回复:我 <label style="float:right"> 昨天16:45</label><br>
                     <?PHP echo $replymail[$j]['contents'] ?>
                 </td>
             <?PHP }else{

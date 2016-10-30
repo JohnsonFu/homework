@@ -165,6 +165,11 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         $result=$this->db->query("select * from replymail where mid='$mid'")->fetchAll();
         return $result;
     }
+    public function getUnread(){
+        $result=$this->db->query("select * from mail where tid='$this->id' and hasread=0")->fetchAll();
+        $result2=$this->db->query("select * from replymail where tid='$this->id' and hasread=0")->fetchAll();
+        return count($result)+count($result2);
+    }
 
 }
 

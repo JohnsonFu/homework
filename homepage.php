@@ -32,6 +32,7 @@ else {
     $money = $account->getMoney();
     $sig = $account->getSig();
 $picid=$account->getPicId();
+$noread=$account->getUnread();
     $password = $account->getPassword();
     $_SESSION['nickname'] = $nickname;
     $_SESSION['sig'] = $sig;
@@ -74,9 +75,11 @@ $picid=$account->getPicId();
             <li style="margin-top:10px;"><a href="AccountPage/personinfo.php">账户设置</a></li>
             <li style="margin-top:10px;"><a href="AccountPage/friend.php">我的好友</a></li>
             <li style="margin-top:10px;"><a href="#">我的活动</a></li>
-            <li style="margin-top:10px;"><a href="#">战书</a></li>
-            <li style="margin-top:10px;"><a href="#">单人PK</a></li>
-            <li style="margin-top:10px;"><a href="#">群体PK</a></li>
+            <?PHP if($noread!=0){?>
+            <li style="margin-top:10px;font-size:18px;"><a href="AccountPage/mail.php">邮箱(<?PHP echo $noread.'未读'; ?>)</a></li>
+       <?PHP }else{ ?>
+            <li style="margin-top:10px;"><a href="AccountPage/mail.php">邮箱</a></li>
+<?PHP } ?>
         </ul>
     </div>
 </div>

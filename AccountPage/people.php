@@ -55,7 +55,8 @@ if(!isset($_SESSION['userid'])){
     <div id="header">好友关系</div>
     <div id="vertmenu">
         <ul>
-            <li><a href="friend.php" >我的好友</a></li>
+            <li><a href="mail.php">我的邮箱</a></li>
+            <li><a href="friend.php" >互相关注</a></li>
             <li><a href="myfollow.php">我的关注</a></li>
             <li><a href="followme.php">我的粉丝</a></li>
             <li><a href="people.php" style=" color: #daddf0; background-color: #80c3f7;">用户搜索</a></li>
