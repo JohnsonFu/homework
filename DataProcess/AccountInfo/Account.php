@@ -170,6 +170,19 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         $result2=$this->db->query("select * from replymail where tid='$this->id' and hasread=0")->fetchAll();
         return count($result)+count($result2);
     }
+    public function hasSetGoal(){
+        $result=$this->db->query("select * from goal where uid='$this->id'")->fetchAll();
+        $count=count($result);
+        if($count>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function getGoal(){
+        $result=$this->db->query("select * from goal where uid='$this->id'")->fetchAll();
+        return $result;
+    }
 
 }
 

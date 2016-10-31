@@ -15,15 +15,25 @@ $nums;
 $db=new PDO("sqlite:../AccountInfo/mydatabase.sqlite");
 if($type=='distance'){
     $nums=$_POST['type2'];
-    echo $uid."-".$cycle."-".$type.'-'.$nums.'-'.$date;
+
 }if($type=='walk'){
     $nums=$_POST['type3'];
-    echo $uid."-".$cycle."-".$type.'-'.$nums.'-'.$date;
+}
+$result1=$db->query("select * from goal where uid='$uid'")->fetchAll();
+$count=count($result1);
+if($count>0){
+    $result3=$db->query("update  goal  set time='$date' , type='$type' , nums='$nums' , cycle='$cycle' where uid='$uid' ");
+    if($result3){
+        echo '目标修改成功';
+    }else{
+        echo '目标修改失败';
+    }
+}else{
+    $result=$db->query("insert into goal(uid,time,type,nums,cycle,bonus) values ('$uid','$date','$type','$nums','$cycle','500')");
+    if($result){
+        echo '目标设定成功';
+    }else{
+        echo '目标设定失败';
+    }
 }
 
-$result=$db->query("insert into goal(uid,time,type,nums,cycle,bonus) values ('$uid','$date','$type','$nums','$cycle','500')");
-if($result){
-    echo '目标设定成功';
-}else{
-    echo '目标设定失败';
-}
