@@ -88,7 +88,7 @@ if(!isset($_SESSION['userid'])){
                         for($j=500;$j<=5000;$j=$j+100){ ?>
                             <option value="<?PHP echo $j*10 ?>"><?PHP echo $j*10 ?>步</option>
                         <?PHP } ?>
-                    </select> <input style="margin-left:60px"  type="submit" value="重设目标"> <input type="button" value="删除目标"></div>
+                    </select> <input style="margin-left:60px"  type="submit" value="提交"> <?PHP if($SetGoal==true){ ?> <input type="button" name='<?PHP echo $id;?>' onclick="deletegoal(this.name)" value="删除目标"><?PHP } ?></div>
                   <div >
 
                     </div>
@@ -101,8 +101,60 @@ if(!isset($_SESSION['userid'])){
 
 
 <?PHP } ?>
-<script type="text/javascript" src="../jquery-1.8.3/jquery.js">
+<script type="text/javascript" >
+function deletegoal(str){
+    if (str.length==0)
+    {
 
+        return
+    }
+   xmlHttp=GetXmlHttpObject()
+    if (xmlHttp==null)
+    {
+        alert ("Browser does not support HTTP Request")
+        return
+    }
+    var url="../DataProcess/GameInfo/DeleteGoal.php"
+    url=url+"?q="+str
+    url=url+"&sid="+Math.random()
+    xmlHttp.onreadystatechange=stateChanged1
+    xmlHttp.open("GET",url,true)
+    xmlHttp.send(null)
+}
+
+function stateChanged1()
+{
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+    {
+        alert(xmlHttp.responseText);
+        if(xmlHttp.responseText=='删除成功')
+            window.location.reload();
+    }
+}
+
+
+function GetXmlHttpObject()
+{
+    var xmlHttp=null;
+    try
+    {
+        // Firefox, Opera 8.0+, Safari
+        xmlHttp=new XMLHttpRequest();
+    }
+    catch (e)
+    {
+        // Internet Explorer
+        try
+        {
+            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch (e)
+        {
+            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+    return xmlHttp;
+}
 </script>
 </body>
 </html>
