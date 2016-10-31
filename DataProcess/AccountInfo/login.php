@@ -15,7 +15,7 @@ if($username && $password){
         Header("Location:../../homepage.php ");
 
     }else{
-        echo "<a href='../../login.html'>登录失败!返回</a>";
+        echo "<script>alert('登录失败,请重新登录');location.href='../../login.html';</script>";
     }
 }
 
