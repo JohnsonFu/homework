@@ -58,34 +58,35 @@ if(!isset($_SESSION['userid'])){
     <div id="content">
         <div class="insidecontent">
             <div class="mylabel">设定目标</div><hr style="margin-right: 50px;">
-
+            <form method="post" action="../DataProcess/GameInfo/ChangeGoal.php" >
                 <div style="margin-left:20px;">
+                    <div style="margin-bottom:20px;">
                     <label style="margin-left:-10px;">目标周期</label>
-                    <select style="margin-left:30px;width:100px;height:30px;"  name="type"><?PHP
+                    <select style="margin-left:30px;width:100px;height:30px;"  name="cycle"><?PHP
                         $time =time()+32*60*60;
                         $date='20'.date("y-m-d",$time);
                         for($k=5;$k<=30;$k++){ ?>
                         <option value="<?PHP echo $k ?>"><?PHP echo $k ?>天</option>
                      <?PHP } ?>
-                    </select><br>
-                    <label style="margin-left:-10px;margin-right:30px">起始时间</label><?PHP echo $date ?><br>
-                   <label style="margin-left:-10px;">每日距离<input type="checkbox" ></label>
-                    <select style="margin-left:30px;width:100px;height:30px;"  name="type"><?PHP
+                    </select></div>
+                    <div style="margin-bottom:20px;"><label style="margin-left:-10px;margin-right:30px">起始时间</label><?PHP echo $date ?></div>
+                 <div style="margin-bottom:20px"> <label style="margin-left:-10px;">每日距离<input id="dist" name="type1" value="distance" type="radio" checked ></label>
+                    <select style="margin-left:30px;width:100px;height:30px;"  name="type2"><?PHP
                         for($j=10;$j<=200;$j++){ ?>
                             <option value="<?PHP echo $j/10 ?>"><?PHP echo $j/10 ?>KM</option>
                         <?PHP } ?>
                     </select>
-
-                    <br>
-                    <label style="margin-left:-10px;">每日步数<input type="checkbox" ></label>
-                    <select style="margin-left:30px;width:100px;height:30px;"  name="type"><?PHP
+                   </div>
+                    <div style="margin-bottom:20px">  <label style="margin-left:-10px;">每日步数<input name="type1" id="step" value="walk" type="radio" "  ></label>
+                    <select style="margin-left:30px;width:100px;height:30px;"  name="type3"><?PHP
                         for($j=500;$j<=5000;$j=$j+100){ ?>
                             <option value="<?PHP echo $j*10 ?>"><?PHP echo $j*10 ?>步</option>
                         <?PHP } ?>
-                    </select>
-                    <br>
-                    <label style="margin-left:-10px;margin-right:30px;">完成奖励</label><label>1000金币</label><input style="margin-left:50px" type="button" value="设定目标">
-                    <br>
+                    </select> <input  type="submit" value="设定目标"></div>
+                  <div >
+
+                    </div>
+                    </form>
                     <hr style="margin-right: 80px;">
                     </div>
         </div>
@@ -94,10 +95,8 @@ if(!isset($_SESSION['userid'])){
 
 
 <?PHP } ?>
-<script type="text/javascript">
-   function test(){
-       alert('hh');
-   }
+<script type="text/javascript" src="../jquery-1.8.3/jquery.js">
+
 </script>
 </body>
 </html>
