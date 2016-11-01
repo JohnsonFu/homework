@@ -117,7 +117,7 @@ session_write_close();
                     ?>
 
                     <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><img src="../headpics/<?PHP echo($cpicid);?>.gif" width="10px;" height="10px" ><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;<img src="../headpics/<?PHP echo($topicid);?>.gif" width="10px;" height="10px"> <?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?>
-                 <?PHP  if($comments[$j]['masterid']!=$id){  ?>               <input type="button" name=<?PHP echo($cnick.'-'.$comments[$j]['masterid'].'-'.$list[$i]['postid'].'-'.$cpicid);  ?>  onclick="comment(this.name)" value="回复" > <?PHP } ?> </div></td></tr>
+                 <?PHP  if($comments[$j]['masterid']!=$id){  ?>               <input type="button" name=<?PHP echo $cnick,'-',$comments[$j]['masterid'],'-',$list[$i]['postid'],'-',$cpicid;  ?>  onclick="comment(this.name)" value="回复" > <?PHP } ?> </div></td></tr>
                     <?PHP
                 }
                 ?>
@@ -125,7 +125,7 @@ session_write_close();
                 <tr  id="commentbar<?PHP  echo($list[$i]['postid']) ?>" style="font-size:12px;visibility: hidden"><td style=""><label id="report<?PHP echo $list[$i]['postid'] ?>"></label><label id="pid<?PHP echo $list[$i]['postid'] ?>" style="visibility: hidden"></label><input type="text" id="postid<?PHP echo $list[$i]['postid'] ?>" style="display: none" "><input type="text" name="toid" style="display: none" value="<?PHP echo($list[$i]['masterid']) ?>"></td><td>回复内容<input type="text" id="comments<?PHP echo $list[$i]['postid'] ?>"><input type="button" value="提交" onclick="addcomment(<?PHP echo $list[$i]['postid'] ?>)" style="float:right;"></td></tr>
 
             </table>
-        <?PHP } ?>
+        <?PHP } unset($list);?>
 
 
     </div>

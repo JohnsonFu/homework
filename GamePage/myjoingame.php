@@ -109,7 +109,7 @@ function getNick($id){
                 <?PHP if($account->isJoinGame($list[$i]['id'])){ ?>
             <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
                 <div class="gameheader" style="padding-bottom:3px; border-bottom-style:solid;font-size:18px; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?>
-                    <input type="button" value="退出" name=<?PHP echo $id.'-' ?><?PHP echo $list[$i]['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+                    <input type="button" value="退出" name=<?PHP echo $id,'-' ?><?PHP echo $list[$i]['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
 
                 </div>
                 <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
@@ -143,7 +143,7 @@ function getNick($id){
 
 
 </div>
-<?PHP } ?>
+<?PHP } unset($list);?>
 
 <script language="javascript">
     function jump(){

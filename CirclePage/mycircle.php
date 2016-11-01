@@ -110,7 +110,7 @@ session_write_close();
 
                             <?PHP }
                             if($account->hasThumb($list[$i]['postid'])==1){?>
-                 <input type="button" id=<?PHP echo($list[$i]['postid'].'2')?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbdown(this.name)" value="取消赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;" ></th>
+                 <input type="button" id=<?PHP echo $list[$i]['postid'],'2'?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbdown(this.name)" value="取消赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;" ></th>
 <?PHP } ?>
                     <?PHP if($account->hasThumb($list[$i]['postid'])==0){?>
                         <input type="button" id=<?PHP echo($list[$i]['postid'])?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbup(this.name)" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;" ></th>
@@ -151,7 +151,7 @@ for($j=0;$j<count($comments);$j++){
             </table>
     <?PHP } ?>
 
-
+<?PHP unset($list); ?>
 </div>
             <script language="javascript">
                 function jump(){

@@ -85,7 +85,7 @@ if(!isset($_SESSION['userid'])){
                         <td style="background-color: #61c5f0;width:17%;"><img src="../headpics/<?PHP echo($fpicid); ?>.gif" width="63px" height="63px" style="margin:5px 5px 0px 5px"><br><div style="font-size:13px;"><?PHP echo ($fnick)?></div></td>
                         <td style="background-color: #67d0fd;width:15%"><label class="ilabel">等级</label><br><label class="ilabel2">LEVEL&nbsp;<?PHP echo ($flevel)?></label></td>
                         <td style="background-color: #8de0ff;width:30%"><label class="ilabel">个性签名</label><br><label class="ilabel2" style="font-size:15px;"><?PHP echo ($fsig)?></label></td>
-                        <td style="background-color: #8dd0ff;width:20%"  ><label class="ilabel"><img id="mypic" src="../img/delete.png" width="40px" height="40px"  name=<?PHP echo $item.'__'.$id;?>   onclick="add(this.name)"><br>取消关注</label></td>
+                        <td style="background-color: #8dd0ff;width:20%"  ><label class="ilabel"><img id="mypic" src="../img/delete.png" width="40px" height="40px"  name=<?PHP echo $item,'__',$id;?>   onclick="add(this.name)"><br>取消关注</label></td>
                         <td style="background-color: #80c4ff;width:15%"><label class="ilabel"><img src="../img/call.gif" width="40px" height="40px"  name=<?PHP echo($fid)?> onclick="sendMsg(this.name)"><br>发私信</label></td>
                     </tr>
                 </table>
@@ -94,7 +94,7 @@ if(!isset($_SESSION['userid'])){
         <?PHP }} ?>
 
     </div>
-<?PHP session_write_close(); ?>
+<?PHP session_write_close();unset($list); ?>
 </body>
 <script type="text/javascript" >
 

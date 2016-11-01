@@ -134,7 +134,7 @@ function getNick($id){
                                 $kaccount = new Account($joinerist[$k]['joinerid'], 'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
                                 $knick = $kaccount->getNick();
                                 $kpicid = $kaccount->getPicId();
-                                echo $knick . ' ';
+                                echo $knick,' ';
  ?>
                             <img src="../headpics/<?PHP echo($kpicid)?>.gif" width="20px" height="20px">
                             <?PHP } ?>
@@ -150,7 +150,7 @@ function getNick($id){
 
 
 </div>
-<?PHP } ?>
+<?PHP } unset($list);?>
 
 <script language="javascript">
     function jump(){

@@ -134,18 +134,19 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
         ?>
         <tr>
             <td style="font-size:15px">回复:<?PHP echo $rfnick ?>  <img src="../headpics/<?PHP echo($rfpicid) ?>.gif"width="15px"height="15px"><input type="text" id="replycontent<?PHP echo $mid?>" style="width:50%;margin-left:60px;" placeholder="回复<?PHP echo $rfnick ?>" >
-                <input type="button" name=<?PHP echo $mid.'-'.$id.'-'.$rfid ?>  value="回复" onclick="reply(this.name)" >
+                <input type="button" name=<?PHP echo $mid,'-',$id,'-',$rfid ?>  value="回复" onclick="reply(this.name)" >
             </td>
         </tr>
         <?PHP }else{?>
             <tr>
                 <td style="font-size:15px">回复:<?PHP echo $fnick ?>  <img src="../headpics/<?PHP echo($fpicid) ?>.gif"width="15px"height="15px"><input type="text" id="replycontent<?PHP echo $mid?>" style="width:50%;margin-left:60px;" placeholder="回复<?PHP echo $fnick ?>" >
-                    <input type="button" name=<?PHP echo $mid.'-'.$id.'-'.$fid ?>  value="回复" onclick="reply(this.name)" >
+                    <input type="button" name=<?PHP echo $mid,'-',$id,'-',$fid ?>  value="回复" onclick="reply(this.name)" >
                 </td>
             </tr>
 
     </table>
-    <?PHP }} ?>
+    <?PHP }}
+    unset($mails);?>
 
 
 </div>

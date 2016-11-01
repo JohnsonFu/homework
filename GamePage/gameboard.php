@@ -48,7 +48,6 @@ if(!isset($_SESSION['userid'])) {
    $id=$_SESSION['userid'];
 $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
-session_write_close();
 include('../DataProcess/GameInfo/Game.php');
 include('../DataProcess/AccountInfo/Account.php');
 include('../DataProcess/GameInfo/mygame.php');
@@ -113,7 +112,7 @@ include('../DataProcess/GameInfo/TimeProcess.php');
                    <?PHP if($account->isJoinGame($list[$i]['id'])){ ?>
                 <input type="button" value="退出" name=<?PHP echo $id.'-' ?><?PHP echo $list[$i]['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
                 <?PHP }else{ ?>
-                       <input type="button" value="加入" class="tablebutton" name=<?PHP echo $id.'-' ?><?PHP echo $list[$i]['id']?> onclick="joingame(this.name)" style=";font-size:20px;width:70px;float:right;height:25px;">
+                       <input type="button" value="加入" class="tablebutton" name=<?PHP echo $id,'-' ?><?PHP echo $list[$i]['id']?> onclick="joingame(this.name)" style=";font-size:20px;width:70px;float:right;height:25px;">
             <?PHP }} ?>
                 <?PHP if($id==$a->id){ ?>
                 <div style="float:right">我发起的竞赛</div>
@@ -148,7 +147,7 @@ include('../DataProcess/GameInfo/TimeProcess.php');
 
 
     </div>
-<?PHP } ?>
+<?PHP }unset($list); ?>
 
 <script language="javascript">
     function jump(){
