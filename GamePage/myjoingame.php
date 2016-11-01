@@ -48,6 +48,7 @@ if(!isset($_SESSION['userid'])) {
 $id=$_SESSION['userid'];
 $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
+session_write_close();
 include('../DataProcess/GameInfo/Game.php');
 include('../DataProcess/GameInfo/mygame.php');
 include('../DataProcess/AccountInfo/Account.php');

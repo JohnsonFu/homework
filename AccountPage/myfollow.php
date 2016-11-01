@@ -94,7 +94,7 @@ if(!isset($_SESSION['userid'])){
         <?PHP }} ?>
 
     </div>
-
+<?PHP session_write_close(); ?>
 </body>
 <script type="text/javascript" >
 

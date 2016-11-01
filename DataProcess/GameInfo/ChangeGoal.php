@@ -7,6 +7,7 @@
  */
 session_start();
 $uid=$_SESSION['userid'];
+session_write_close();
 $cycle=$_POST['cycle'];
 $type=$_POST['type1'];
 $time =time()+32*60*60;

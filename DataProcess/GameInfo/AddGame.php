@@ -10,6 +10,7 @@ $db = new PDO("sqlite:../AccountInfo/mydatabase.sqlite");
 $name=$_POST['gamename'];
 $type=$_POST['type'];
 $userid=$_SESSION['userid'];
+session_write_close();
 $starttime=$_POST['starttime'];
 $endtime=$_POST['endtime'];
 $money=$_POST['money'];

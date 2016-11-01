@@ -49,6 +49,7 @@ include('../DataProcess/AccountInfo/Account.php');
 $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
+session_write_close();
 include('../DataProcess/GameInfo/mygame.php');
 //include('../DataProcess/AccountInfo/mydatabase.sqlite')
 $mygame=new mygame('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite',$id);

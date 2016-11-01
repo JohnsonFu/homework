@@ -51,7 +51,7 @@ if(!isset($_SESSION['userid'])){
 $anick=$account->getNick();
     $list=$account->getMyPosts();
 }
-
+session_write_close();
 
 ?>
 <div id="top_bg">

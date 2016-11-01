@@ -63,6 +63,7 @@ $money=$account->getMoney();
                <button type="submit"  class="login-btn register-btn" id="button" style="margin-left:15%;width:70px;">修改</button>
     </div>
         </form>
+    <?PHP session_write_close(); ?>
 </div>
 <div class="footer">
     <p>爱运动 - isport</p>

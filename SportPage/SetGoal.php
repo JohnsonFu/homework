@@ -28,6 +28,7 @@ if(!isset($_SESSION['userid'])){
     $nickname=$_SESSION['nickname'];
     include('../DataProcess/AccountInfo/Account.php');
     $level=$_SESSION['level'];
+    session_write_close();
     $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $SetGoal=$account->hasSetGoal();
     $goal=$account->getGoal();

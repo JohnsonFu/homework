@@ -52,9 +52,10 @@ if(!isset($_SESSION['userid'])){
 
     $list=$account->getMyFollowPosts();
 }
-
+session_write_close();
 
 ?>
+<?PHP session_write_close(); ?>
 <div id="top_bg">
         <div class="logo_l"></div>
         <div id="menu">

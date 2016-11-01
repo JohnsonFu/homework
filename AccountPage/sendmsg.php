@@ -11,7 +11,7 @@ session_start();
 $nick=$_SESSION['nickname'];
 
 ?>
-
+<?PHP session_write_close(); ?>
 <body>
 <header style="text-align:center">发送信息</header>
 <form action="../DataProcess/MailInfo/sendmail.php" method="post">

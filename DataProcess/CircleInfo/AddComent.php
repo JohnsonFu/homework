@@ -7,6 +7,7 @@
  */
 session_start();
 $id=$_SESSION['userid'];
+session_write_close();
 $toid=$_POST['toid'];
 $comment=$_POST['comment'];
 $time =time()+8*60*60;

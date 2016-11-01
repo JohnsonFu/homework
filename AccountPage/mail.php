@@ -42,7 +42,7 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
     include('../DataProcess/AccountInfo/Account.php');
     $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $mails=$account->getMail();
-
+    session_write_close();
 }
 ?>
 <body>

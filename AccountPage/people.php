@@ -82,6 +82,7 @@ if(!isset($_SESSION['userid'])){
 
         </div>
        <?PHP } ?>
+        <?PHP session_write_close(); ?>
 </div>
 </body>
 <script type="text/javascript" >

@@ -19,7 +19,7 @@ if(!isset($_SESSION['userid'])){
     $id=$_SESSION['userid'];
     $nickname=$_SESSION['nickname'];
     $level=$_SESSION['level'];
-
+    session_write_close();
 
 ?>
 <div id="top_bg">

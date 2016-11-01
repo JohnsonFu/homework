@@ -12,6 +12,7 @@ $password=$_POST['password'];
 if($username && $password){
     if(login($username,$password)==true){
         $_SESSION['userid']=$username;
+        session_write_close();
         Header("Location:../../homepage.php ");
 
     }else{

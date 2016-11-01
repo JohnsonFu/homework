@@ -23,6 +23,7 @@ if($res1==1&&$res2==1){
     $_SESSION['nickname']=$nickname;
     $_SESSION['password']=$password;
    $_SESSION['sig']=$sig;
+    session_write_close();
     echo "<script>alert('修改成功!');</script>";
 
 }else {

@@ -5,7 +5,7 @@
  * Date: 2016/10/26
  * Time: 19:45
  */
-session_start();
+
 $postid=$_GET['q'];
 $db=new PDO('sqlite:../AccountInfo/mydatabase.sqlite');
 //$db->exec("PRAGMA foreign_keys=ON");

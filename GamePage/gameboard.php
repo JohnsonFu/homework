@@ -48,12 +48,14 @@ if(!isset($_SESSION['userid'])) {
    $id=$_SESSION['userid'];
 $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
+session_write_close();
 include('../DataProcess/GameInfo/Game.php');
 include('../DataProcess/AccountInfo/Account.php');
 include('../DataProcess/GameInfo/mygame.php');
 $mygame=new mygame('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite',$id);
 $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 $list=getGameList('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+session_write_close();
 function getNick($id){
     $db=new PDO('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $res=$db->query("select nickname from users where id='$id'")->fetchAll()[0][0];

@@ -35,6 +35,7 @@ if(!isset($_SESSION['userid'])){
     include('../DataProcess/AccountInfo/Account.php');
     $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $list=$account->getFriend();
+    session_write_close();
 }
 ?>
 <div id="top_bg">

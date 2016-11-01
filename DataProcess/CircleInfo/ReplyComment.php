@@ -7,6 +7,7 @@
  */
 session_start();
 $id=$_SESSION['userid'];
+session_write_close();
 $str=$_GET['q'];
 $arr=explode('-',$str);
 $comment=$arr[1];

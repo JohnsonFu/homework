@@ -39,7 +39,7 @@ $noread=$account->getUnread();
     $_SESSION['password'] = $password;
     $_SESSION['level'] = $level;
     $_SESSION['money'] = $money;
-
+session_write_close();
 ?>
 <body>
 <div id="top_bg">

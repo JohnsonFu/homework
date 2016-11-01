@@ -8,6 +8,7 @@
 session_start();
 $id=$_SESSION['userid'];
 $nick=$_SESSION['nickname'];
+session_write_close();
 $postid=$_GET['q'];
 $db=new PDO('sqlite:../AccountInfo/mydatabase.sqlite');
 $uidpid=$id.$postid;
