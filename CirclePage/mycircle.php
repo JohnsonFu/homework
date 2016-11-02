@@ -86,8 +86,8 @@ session_write_close();
         <div class="insidecontent">
         <div class="mylabel">关注者动态</div><hr style="margin-right: 50px;">
 
-<?PHP for($i=0;$i<count($list);$i++){
-    $a=new Account($list[$i]['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+<?PHP foreach($list as $item){
+    $a=new Account($item['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $fpicid=$a->getPicId();
     $fnickname=$a->getNick();
 
@@ -96,9 +96,9 @@ session_write_close();
 
                 <tr>
                     <th style="background-color: #eaf2f2;font-size:12px;" rowspan="2"><img src="../headpics/<?PHP echo($fpicid);?>.gif" style="margin:5px 5px 5px 5px"><br><?PHP echo($fnickname); ?></th>
-                    <th style="font-size:12px;text-align: left;">标题:<?PHP echo($list[$i]['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($list[$i]['time']); ?><br>
-                        运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($list[$i]['postid'])?></label>
-                        <?PHP $thumb=$account->getThumb($list[$i]['postid']) ;
+                    <th style="font-size:12px;text-align: left;">标题:<?PHP echo($item['tittle']); ?>&nbsp;&nbsp;&nbsp;&nbsp;时间:<?PHP echo($item['time']); ?><br>
+                        运动距离:5KM&nbsp;&nbsp;&nbsp;postID:<?PHP echo($item['postid'])?></label>
+                        <?PHP $thumb=$account->getThumb($item['postid']) ;
                         if(count($thumb)>0){
                         ?>
                         <div style="font-family: 'American Typewriter';float:right;">
@@ -109,11 +109,11 @@ session_write_close();
                             ?>
 
                             <?PHP }
-                            if($account->hasThumb($list[$i]['postid'])==1){?>
-                 <input type="button" id=<?PHP echo $list[$i]['postid'],'2'?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbdown(this.name)" value="取消赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;" ></th>
+                            if($account->hasThumb($item['postid'])==1){?>
+                 <input type="button" id=<?PHP echo $item['postid'],'2'?> name="<?PHP echo($item['postid']) ?>" onclick="thumbdown(this.name)" value="取消赞<?PHP echo($item['thumbs']); ?>" style="float:right;" ></th>
 <?PHP } ?>
-                    <?PHP if($account->hasThumb($list[$i]['postid'])==0){?>
-                        <input type="button" id=<?PHP echo($list[$i]['postid'])?> name="<?PHP echo($list[$i]['postid']) ?>" onclick="thumbup(this.name)" value="点赞<?PHP echo($list[$i]['thumbs']); ?>" style="float:right;" ></th>
+                    <?PHP if($account->hasThumb($item['postid'])==0){?>
+                        <input type="button" id=<?PHP echo($item['postid'])?> name="<?PHP echo($item['postid']) ?>" onclick="thumbup(this.name)" value="点赞<?PHP echo($item['thumbs']); ?>" style="float:right;" ></th>
                    <?PHP }?>
      </tr>
                     </div>
@@ -121,25 +121,25 @@ session_write_close();
 
                 <tr>
                     <form method="post" action="../DataProcess/CircleInfo/AddComent.php" >
-                    <td style="width:80%;font-size:16px;"><?PHP echo($list[$i]['content']); ?>.</td>
+                    <td style="width:80%;font-size:16px;"><?PHP echo($item['content']); ?>.</td>
                 </tr>
-     <?PHP if($account->isFriend($list[$i]['masterid'])) {?>
-     <tr  id="commentbar" style="font-size:16px;"><td style="text-align:center">我的评论<input type="text" name="postid" style="display: none" value="<?PHP echo($list[$i]['postid']) ?>"><input type="text" name="toid" style="display: none" value="<?PHP echo($list[$i]['masterid']) ?>"></td><td>评论内容<input type="text" name="comment"><input type="submit" value="评论" onclick="submit" style="float:right;"></td></tr>
+     <?PHP if($account->isFriend($item['masterid'])) {?>
+     <tr  id="commentbar" style="font-size:16px;"><td style="text-align:center">我的评论<input type="text" name="postid" style="display: none" value="<?PHP echo($item['postid']) ?>"><input type="text" name="toid" style="display: none" value="<?PHP echo($item['masterid']) ?>"></td><td>评论内容<input type="text" name="comment"><input type="submit" value="评论" onclick="submit" style="float:right;"></td></tr>
      <?PHP }?>
      <tr style="font-size:16px;"><td style="text-align:center">评论者</td><td style="text-align:center">评论内容</td></tr>
      </form>
 <?PHP
 $post=new Post($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
-$comments=$post->getComment($list[$i]['postid']);
-for($j=0;$j<count($comments);$j++){
-    $aa=new Account($comments[$j]['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
-   $bb=new Account($comments[$j]['toid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+$comments=$post->getComment($item['postid']);
+foreach($comments as $temp){
+    $aa=new Account($temp['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+   $bb=new Account($temp['toid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $tonick=$bb->getNick();
     $cnick=$aa->getNick();
     $cpicid=$aa->getPicId();
     $topicid=$bb->getPicId();
-    $ccontent=$comments[$j]['content'];
-    $ctime=$comments[$j]['time'];
+    $ccontent=$temp['content'];
+    $ctime=$temp['time'];
     ?>
 
     <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><img src="../headpics/<?PHP echo($cpicid);?>.gif" width="10px;" height="10px" ><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;&nbsp;<img src="../headpics/<?PHP echo($topicid);?>.gif" width="10px;" height="10px" ><?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?></div></td></tr>

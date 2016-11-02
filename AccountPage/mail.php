@@ -79,18 +79,21 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
 </div>
 <div>
     <?PHP
-    for($k=0;$k<count($mails);$k++){
-             $fid=$mails[$k]['fid'];
-        $mid=$mails[$k]['mid'];
-    $content=$mails[$k]['contents'];
-        $time=$mails[$k]['time'];
-    $tittle=$mails[$k]['tittle'];
+    foreach ($mails as $item) {
+
+
+
+             $fid=$item['fid'];
+        $mid=$item['mid'];
+    $content=$item['contents'];
+        $time=$item['time'];
+    $tittle=$item['tittle'];
         $faccount=new Account($fid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
         $fnick=$faccount->getNick();
         $fpicid=$faccount->getPicId();
-        $hasread=$mails[$k]['hasread'];
+        $hasread=$item['hasread'];
 
-        $rfid=$mails[$k]['tid'];
+        $rfid=$item['tid'];
         $rfaccount=new Account($rfid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
         $rfnick=$rfaccount->getNick();
         $rfpicid=$rfaccount->getPicId();
@@ -102,30 +105,30 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
             </td>
         </tr>
         <?PHP $replymail=$account->getReplyMail($mid);
-        for($j=0;$j<count($replymail);$j++){
+        foreach($replymail as $temp){
 
         ?>
         <tr>
-           <?PHP  if($replymail[$j]['fid']!=$id){
-                $mfid=$replymail[$j]['fid'];
-               $replyid=$replymail[$j]['rid'];
+           <?PHP  if($temp['fid']!=$id){
+                $mfid=$temp['fid'];
+               $replyid=$temp['rid'];
                 $mfaccount=new Account($mfid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
                 $mfnick=$mfaccount->getNick();
-               $hasread2=$replymail[$j]['hasread'];
+               $hasread2=$temp['hasread'];
                 $mfpicid=$mfaccount->getPicId();
                 ?>
                 <td style="font-size:15px"> <?PHP if($hasread2==0){echo '(未读)';afterreadreply($replyid);}  echo $mfnick; ?><img src="../headpics/<?PHP echo($mfpicid) ?>.gif"width="15px"height="15px"> 回复:我 <label style="float:right"> 昨天16:45</label><br>
-                    <?PHP echo $replymail[$j]['contents'] ?>
+                    <?PHP echo $temp['contents'] ?>
                 </td>
             <?PHP }else{
-               $tfid=$replymail[$j]['tid'];
+               $tfid=$temp['tid'];
                $tfaccount=new Account($tfid,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
                $tfnick=$tfaccount->getNick();
                $tfpicid=$tfaccount->getPicId();
 
                 ?>
                 <td style="font-size:15px">我 回复:<?PHP echo $tfnick ?>  <img src="../headpics/<?PHP echo($tfpicid) ?>.gif"width="15px"height="15px"><label style="float:right">昨天16:45</label><br>
-                    <?PHP echo $replymail[$j]['contents'] ?>
+                    <?PHP echo $temp['contents'] ?>
                 </td>
             <?PHP } ?>
         </tr>

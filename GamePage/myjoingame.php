@@ -101,15 +101,15 @@ function getNick($id){
     <div class="insidecontent" style="height:auto">
 
         <div class="mylabel">参加的竞赛</div><hr style="margin-right: 50px;">
-        <?PHP for($i=0;$i<count($list);$i++) {
-            $a=new Account($list[$i]['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+        <?PHP foreach($list as $item) {
+            $a=new Account($item['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
             $picid=$a->getPicId();
             ?>
             <?PHP if($id!=$a->id){ ?>
-                <?PHP if($account->isJoinGame($list[$i]['id'])){ ?>
+                <?PHP if($account->isJoinGame($item['id'])){ ?>
             <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
-                <div class="gameheader" style="padding-bottom:3px; border-bottom-style:solid;font-size:18px; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?>
-                    <input type="button" value="退出" name=<?PHP echo $id,'-' ?><?PHP echo $list[$i]['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+                <div class="gameheader" style="padding-bottom:3px; border-bottom-style:solid;font-size:18px; border-width:1px; border-color:#000"><?PHP echo($item['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($item['gamename'])?>
+                    <input type="button" value="退出" name=<?PHP echo $id,'-' ?><?PHP echo $item['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
 
                 </div>
                 <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
@@ -119,9 +119,9 @@ function getNick($id){
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">类型</td>
                     </tr>
                     <tr style="font-size:13px;background-color:#ececec;">
-                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"> <img src="../headpics/<?PHP echo($picid)?>.gif" style="margin-top:4px;" width="20px;" height="20px'"><?PHP echo(getNick($list[$i]['masterid']))?></td>
-                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo($list[$i]['gamename'])?></td>
-                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;"><?PHP echo($list[$i]['gametype'])?></td>
+                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"> <img src="../headpics/<?PHP echo($picid)?>.gif" style="margin-top:4px;" width="20px;" height="20px'"><?PHP echo(getNick($item['masterid']))?></td>
+                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo($item['gamename'])?></td>
+                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;"><?PHP echo($item['gametype'])?></td>
                     </tr>
                     <tr style="font-size:13px;">
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">人数</td>
@@ -129,7 +129,7 @@ function getNick($id){
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">奖金</td>
                     </tr>
                     <tr style="font-size:13px;background-color:#ececec;">
-                        <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($mygame->getgamejoiner($list[$i]['id']))?></td>
+                        <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($mygame->getgamejoiner($item['id']))?></td>
                         <td style="border-width:1px;border-color:#000;border-right-style:solid;">1天2小时3分</td>
                         <td style=" border-width:1px;border-color:#000;">1000</td>
                     </tr>

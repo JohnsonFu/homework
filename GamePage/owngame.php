@@ -100,11 +100,11 @@ function getNick($id){
     <div class="insidecontent" style="height:auto">
 
         <div class="mylabel">我发起的竞赛</div><hr style="margin-right: 50px;">
-        <?PHP for($i=0;$i<count($list);$i++) {
-            $joinerist=$mygame->getgamejoiner($list[$i]['id']);
+        <?PHP foreach($list as $item) {
+            $joinerist=$mygame->getgamejoiner($item['id']);
             ?>
             <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
-                <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($list[$i]['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($list[$i]['gamename'])?><input type="button" name=<?PHP echo($list[$i]['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+                <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($item['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($item['gamename'])?><input type="button" name=<?PHP echo($item['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
                 </div>
                 <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                     <tr style="font-size:13px;">
@@ -113,9 +113,9 @@ function getNick($id){
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">类型</td>
                     </tr>
                     <tr style="font-size:13px;background-color:#ececec;">
-                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo(getNick($list[$i]['masterid']))?></td>
-                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo($list[$i]['gamename'])?></td>
-                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;"><?PHP echo($list[$i]['gametype'])?></td>
+                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo(getNick($item['masterid']))?></td>
+                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo($item['gamename'])?></td>
+                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;"><?PHP echo($item['gametype'])?></td>
                     </tr>
                     <tr style="font-size:13px;">
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">人数</td>
@@ -125,20 +125,20 @@ function getNick($id){
                     <tr style="font-size:13px;background-color:#ececec;">
                         <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($joinerist);  ?></td>
                         <td style="border-width:1px;border-color:#000;border-right-style:solid;">1天2小时3分</td>
-                        <td style=" border-width:1px;border-color:#000;"><?PHP echo($list[$i]['joinmoney'])?></td>
+                        <td style=" border-width:1px;border-color:#000;"><?PHP echo($item['joinmoney'])?></td>
                     </tr>
                     <tr style="font-size:13px;">
                         <td style=" border-width:1px;border-color:#000;border-right-style:solid;border-top-style:solid;">参与者</td>
                         <td style="border-width:1px;border-color:#000;border-right-style:solid;border-top-style:solid;text-align:left">
-                            <?PHP for($k=0;$k<count($joinerist);$k++) {
-                                $kaccount = new Account($joinerist[$k]['joinerid'], 'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+                            <?PHP foreach($joinerist as $temp) {
+                                $kaccount = new Account($temp['joinerid'], 'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
                                 $knick = $kaccount->getNick();
                                 $kpicid = $kaccount->getPicId();
                                 echo $knick,' ';
  ?>
                             <img src="../headpics/<?PHP echo($kpicid)?>.gif" width="20px" height="20px">
                             <?PHP } ?>
-                        <td style=" border-width:1px;border-color:#000;border-top-style:solid;">总奖池:<?PHP echo($list[$i]['allmoney'])?></td>
+                        <td style=" border-width:1px;border-color:#000;border-top-style:solid;">总奖池:<?PHP echo($item['allmoney'])?></td>
                         </td>
 
                     </tr>

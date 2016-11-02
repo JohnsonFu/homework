@@ -68,15 +68,16 @@ if(!isset($_SESSION['userid'])){
         <div class="mylabel">用户搜索</div><hr style="margin-right: 50px;">
         <div style="margin-left:53%;"><input type="text" class="textview" name="friendname" placeholder="请输入昵称"><input type="button" class="mybutton" value="搜索">
   </div>
-<?PHP for($i=0;$i<count($list);$i++){?>
+<?PHP foreach($list as $item){
+?>
         <div class="peopleitem">
             <table  style="width:100%;height:100%;word-break:break-all;"cellspacing="0" cellpadding="0">
                 <tr style="text-align: center;font-size:15px;" >
-                    <td style="background-color: #61c5f0;width:17%;"><img src="../headpics/<?PHP echo($list[$i]['picid']); ?>.gif" width="63px" height="63px" style="margin:5px 5px 0px 5px"><br><div style="font-size:13px;"><?PHP echo ($list[$i]['nickname'])?></div></td>
-                    <td style="background-color: #67d0fd;width:15%"><label class="ilabel">等级</label><br><label class="ilabel2">LEVEL&nbsp;<?PHP echo ($list[$i]['level'])?></label></td>
-                    <td style="background-color: #8de0ff;width:30%"><label class="ilabel">个性签名</label><br><label class="ilabel2" style="font-size:15px;"><?PHP echo ($list[$i]['signature'])?></label></td>
-                    <td style="background-color: #8dd0ff;width:20%"  ><label class="ilabel"><img id="mypic" src="../img/iconpng.png" width="40px" height="40px"  name=<?PHP echo $list[$i]['id'],'__',$id;?> onclick="add(this.name)"><br>关注</label></td>
-                    <td style="background-color: #80c4ff;width:15%"><label class="ilabel"><img src="../img/call.gif" width="40px" height="40px"  name=<?PHP echo($list[$i]['id'])?> onclick="sendMsg(this.name)"><br>发私信</label></td>
+                    <td style="background-color: #61c5f0;width:17%;"><img src="../headpics/<?PHP echo($item['picid']); ?>.gif" width="63px" height="63px" style="margin:5px 5px 0px 5px"><br><div style="font-size:13px;"><?PHP echo ($item['nickname'])?></div></td>
+                    <td style="background-color: #67d0fd;width:15%"><label class="ilabel">等级</label><br><label class="ilabel2">LEVEL&nbsp;<?PHP echo ($item['level'])?></label></td>
+                    <td style="background-color: #8de0ff;width:30%"><label class="ilabel">个性签名</label><br><label class="ilabel2" style="font-size:15px;"><?PHP echo ($item['signature'])?></label></td>
+                    <td style="background-color: #8dd0ff;width:20%"  ><label class="ilabel"><img id="mypic" src="../img/iconpng.png" width="40px" height="40px"  name=<?PHP echo $item['id'],'__',$id;?> onclick="add(this.name)"><br>关注</label></td>
+                    <td style="background-color: #80c4ff;width:15%"><label class="ilabel"><img src="../img/call.gif" width="40px" height="40px"  name=<?PHP echo($item['id'])?> onclick="sendMsg(this.name)"><br>发私信</label></td>
                 </tr>
             </table>
 
