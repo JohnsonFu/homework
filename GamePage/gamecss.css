@@ -2,6 +2,7 @@ body{
     background-color: #eaf2f2;
     height:auto;
 }
+
 #menu ul{
     magrin-top:0;
     padding:0;
@@ -15,6 +16,7 @@ body{
     margin-right: 20px;
     font-size:22px;
     color: #ffffff;
+
 }
 #menu ul li a{
     color: #ffffff;
