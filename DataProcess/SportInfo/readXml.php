@@ -25,10 +25,12 @@ for($i=0;$i<300;$i++){
     $weight=rand(65,75);
     $km=rand(10,30)/10;
     $path=rand(7000,30000);
+    $duration=rand(30,160);
  $single['date']=$date;
     $single['weight']=$weight;
     $single['km']=$km;
     $single['path']=$path;
+    $single['duration']=$duration;
     array_push($testdata,$single);
 }
 //print_r($testdata);
