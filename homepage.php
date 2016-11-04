@@ -94,7 +94,7 @@ session_write_close();
 <div id="content">
     <div class="insidecontent">
         <div class="mylabel">运动轨迹</div><hr style="margin-right: 50px;">
-        <div class="insidecontent2">
+
             <div id="main" style="width: 640px;height:350px;"></div>
 
             <label style="margin-top:0; font-family:微软雅黑;font-size:20px;color:#000000;">累计运动总量</label>
@@ -110,7 +110,7 @@ session_write_close();
             <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动步数:</label>
             <label style="font-size:35px; color:black;"><?PHP echo $path; ?></label><label style="font-family:微软雅黑;color:#484848;">步</label>
 
-        </div>
+    
     </div>
 </div>
 <?PHP }?>
@@ -139,7 +139,7 @@ session_write_close();
                     var times=time[1]+'/'+time[2];
 
                     date.push(times);
-                    path.push(result[i].path);
+                    path.push(Math.round(result[i].path));
                     heat.push(result[i].heat);
                 }
             },

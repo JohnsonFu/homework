@@ -57,24 +57,57 @@ class Sport
         return $result[0][0];
 
     }
+    public function getNearMonthKM(){
+    $maxid=$this->db->query("select max(rowid) from '$this->tablename' ")->fetchall()[0][0];
+    $lower=$maxid-30;
+
+    $sql=("select sum(km) as total from '$this->tablename' where rowid<='$maxid' and rowid>='$lower'");
+    $result=$this->db->query($sql)->fetchAll();
+    return $result[0][0];
+}
+    public function getNearMonthPath(){
+        $maxid=$this->db->query("select max(rowid) from '$this->tablename' ")->fetchall()[0][0];
+        $lower=$maxid-30;
+
+        $sql=("select sum(path) as total from '$this->tablename' where rowid<='$maxid' and rowid>='$lower'");
+        $result=$this->db->query($sql)->fetchAll();
+        return round($result[0][0],0);
+    }
+
+    public function getNearMonthHeat(){
+        $maxid=$this->db->query("select max(rowid) from '$this->tablename' ")->fetchall()[0][0];
+        $lower=$maxid-30;
+
+        $sql=("select sum(heat) as total from '$this->tablename' where rowid<='$maxid' and rowid>='$lower'");
+        $result=$this->db->query($sql)->fetchAll();
+        return round($result[0][0]/1000,1);
+    }
     public function getTotalPath(){
         $sql=("select sum(path) as total from '$this->tablename'");
         $result=$this->db->query($sql)->fetchAll();
         return intval($result[0][0]);
+    }
+    public function getNearMonthTime(){
+        $maxid=$this->db->query("select max(rowid) from '$this->tablename' ")->fetchall()[0][0];
+        $lower=$maxid-30;
+
+        $sql=("select sum(duration) as total from '$this->tablename' where rowid<='$maxid' and rowid>='$lower'");
+        $result=$this->db->query($sql)->fetchAll();
+        return round($result[0][0]/60,1);
     }
     public function getTotalTime(){
         $sql=("select sum(duration) as total from '$this->tablename'");
         $result=$this->db->query($sql)->fetchAll();
         $total=$result[0][0];
         $hour=$total/60;
-        return $hour;
+        return round($hour,1);
     }
     public function getTotalHeat(){
         $sql=("select sum(heat) as total from '$this->tablename'");
         $result=$this->db->query($sql)->fetchAll();
         $total=$result[0][0];
 
-        return $total/1000;
+        return round($total/1000,1);
     }
 
 

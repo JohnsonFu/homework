@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="../css/radialindicator.css"  rel="stylesheet" type="text/css" />
- <link rel="stylesheet" type="text/css" href="SportCss.css">
+ <link rel="stylesheet" type="text/css" href="../AccountPage/AccountCss.css">
     <script>
         function menuFix(){
             var self=document.getElementById("menu").getElementsByTagName("li");
@@ -20,6 +20,19 @@
         window.onload=menuFix;
     </script>
 </head>
+<?PHP
+session_start();
+$id=$_SESSION['userid'];
+$dbaddr='sqlite:../DataProcess/AccountInfo/mydatabase.sqlite';
+include('../DataProcess/SportInfo/Sport.php');
+$sport=new Sport($id,$dbaddr);
+$sport->ImportXMLDATA();
+$long=$sport->getNearMonthKM();
+$time=$sport->getNearMonthTime();
+$path=$sport->getNearMonthPath();
+$heat=$sport->getNearMonthHeat();
+session_write_close();
+?>
 <body>
 <div id="top_bg">
     <div class="logo_l"></div>
@@ -47,29 +60,25 @@
     </div>
 </div>
 
-<div class="footer">
-    <p>爱运动 - isport</p>
-    <p>Designed By FuLinhua 2016</p>
-</div>
 <div id="content">
     <div class="insidecontent">
-        <div class="mylabel">我的运动</div><hr style="margin-right: 50px;">
-        <div class="insidecontent2">
-            <div id="main" style="width: 600px;height:400px;"></div>
-            <label style="margin-top:0; font-family:微软雅黑;font-size:20px;color:#000000;">累计运动总量</label>
+        <div class="mylabel" style="padding-top:10px;">我的运动</div><hr style="margin-right: 50px;">
+
+            <div id="main" style="width: 650px;height:400px;"></div>
+            <label style="margin-top:0; font-family:微软雅黑;font-size:20px;color:#000000;">近一个月运动量</label>
             <label style="font-size:18px;margin-left:0;color:#55555c;font-family: 微软雅黑;">运动距离:</label>
-            <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">公里</label>
+            <label style="font-size:35px; color:black;"><?PHP echo $long; ?></label><label style="font-family:微软雅黑;color:#484848;">公里</label>
             <label style="font-family:微软雅黑;font-size:50px; margin-top:20px;color:lightgrey">|</label>
             <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动时长:</label>
-            <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">小时</label>
+            <label style="font-size:35px; color:black;"><?PHP echo $time; ?></label><label style="font-family:微软雅黑;color:#484848;">小时</label>
             <br>
             <label style="font-size:18px;margin-left:125px;color:#55555c;font-family: 微软雅黑;">燃烧热量:</label>
-            <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">大卡</label>
+            <label style="font-size:35px; color:black;"><?PHP echo $heat; ?></label><label style="font-family:微软雅黑;color:#484848;">千卡</label>
             <label style="font-family:微软雅黑;font-size:50px; margin-top:20px;color:lightgrey">|</label>
             <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动步数:</label>
-            <label style="font-size:35px; color:black;">0</label><label style="font-family:微软雅黑;color:#484848;">步</label>
+            <label style="font-size:35px; color:black;"><?PHP echo $path; ?></label><label style="font-family:微软雅黑;color:#484848;">步</label>
 
-        </div>
+
     </div>
 </div>
 </div>
@@ -77,27 +86,39 @@
 
 
 <script src="../js/echarts.min.js" type="text/javascript"></script>
-<script language="JavaScript">
 
-
-
-      // var i=document.getElementById("index").value;
-var i=document.getElementById("test").innerHTML;
-       $('#indicatorContainer2').radialIndicator({
-
-           barColor: '#87CEEB',
-           barWidth: 10,
-           initValue: i,
-           roundCorner: true,
-           percentage: true
-       });
-
-
-</script>
+<script src="../jquery-1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
+    var date=[];
+    var km=[];
+    var path=[];
+    var heat=[];
+    function arrTest(){
+        $.ajax({
+            type: "post",
+            async: false, //同步执行
+            url: "../DataProcess/SportInfo/getAllData.php",
+            dataType: "json", //返回数据形式为json
+            success: function(result) {
+                myChart.hideLoading(); //隐藏加载动画
+                for (var i = 0; i < result.length; i++) {
+                    km.push(result[i].km);
+                    var time=result[i].date.split('-');
+                    var times=time[1]+'/'+time[2];
 
+                    date.push(times);
+                    path.push(Math.round(result[i].path));
+                    heat.push(result[i].heat);
+                }
+            },
+            error: function() {
+                alert("请求数据失败!");
+            }
+        });
+    }
+    arrTest();
     // 指定图表的配置项和数据
     var colors = ['#5793f3', '#d14a61', '#675bba'];
 
@@ -118,7 +139,7 @@ var i=document.getElementById("test").innerHTML;
             }
         },
         legend: {
-            data:['运动距离','运动时间','运动热量']
+            data:['运动步数','运动距离','运动热量']
         },
         xAxis: [
             {
@@ -126,15 +147,27 @@ var i=document.getElementById("test").innerHTML;
                 axisTick: {
                     alignWithLabel: true
                 },
-                data: ['1月','2月',"3月",'4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                data: date
             }
         ],
         yAxis: [
             {
                 type: 'value',
+                name: '运动步数',
+                position: 'right',
+                offset: 80,
+                axisLine: {
+                    lineStyle: {
+                        color: colors[1]
+                    }
+                },
+                axisLabel: {
+                    formatter: '{value} '
+                }
+            },
+            {
+                type: 'value',
                 name: '运动距离',
-                min: 0,
-                max: 250,
                 position: 'right',
                 axisLine: {
                     lineStyle: {
@@ -145,27 +178,10 @@ var i=document.getElementById("test").innerHTML;
                     formatter: '{value} km'
                 }
             },
-            {
-                type: 'value',
-                name: '运动时间',
-                min: 0,
-                max: 250,
-                position: 'right',
-                offset: 80,
-                axisLine: {
-                    lineStyle: {
-                        color: colors[1]
-                    }
-                },
-                axisLabel: {
-                    formatter: '{value} h'
-                }
-            },
+
             {
                 type: 'value',
                 name: '运动热量',
-                min: 0,
-                max: 25,
                 position: 'left',
                 axisLine: {
                     lineStyle: {
@@ -179,32 +195,28 @@ var i=document.getElementById("test").innerHTML;
         ],
         series: [
             {
-                name:'运动距离',
+                name:'运动步数',
                 type:'bar',
-                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                data:path
             },
             {
-                name:'运动时间',
-                type:'bar',
+                name:'运动距离',
+                type:'line',
                 yAxisIndex: 1,
-                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                data:km
             },
             {
                 name:'运动热量',
                 type:'bar',
                 yAxisIndex: 2,
-                data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+                data:heat
             }
         ]
     };
 
-
-
-
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
 </script>
-<script src="../js/demo.js"></script>
 </body>
 
 
