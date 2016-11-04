@@ -26,33 +26,18 @@ for($i=0;$i<300;$i++){
     $km=rand(10,30)/10;
     $path=rand(7000,30000);
     $duration=rand(30,160);
+    $heat=rand(100909,300000);
  $single['date']=$date;
     $single['weight']=$weight;
     $single['km']=$km;
     $single['path']=$path;
     $single['duration']=$duration;
+    $single['heat']=$duration;
     array_push($testdata,$single);
 }
 //print_r($testdata);
 
-$data_array = array(
-    array(
-        'title' => 'title1',
-        'content' => 'content1',
-        'pubdate' => '2009-10-11',
-    ),
-    array(
-        'title' => 'title2',
-        'content' => 'content2',
-        'pubdate' => '2009-11-11',
-    )
-);
-//  属性数组
-$attribute_array = array(
-    'title' => array(
-        'size' => 1
-    )
-);
+
 //  创建一个XML文档并设置XML版本和编码。。
 $dom=new DomDocument('1.0', 'utf-8');
 //  创建根节点
@@ -63,7 +48,7 @@ foreach ($testdata as $data) {
     $article->appendchild($items);
     create_item($dom, $items, $data, $attribute_array);
 }
-$dom->save("../test.xml");
+$dom->save("../SportXML/test.xml");
 function create_item($dom, $item, $data, $attribute) {
     if (is_array($data)) {
         foreach ($data as $key => $val) {
