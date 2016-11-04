@@ -14,17 +14,26 @@
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
-    var arr1=[];
+    var date=[];
+    var km=[];
+    var path=[];
+    var heat=[];
     function arrTest(){
         $.ajax({
             type: "post",
             async: false, //同步执行
-            url: "../DataProcess/SportInfo/echardata.php",
+            url: "../DataProcess/SportInfo/getAllData.php",
             dataType: "json", //返回数据形式为json
             success: function(result) {
                 myChart.hideLoading(); //隐藏加载动画
                 for (var i = 0; i < result.length; i++) {
-                    arr1.push(result[i]);
+                    km.push(result[i].km);
+                    var time=result[i].date.split('-');
+                    var times=time[1]+'/'+time[2];
+
+                    date.push(times);
+                    path.push(result[i].path);
+                    heat.push(result[i].heat);
                 }
             },
             error: function() {
@@ -34,23 +43,97 @@
     }
     arrTest();
     // 指定图表的配置项和数据
-    var option = {
-        title: {
-            text: 'ECharts 入门示例'
+    var colors = ['#5793f3', '#d14a61', '#675bba'];
+
+    option = {
+        color: colors,
+
+        tooltip: {
+            trigger: 'axis'
         },
-        tooltip: {},
+        grid: {
+            right: '20%'
+        },
+        toolbox: {
+            feature: {
+                dataView: {show: true, readOnly: false},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
         legend: {
-            data:['销量']
+            data:['运动距离','运动步数','运动热量']
         },
-        xAxis: {
-            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-        },
-        yAxis: {},
-        series: [{
-            name: '销量',
-            type: 'bar',
-            data: arr1
-        }]
+        xAxis: [
+            {
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                data: date
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '运动距离',
+                position: 'right',
+                axisLine: {
+                    lineStyle: {
+                        color: colors[0]
+                    }
+                },
+                axisLabel: {
+                    formatter: '{value} km'
+                }
+            },
+            {
+                type: 'value',
+                name: '运动步数',
+                position: 'right',
+                offset: 80,
+                axisLine: {
+                    lineStyle: {
+                        color: colors[1]
+                    }
+                },
+                axisLabel: {
+                    formatter: '{value} h'
+                }
+            },
+            {
+                type: 'value',
+                name: '运动热量',
+                position: 'left',
+                axisLine: {
+                    lineStyle: {
+                        color: colors[2]
+                    }
+                },
+                axisLabel: {
+                    formatter: '{value} cal'
+                }
+            }
+        ],
+        series: [
+            {
+                name:'运动距离',
+                type:'bar',
+                data:km
+            },
+            {
+                name:'运动步数',
+                type:'line',
+                yAxisIndex: 1,
+                data:path
+            },
+            {
+                name:'运动热量',
+                type:'bar',
+                yAxisIndex: 2,
+                data:heat
+            }
+        ]
     };
 
     // 使用刚指定的配置项和数据显示图表。

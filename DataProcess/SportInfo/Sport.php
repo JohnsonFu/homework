@@ -44,6 +44,13 @@ class Sport
             $this->db->query($sentence);
         }
     }
+
+    public function getAllData(){
+        $sql=("select * from '$this->tablename'");
+        $result=$this->db->query($sql)->fetchAll();
+        return $result;
+}
+
     public function getTotalKM(){
             $sql=("select sum(km) as total from '$this->tablename'");
            $result=$this->db->query($sql)->fetchAll();

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d873dfbb-9bb4-4c07-8125-3bc64292ce6e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SportPage/testiposrt.php" afterPath="$PROJECT_DIR$/SportPage/testiposrt.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/SportInfo/Sport.php" afterPath="$PROJECT_DIR$/DataProcess/SportInfo/Sport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SportPage/testChart.html" afterPath="$PROJECT_DIR$/SportPage/testChart.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homepage.php" afterPath="$PROJECT_DIR$/homepage.php" />
     </list>
     <ignored path="homework.iws" />
@@ -39,18 +39,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myfollow.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AccountPage/myfollow.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375">
-              <caret line="46" column="59" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="people.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AccountPage/people.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homepage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homepage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-64.416664">
-              <caret line="199" column="13" selection-start-line="199" selection-start-column="13" selection-end-line="199" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.30116472">
+              <caret line="119" column="64" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#3;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -87,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testChart.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testChart.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SportPage/testChart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09983361">
-              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+            <state vertical-scroll-proportion="-4.375">
+              <caret line="7" column="39" selection-start-line="6" selection-start-column="48" selection-end-line="7" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -99,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="echardata.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/echardata.php">
+      <file leaf-file-name="getAllData.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/getAllData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state vertical-scroll-proportion="-11.25">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -146,21 +134,22 @@
       <file leaf-file-name="Sport.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/Sport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.125">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state vertical-scroll-proportion="-11.291667">
+              <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
               <folding>
-                <marker date="1478244849000" expanded="true" signature="367:553" placeholder="CREATE TABLE..IF..." />
-                <marker date="1478244849000" expanded="true" signature="1314:1344" placeholder="insert into ..." />
-                <marker date="1478244849000" expanded="true" signature="1314:1379" placeholder="insert into ..." />
-                <marker date="1478244849000" expanded="true" signature="1314:1438" placeholder="insert into ..." />
-                <marker date="1478244849000" expanded="true" signature="1551:1598" placeholder="select sum(k..." />
-                <marker date="1478244849000" expanded="true" signature="1745:1794" placeholder="select sum(p..." />
-                <marker date="1478244849000" expanded="true" signature="1945:1998" placeholder="select sum(d..." />
-                <marker date="1478244849000" expanded="true" signature="2188:2237" placeholder="select sum(h..." />
-                <marker date="1478244849000" expanded="true" signature="2492:2661" placeholder="CREATE TABLE..tt..." />
-                <marker date="1478244849000" expanded="true" signature="2492:2679" placeholder="CREATE TABLE..tt..." />
-                <marker date="1478244849000" expanded="true" signature="2831:2888" placeholder="insert into tally..." />
-                <marker date="1478244849000" expanded="true" signature="2915:2934" placeholder="select * fro..tally..." />
+                <marker date="1478263751000" expanded="true" signature="367:553" placeholder="CREATE TABLE..IF..." />
+                <marker date="1478263751000" expanded="true" signature="1314:1344" placeholder="insert into ..." />
+                <marker date="1478263751000" expanded="true" signature="1314:1379" placeholder="insert into ..." />
+                <marker date="1478263751000" expanded="true" signature="1314:1438" placeholder="insert into ..." />
+                <marker date="1478263751000" expanded="true" signature="1548:1580" placeholder="select * fro..." />
+                <marker date="1478263751000" expanded="true" signature="1716:1763" placeholder="select sum(k..." />
+                <marker date="1478263751000" expanded="true" signature="1910:1959" placeholder="select sum(p..." />
+                <marker date="1478263751000" expanded="true" signature="2110:2163" placeholder="select sum(d..." />
+                <marker date="1478263751000" expanded="true" signature="2353:2402" placeholder="select sum(h..." />
+                <marker date="1478263751000" expanded="true" signature="2657:2826" placeholder="CREATE TABLE..tt..." />
+                <marker date="1478263751000" expanded="true" signature="2657:2844" placeholder="CREATE TABLE..tt..." />
+                <marker date="1478263751000" expanded="true" signature="2996:3053" placeholder="insert into tally..." />
+                <marker date="1478263751000" expanded="true" signature="3080:3099" placeholder="select * fro..tally..." />
               </folding>
             </state>
           </provider>
@@ -182,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataProcess/AccountInfo/regist.php" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/AccountPage/mail.html" />
         <option value="$PROJECT_DIR$/AccountPage/sendmsg.html" />
@@ -228,11 +216,12 @@
         <option value="$PROJECT_DIR$/AccountPage/people.php" />
         <option value="$PROJECT_DIR$/DataProcess/SportInfo/readXml.php" />
         <option value="$PROJECT_DIR$/DataProcess/SportInfo/echoxml.php" />
-        <option value="$PROJECT_DIR$/DataProcess/SportInfo/Sport.php" />
-        <option value="$PROJECT_DIR$/homepage.php" />
         <option value="$PROJECT_DIR$/SportPage/testChart.php" />
         <option value="$PROJECT_DIR$/DataProcess/SportInfo/echardata.php" />
+        <option value="$PROJECT_DIR$/DataProcess/SportInfo/Sport.php" />
+        <option value="$PROJECT_DIR$/DataProcess/SportInfo/getAllData.php" />
         <option value="$PROJECT_DIR$/SportPage/testChart.html" />
+        <option value="$PROJECT_DIR$/homepage.php" />
       </list>
     </option>
   </component>
@@ -506,13 +495,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DataProcess/AccountInfo/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess/AccountInfo/Logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -856,23 +838,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/Sport.php">
+    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/readXml.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state vertical-scroll-proportion="6.2083335">
+          <caret line="9" column="13" selection-start-line="7" selection-start-column="0" selection-end-line="16" selection-end-column="24" />
           <folding>
-            <marker date="1478244849000" expanded="true" signature="367:553" placeholder="CREATE TABLE..IF..." />
-            <marker date="1478244849000" expanded="true" signature="1314:1344" placeholder="insert into ..." />
-            <marker date="1478244849000" expanded="true" signature="1314:1379" placeholder="insert into ..." />
-            <marker date="1478244849000" expanded="true" signature="1314:1438" placeholder="insert into ..." />
-            <marker date="1478244849000" expanded="true" signature="1551:1598" placeholder="select sum(k..." />
-            <marker date="1478244849000" expanded="true" signature="1745:1794" placeholder="select sum(p..." />
-            <marker date="1478244849000" expanded="true" signature="1945:1998" placeholder="select sum(d..." />
-            <marker date="1478244849000" expanded="true" signature="2188:2237" placeholder="select sum(h..." />
-            <marker date="1478244849000" expanded="true" signature="2492:2661" placeholder="CREATE TABLE..tt..." />
-            <marker date="1478244849000" expanded="true" signature="2492:2679" placeholder="CREATE TABLE..tt..." />
-            <marker date="1478244849000" expanded="true" signature="2831:2888" placeholder="insert into tally..." />
-            <marker date="1478244849000" expanded="true" signature="2915:2934" placeholder="select * fro..tally..." />
+            <element signature="e#6#90#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -885,20 +856,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/readXml.php">
+    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/Sport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.2083335">
-          <caret line="9" column="13" selection-start-line="7" selection-start-column="0" selection-end-line="16" selection-end-column="24" />
+        <state vertical-scroll-proportion="-11.291667">
+          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
           <folding>
-            <element signature="e#6#90#0#PHP" expanded="true" />
+            <marker date="1478263751000" expanded="true" signature="367:553" placeholder="CREATE TABLE..IF..." />
+            <marker date="1478263751000" expanded="true" signature="1314:1344" placeholder="insert into ..." />
+            <marker date="1478263751000" expanded="true" signature="1314:1379" placeholder="insert into ..." />
+            <marker date="1478263751000" expanded="true" signature="1314:1438" placeholder="insert into ..." />
+            <marker date="1478263751000" expanded="true" signature="1548:1580" placeholder="select * fro..." />
+            <marker date="1478263751000" expanded="true" signature="1716:1763" placeholder="select sum(k..." />
+            <marker date="1478263751000" expanded="true" signature="1910:1959" placeholder="select sum(p..." />
+            <marker date="1478263751000" expanded="true" signature="2110:2163" placeholder="select sum(d..." />
+            <marker date="1478263751000" expanded="true" signature="2353:2402" placeholder="select sum(h..." />
+            <marker date="1478263751000" expanded="true" signature="2657:2826" placeholder="CREATE TABLE..tt..." />
+            <marker date="1478263751000" expanded="true" signature="2657:2844" placeholder="CREATE TABLE..tt..." />
+            <marker date="1478263751000" expanded="true" signature="2996:3053" placeholder="insert into tally..." />
+            <marker date="1478263751000" expanded="true" signature="3080:3099" placeholder="select * fro..tally..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/echardata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17470881">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/getAllData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SportPage/testChart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.375">
+          <caret line="7" column="39" selection-start-line="6" selection-start-column="48" selection-end-line="7" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/homepage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-64.416664">
-          <caret line="199" column="13" selection-start-line="199" selection-start-column="13" selection-end-line="199" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.30116472">
+          <caret line="119" column="64" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#3;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -913,24 +922,6 @@
             <element signature="n#style#0;n#label#12;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#13;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#14;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/echardata.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SportPage/testChart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09983361">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
