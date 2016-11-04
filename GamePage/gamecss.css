@@ -170,3 +170,13 @@ body{
     text-align:center;
 
 }
+#sidebar{
+
+    display:inline;
+    background:black  ;
+    margin-top:5px;
+    height:240px;
+    width:203px;
+    color:white;
+    float:left;
+}

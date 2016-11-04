@@ -109,6 +109,9 @@ class Sport
 
         return round($total/1000,1);
     }
+    public function getCircle($length){
+        return round($length/400,1);
+    }
 
 
 

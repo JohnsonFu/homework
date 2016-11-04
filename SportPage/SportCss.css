@@ -153,3 +153,13 @@ body{
     background-color:#eaf2f2;
     border-radius:10px 10px 10px 10px;
 }
+#sidebar{
+    float:left;
+    display:inline;
+    background:url(../img/juli.png)  ;
+    margin-top:5px;
+    height:240px;
+    width:203px;
+    color:white;
+    float:left;
+}
