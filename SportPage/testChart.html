@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="../js/echarts.min.js"></script>
+    <script src="../jquery-1.8.3/jquery.min.js"></script>
+</head>
+<body>
+<?PHP include("../DataProcess/SportInfo/echardata.php") ?>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    var arr1=[];
+    function arrTest(){
+        $.ajax({
+            type: "post",
+            async: false, //同步执行
+            url: "../DataProcess/SportInfo/echardata.php",
+            dataType: "json", //返回数据形式为json
+            success: function(result) {
+                myChart.hideLoading(); //隐藏加载动画
+                for (var i = 0; i < result.length; i++) {
+                    arr1.push(result[i]);
+                }
+            },
+            error: function() {
+                alert("请求数据失败!");
+            }
+        });
+    }
+    arrTest();
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: arr1
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>

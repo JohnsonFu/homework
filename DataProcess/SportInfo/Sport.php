@@ -10,14 +10,16 @@ class Sport
 {
     public $id;
     public $db;
+    public $tablename;
     function __construct($id,$dbaddr)
     {
         $this->id=$id;
         $this->db=new PDO($dbaddr);
+        $this->tablename=$this->id.'data' ;
     }
     public function ImportXMLDATA(){
-        $tablename=$this->id.'data' ;
-        $sql = "CREATE TABLE IF NOT EXISTS '$tablename' (
+
+        $sql = "CREATE TABLE IF NOT EXISTS '$this->tablename' (
     date VARCHAR(30) NOT NULL PRIMARY KEY,
     weight DOUBLE  ,
     km DOUBLE,
@@ -38,17 +40,42 @@ class Sport
             $path=$item->getElementsByTagName("path")->item(0)->nodeValue;
             $duration=$item->getElementsByTagName("duration")->item(0)->nodeValue;
             $heat=$item->getElementsByTagName("heat")->item(0)->nodeValue;
-            $sentence="insert into '$tablename'(date,weight,km,path,duration,heat)values('$date','$weight','$km','$path','$duration','$heat')";
+            $sentence="insert into '$this->tablename'(date,weight,km,path,duration,heat)values('$date','$weight','$km','$path','$duration','$heat')";
             $this->db->query($sentence);
         }
+    }
+    public function getTotalKM(){
+            $sql=("select sum(km) as total from '$this->tablename'");
+           $result=$this->db->query($sql)->fetchAll();
+        return $result[0][0];
 
- }
+    }
+    public function getTotalPath(){
+        $sql=("select sum(path) as total from '$this->tablename'");
+        $result=$this->db->query($sql)->fetchAll();
+        return intval($result[0][0]);
+    }
+    public function getTotalTime(){
+        $sql=("select sum(duration) as total from '$this->tablename'");
+        $result=$this->db->query($sql)->fetchAll();
+        $total=$result[0][0];
+        $hour=$total/60;
+        return $hour;
+    }
+    public function getTotalHeat(){
+        $sql=("select sum(heat) as total from '$this->tablename'");
+        $result=$this->db->query($sql)->fetchAll();
+        $total=$result[0][0];
+
+        return $total/1000;
+    }
 
 
 
 }
-$sport=new Sport('22222','sqlite:../AccountInfo/mydatabase.sqlite');
-$sport->ImportXMLDATA();
+//$sport=new Sport('22222','sqlite:../AccountInfo/mydatabase.sqlite');
+//$total=$sport->getTotalTime();
+//echo $total;
 //$sql = 'CREATE TABLE  tt (
 //    date VARCHAR(30) NOT NULL PRIMARY KEY,
 //    weight DOUBLE,
