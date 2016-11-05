@@ -106,15 +106,15 @@ session_write_close();
             <label style="font-size:35px; color:black;"><?PHP echo $time; ?></label><label style="font-family:微软雅黑;color:#484848;">小时</label>
             <br>
             <label style="font-size:18px;margin-left:125px;color:#55555c;font-family: 微软雅黑;">燃烧热量:</label>
-            <label style="font-size:35px; color:black;"><?PHP echo $heat; ?></label><label style="font-family:微软雅黑;color:#484848;">卡路里</label>
+            <label style="font-size:35px; color:black;"><?PHP echo $heat; ?></label><label style="font-family:微软雅黑;color:#484848;">大卡</label>
             <label style="font-family:微软雅黑;font-size:50px; margin-top:20px;color:lightgrey">|</label>
             <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动步数:</label>
             <label style="font-size:35px; color:black;"><?PHP echo $path; ?></label><label style="font-family:微软雅黑;color:#484848;">步</label><br>
         <label style="margin-top:10px; font-family:微软雅黑;font-size:20px;color:#000000;">这些运动量可以</label><br>
-        <div style="display: inline-block;margin-top:20px;"><img src="img/paodao.png" width="150px" height="100px"><br> <label><?PHP echo $quanshu;?>圈</label></div>
-        <div style="display:inline-block;"><img src="img/feirou.png" width="150px" height="100px"><br> <label style="padding-left:30%">100公斤</label></div>
-       <div style="display:inline-block;"><img src="img/qiyou.png" width="150px" height="100px"><br> <label style="padding-left:30%">100升</label></div>
-        <div style="display:inline-block;"><img src="img/dengpao.png" width="150px" height="100px"><br> <label style="padding-left:30%">100小时</label></div>
+        <div style="display: inline-block;margin-top:20px;"><img src="img/paodao.png" width="150px" height="100px"><br> <label style="padding-left:20%;font-size:18px;"><?PHP echo $quanshu;?>圈</label></div>
+        <div style="display:inline-block;"><img src="img/feirou.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat/7700,1) ?>公斤</label></div>
+       <div style="display:inline-block;"><img src="img/qiyou.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat*1.74/10000,2) ?>升</label></div>
+        <div style="display:inline-block;"><img src="img/dengpao.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat*4.18*1000/216000,0); ?>小时</label></div>
 
     </div>
 

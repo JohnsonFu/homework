@@ -37,7 +37,7 @@ class Sport
             $single['km'] = $km;
             $single['path'] = $path;
             $single['duration'] = $duration;
-            $single['heat'] = $duration;
+            $single['heat'] = $heat;
             array_push($testdata, $single);
         }
 //print_r($testdata);
@@ -84,7 +84,7 @@ class Sport
 
 
     public function ImportXMLDATA($dataaddr){
-   
+
     //  $this-> getNewData($dataaddr);
         $sql = "CREATE TABLE IF NOT EXISTS '$this->tablename' (
     date VARCHAR(30) NOT NULL PRIMARY KEY,
@@ -95,7 +95,7 @@ class Sport
     heat DOUBLE
     )";
         $this->db->query($sql);
-       // $this->db->query("DELETE FROM  '$this->tablename'");
+     //   $this->db->query("DELETE FROM  '$this->tablename'");
         $xmldoc = new DOMDocument();
         $xmldoc->load($dataaddr);
         $stu = $xmldoc->getElementsByTagName("item");//直接找到节点name
@@ -124,6 +124,7 @@ class Sport
         return $result[0][0];
 
     }
+
     public function getNearMonthKM(){
     $maxid=$this->db->query("select max(rowid) from '$this->tablename' ")->fetchall()[0][0];
     $lower=$maxid-30;
