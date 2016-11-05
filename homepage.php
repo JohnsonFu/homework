@@ -18,7 +18,7 @@
     </style>
 </head>
 <?PHP session_start();
-error_reporting(0);
+//error_reporting(0);
 if(!isset($_SESSION['userid'])){
     echo "<script>alert('未登录!将返回登录界面....');</script>";
     echo "<meta http-equiv='Refresh' content='0;URL=login.html'>";
@@ -42,7 +42,7 @@ $noread=$account->getUnread();
     $_SESSION['money'] = $money;
 include('DataProcess/SportInfo/Sport.php');
 $sport=new Sport($id,$dbaddr);
-$sport->ImportXMLDATA();
+$sport->ImportXMLDATA('DataProcess/SportXML/test.xml');
 $long=$sport->getTotalKM();
 $time=$sport->getTotalTime();
 $path=$sport->getTotalPath();
@@ -106,7 +106,7 @@ session_write_close();
             <label style="font-size:35px; color:black;"><?PHP echo $time; ?></label><label style="font-family:微软雅黑;color:#484848;">小时</label>
             <br>
             <label style="font-size:18px;margin-left:125px;color:#55555c;font-family: 微软雅黑;">燃烧热量:</label>
-            <label style="font-size:35px; color:black;"><?PHP echo $heat; ?></label><label style="font-family:微软雅黑;color:#484848;">千卡</label>
+            <label style="font-size:35px; color:black;"><?PHP echo $heat; ?></label><label style="font-family:微软雅黑;color:#484848;">卡路里</label>
             <label style="font-family:微软雅黑;font-size:50px; margin-top:20px;color:lightgrey">|</label>
             <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动步数:</label>
             <label style="font-size:35px; color:black;"><?PHP echo $path; ?></label><label style="font-family:微软雅黑;color:#484848;">步</label><br>

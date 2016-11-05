@@ -26,7 +26,7 @@ $id=$_SESSION['userid'];
 $dbaddr='sqlite:../DataProcess/AccountInfo/mydatabase.sqlite';
 include('../DataProcess/SportInfo/Sport.php');
 $sport=new Sport($id,$dbaddr);
-$sport->ImportXMLDATA();
+$sport->ImportXMLDATA('../DataProcess/SportXML/test.xml');
 $long=$sport->getNearMonthKM();
 $time=$sport->getNearMonthTime();
 $path=$sport->getNearMonthPath();
@@ -73,7 +73,7 @@ session_write_close();
             <label style="font-size:35px; color:black;"><?PHP echo $time; ?></label><label style="font-family:微软雅黑;color:#484848;">小时</label>
             <br>
             <label style="font-size:18px;margin-left:125px;color:#55555c;font-family: 微软雅黑;">燃烧热量:</label>
-            <label style="font-size:35px; color:black;"><?PHP echo $heat; ?></label><label style="font-family:微软雅黑;color:#484848;">千卡</label>
+            <label style="font-size:35px; color:black;"><?PHP echo $heat; ?></label><label style="font-family:微软雅黑;color:#484848;">卡路里</label>
             <label style="font-family:微软雅黑;font-size:50px; margin-top:20px;color:lightgrey">|</label>
             <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动步数:</label>
             <label style="font-size:35px; color:black;"><?PHP echo $path; ?></label><label style="font-family:微软雅黑;color:#484848;">步</label>

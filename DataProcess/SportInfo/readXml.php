@@ -17,39 +17,47 @@
 //echo $stu1->nodeValue;
 
 
-$testdata=array();
-for($i=0;$i<300;$i++){
-    $single=array();
-    $time =time()+8*60*60-(300-$i)*24*60*60;
-    $date='20'.date("y-m-d",$time);
-    $weight=rand(65,75);
-    $km=rand(10,30)/10;
-    $path=rand(7000,30000);
-    $duration=rand(30,160);
-    $heat=rand(100909,300000);
- $single['date']=$date;
-    $single['weight']=$weight;
-    $single['km']=$km;
-    $single['path']=$path;
-    $single['duration']=$duration;
-    $single['heat']=$duration;
-    array_push($testdata,$single);
-}
+
+
+ function getData()
+{
+
+    $testdata = array();
+    $pathave = rand(5, 8) / 10;//步长为0.5m-0.8
+    for ($i = 0; $i < 300; $i++) {
+        $single = array();
+        $speed = rand(3, 7);
+        $time = time() + 8 * 60 * 60 - (300 - $i) * 24 * 60 * 60;
+        $date = '20' . date("y-m-d", $time);
+        $weight = rand(65, 75);
+        $km = rand(20, 100) / 10;
+        $path = round($km * 1000 / $pathave, 0);
+        $duration = round($km / $speed * 60, 2);
+        $heat = round(65 * $speed * $duration / 60, 3);//卡路里公式:65*每小时速度*小时数
+        $single['date'] = $date;
+        $single['weight'] = $weight;
+        $single['km'] = $km;
+        $single['path'] = $path;
+        $single['duration'] = $duration;
+        $single['heat'] = $duration;
+        array_push($testdata, $single);
+    }
 //print_r($testdata);
 
 
 //  创建一个XML文档并设置XML版本和编码。。
-$dom=new DomDocument('1.0', 'utf-8');
+    $dom = new DomDocument('1.0', 'utf-8');
 //  创建根节点
-$article = $dom->createElement('article');
-$dom->appendchild($article);
-foreach ($testdata as $data) {
-    $items = $dom->createElement('item');
-    $article->appendchild($items);
-    create_item($dom, $items, $data, $attribute_array);
+    $article = $dom->createElement('article');
+    $dom->appendchild($article);
+    foreach ($testdata as $data) {
+        $items = $dom->createElement('item');
+        $article->appendchild($items);
+        create_item($dom, $items, $data);
+    }
+    $dom->save("../SportXML/test.xml");
 }
-$dom->save("../SportXML/test.xml");
-function create_item($dom, $item, $data, $attribute) {
+function create_item($dom, $item, $data) {
     if (is_array($data)) {
         foreach ($data as $key => $val) {
             //  创建元素
@@ -71,4 +79,6 @@ function create_item($dom, $item, $data, $attribute) {
 //            }   //  end if
         }
     }   //  end if
-}   //  end function
+}   //  end fun
+//ction
+getData();
