@@ -54,7 +54,7 @@ if(!isset($_SESSION['userid'])){
                 <li><a href="MySport.php" >我的运动</a></li>
                 <li><a href="#" style="color:#daddf0; background-color: #80c3f7;">
                 设定目标</a></li>
-                <li><a href="exercise.php">健身追踪</a></li>
+                <li><a href="health.php">身体分析</a></li>
                 <li><a href="#">睡眠分析</a></li>
             </ul>
         </div>

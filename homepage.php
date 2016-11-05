@@ -233,19 +233,52 @@ session_write_close();
             {
                 name:'运动步数',
                 type:'bar',
-                data:path
+                data:path,
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
             },
             {
                 name:'运动距离',
                 type:'line',
                 yAxisIndex: 1,
-                data:km
+                data:km,
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
             },
             {
                 name:'运动热量',
                 type:'bar',
                 yAxisIndex: 2,
-                data:heat
+                data:heat,
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
             }
         ]
     };

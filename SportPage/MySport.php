@@ -54,7 +54,7 @@ session_write_close();
         <ul>
             <li><a href="MySport.php" style="color:#daddf0; background-color: #80c3f7;">我的运动</a></li>
             <li><a href="SetGoal.php">设定目标</a></li>
-            <li><a href="exercise.php">健身追踪</a></li>
+            <li><a href="health.php">身体分析</a></li>
             <li><a href="#">睡眠分析</a></li>
         </ul>
     </div>
@@ -67,21 +67,21 @@ session_write_close();
             <div id="main" style="width: 650px;height:400px;"></div>
             <label style="margin-top:0; font-family:微软雅黑;font-size:20px;color:#000000;">近一个月运动量</label>
             <label style="font-size:18px;margin-left:0;color:#55555c;font-family: 微软雅黑;">运动距离:</label>
-            <label style="font-size:35px; color:black;"><?PHP echo $long; ?></label><label style="font-family:微软雅黑;color:#484848;">公里</label>
+            <label style="font-family:微软雅黑;font-size:35px; color:black;"><?PHP echo $long; ?></label><label style="font-family:微软雅黑;color:#484848;">公里</label>
             <label style="font-family:微软雅黑;font-size:50px; margin-top:20px;color:lightgrey">|</label>
             <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动时长:</label>
-            <label style="font-size:35px; color:black;"><?PHP echo $time; ?></label><label style="font-family:微软雅黑;color:#484848;">小时</label>
+            <label style="font-family:微软雅黑;font-size:35px; color:black;"><?PHP echo $time; ?></label><label style="font-family:微软雅黑;color:#484848;">小时</label>
             <br>
             <label style="font-size:18px;margin-left:125px;color:#55555c;font-family: 微软雅黑;">燃烧热量:</label>
-            <label style="font-size:35px; color:black;"><?PHP echo $heat; ?></label><label style="font-family:微软雅黑;color:#484848;">大卡</label>
+            <label style="font-family:微软雅黑;font-size:35px; color:black;"><?PHP echo $heat; ?></label><label style="font-family:微软雅黑;color:#484848;">大卡</label>
             <label style="font-family:微软雅黑;font-size:50px; margin-top:20px;color:lightgrey">|</label>
             <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">运动步数:</label>
-            <label style="font-size:35px; color:black;"><?PHP echo $path; ?></label><label style="font-family:微软雅黑;color:#484848;">步</label><br>
+            <label style="font-family:微软雅黑;font-size:35px; color:black;"><?PHP echo $path; ?></label><label style="font-family:微软雅黑;color:#484848;">步</label><br>
         <label style="margin-top:10px; font-family:微软雅黑;font-size:20px;color:#000000;">这些运动量可以</label><br>
-        <div style="display: inline-block;margin-top:20px;"><img src="../img/paodao.png" width="150px" height="100px"><br> <label style="padding-left:20%;font-size:18px;"><?PHP echo round($long*1000/400,1);?>圈</label></div>
-        <div style="display:inline-block;"><img src="../img/feirou.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat/7700,1) ?>公斤</label></div>
-        <div style="display:inline-block;"><img src="../img/qiyou.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat*1.74/10000,2) ?>升</label></div>
-        <div style="display:inline-block;"><img src="../img/dengpao.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat*4.18*1000/216000,0); ?>小时</label></div>
+        <div style="display: inline-block;margin-top:20px;"><img src="../img/paodao.png" width="150px" height="100px"><br> <label style="font-family:微软雅黑;padding-left:20%;font-size:18px;"><?PHP echo round($long*1000/400,1);?>圈</label></div>
+        <div style="display:inline-block;"><img src="../img/feirou.png" width="150px" height="100px"><br> <label style="font-family:微软雅黑;padding-left:30%;font-size:18px;"><?PHP echo round($heat/7700,1) ?>公斤</label></div>
+        <div style="display:inline-block;"><img src="../img/qiyou.png" width="150px" height="100px"><br> <label style="font-family:微软雅黑;padding-left:30%;font-size:18px;"><?PHP echo round($heat*1.74/10000,2) ?>升</label></div>
+        <div style="display:inline-block;"><img src="../img/dengpao.png" width="150px" height="100px"><br> <label style="font-family:微软雅黑;padding-left:30%;font-size:18px;"><?PHP echo round($heat*4.18*1000/216000,0); ?>小时</label></div>
 
 
     </div>
@@ -153,6 +153,7 @@ session_write_close();
                     alignWithLabel: true
                 },
                 data: date
+
             }
         ],
         yAxis: [
@@ -202,19 +203,52 @@ session_write_close();
             {
                 name:'运动步数',
                 type:'bar',
-                data:path
+                data:path,
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
             },
             {
                 name:'运动距离',
                 type:'line',
                 yAxisIndex: 1,
-                data:km
+                data:km,
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
             },
             {
                 name:'运动热量',
                 type:'bar',
                 yAxisIndex: 2,
-                data:heat
+                data:heat,
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
             }
         ]
     };

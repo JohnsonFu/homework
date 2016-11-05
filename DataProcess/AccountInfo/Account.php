@@ -27,6 +27,24 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
   public  function getNick(){
         return $this->infolist['nickname'];
     }
+    public function getHeight(){
+        return $this->infolist['height'];
+    }
+
+    public function getWalkPath(){
+    $height=$this->infolist['height'];
+    return round($height/2.69,0);
+}
+    public function getRunPath(){
+        $height=$this->infolist['height'];
+        return round($height/2.25,0);
+    }
+    public function getIdealWeight(){
+        $height=$this->infolist['height']/100;
+        $weight=22*$height*$height;
+        return round($weight,1);
+    }
+
 
   public  function getLevel(){
         return $this->infolist['level'];

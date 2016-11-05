@@ -33,7 +33,12 @@ class Sport
             $duration = round($km / $speed * 60, 2);
             $heat = round(65 * $speed * $duration / 60, 3);//卡路里公式:65*每小时速度*小时数
             $single['date'] = $date;
-            $single['weight'] = $weight;
+            if((date('w',strtotime($date))==6)){
+                $single['weight'] = $weight;
+            }else{
+                $single['weight'] = 0;
+            }
+
             $single['km'] = $km;
             $single['path'] = $path;
             $single['duration'] = $duration;
@@ -65,17 +70,7 @@ class Sport
                 //  创建元素值
                 $text = $dom->createTextNode($val);
                 $$key->appendchild($text);
-//            if (isset($attribute[$key])) {
-//                //  如果此字段存在相关属性需要设置
-//                foreach ($attribute[$key] as $akey => $row) {
-//                    //  创建属性节点
-//                    $$akey = $dom->createAttribute($akey);
-//                    $$key->appendchild($$akey);
-//                    // 创建属性值节点
-//                    $aval = $dom->createTextNode($row);
-//                    $$akey->appendChild($aval);
-//                }
-//            }   //  end if
+//
             }
         }   //  end if
     }
@@ -85,7 +80,7 @@ class Sport
 
     public function ImportXMLDATA($dataaddr){
 
-    //  $this-> getNewData($dataaddr);
+     // $this-> getNewData($dataaddr);
         $sql = "CREATE TABLE IF NOT EXISTS '$this->tablename' (
     date VARCHAR(30) NOT NULL PRIMARY KEY,
     weight DOUBLE  ,
@@ -95,7 +90,7 @@ class Sport
     heat DOUBLE
     )";
         $this->db->query($sql);
-     //   $this->db->query("DELETE FROM  '$this->tablename'");
+      //  $this->db->query("DELETE FROM  '$this->tablename'");
         $xmldoc = new DOMDocument();
         $xmldoc->load($dataaddr);
         $stu = $xmldoc->getElementsByTagName("item");//直接找到节点name
@@ -122,6 +117,23 @@ class Sport
             $sql=("select sum(km) as total from '$this->tablename'");
            $result=$this->db->query($sql)->fetchAll();
         return $result[0][0];
+
+    }
+
+    public function WeightAdvice($nowweight,$ideaweight){
+        if(abs($nowweight-$ideaweight)<1){
+            return ",与现体重基本一致,希望继续保持!";
+        }
+        else {
+            if ($nowweight > $ideaweight) {
+                $cal = ($nowweight - $ideaweight) * 7760;
+                return (",还需要燃烧热量".$cal."大卡,为了好身材,努力吧!");
+            }
+           if($nowweight < $ideaweight){
+               $cal = ($ideaweight - $nowweight) * 7760;
+               return (",还需要摄入热量".$cal."大卡,注意加强营养,合理搭配膳食!");
+           }
+        }
 
     }
 
@@ -181,6 +193,31 @@ class Sport
         return round($length/400,1);
     }
 
+
+
+    public function getWeightData(){
+        $sql=("select * from '$this->tablename'");
+        $result=$this->db->query($sql)->fetchAll();
+        $arr=array();
+        foreach ($result as $item) {
+            if((date('w',strtotime($item['date']))==6)){
+                array_push($arr,$item);
+            }
+        }
+        return $arr;
+    }
+    public function getLatestWeight(){
+        $sql=("select * from '$this->tablename'");
+        $result=$this->db->query($sql)->fetchAll();
+        $arr=array();
+        $count=count($result);
+        for($j=$count-1;$j>0;$j--){
+            if((date('w',strtotime($result[$j]['date']))==6)){
+                return $result[$j]['weight'];
+            }
+        }
+        return null;
+    }
 
 
 }
