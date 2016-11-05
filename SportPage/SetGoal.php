@@ -32,6 +32,8 @@ if(!isset($_SESSION['userid'])){
     $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $SetGoal=$account->hasSetGoal();
     $goal=$account->getGoal();
+     $time =time()+32*60*60;
+     $date='20'.date("y-m-d",$time);
     ?>
     <div id="top_bg">
         <div class="logo_l"></div>
@@ -63,19 +65,7 @@ if(!isset($_SESSION['userid'])){
         <div class="insidecontent">
             <div class="mylabel">设定目标</div><hr style="margin-right: 50px;">
             <form method="post" action="../DataProcess/GameInfo/ChangeGoal.php" >
-                <div style="margin-left:20px;">
-                    <div style="margin-bottom:20px;">
-                    <label style="margin-left:-10px;">目标周期</label>
-                    <select style="margin-left:30px;width:100px;height:30px;"  name="cycle"><?PHP
-                        $time =time()+32*60*60;
-                        $date='20'.date("y-m-d",$time);
-                        for($k=5;$k<=30;$k++){ ?>
-                        <option value="<?PHP echo $k ?>"><?PHP echo $k ?>天</option>
-                     <?PHP } ?>
-                    </select>
-                     <label style="margin-left:52px;">已设周期:&nbsp;&nbsp;<?PHP if($SetGoal==true){echo $goal[0]['cycle'].'天';}else{echo '无';} ?></label>
 
-                    </div>
                     <div style="margin-bottom:20px;"><label style="margin-left:-10px;margin-right:30px">起始时间</label><?PHP echo $date ?> <label style="margin-left:30px;margin-right:20px;">已设时间:</label><?PHP if($SetGoal==true){echo $goal[0]['time'];}else{echo '无';} ?></div>
                  <div style="margin-bottom:20px"> <label style="margin-left:-10px;">每日距离<input id="dist" name="type1" value="distance" type="radio" checked ></label>
                     <select style="margin-left:30px;width:100px;height:30px;"  name="type2"><?PHP

@@ -2,20 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: fulinhua
- * Date: 2016/11/4
- * Time: 20:44
+ * Date: 2016/11/5
+ * Time: 19:21
  */
 session_start();
 include('../SportInfo/Sport.php');
 $id=$_SESSION['userid'];
 $sport=new Sport($id,'sqlite:../AccountInfo/mydatabase.sqlite');
-$data=$sport->getAllData();
-$arr=array();
-$count=count($data);
-for($j=$count-15;$j<$count;$j++){
-    array_push($arr,$data[$j]);
-}
+$data=$sport->getGoalData($id);
 
 
-
-exit(json_encode($arr));
+exit(json_encode($data));

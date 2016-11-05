@@ -218,11 +218,43 @@ class Sport
         }
         return null;
     }
+    public function getGoalData($userid){
+        $sql=("select * from '$this->tablename'");
+        $result=$this->db->query($sql)->fetchAll();
+        $count=count($result)-1;
+        $path=$result[$count]['path'];
+        $km=$result[$count]['km'];
+        $arr=array();
+        $goal=$this->db->query("select * from goal where uid='$userid' ")->fetchAll();
+        if(count($goal)==0){
+            array_push($arr,'no');
+            array_push($arr,0);
+            array_push($arr,0);
+            return $arr;
+
+        }else{
+            $goalnums=$goal[0]['nums'];
+            if($goal[0]['type']=='distance'){
+            array_push($arr,'distance');
+                array_push($arr,$km);
+                array_push($arr,$goalnums);
+
+                return $arr;
+            }else{
+                array_push($arr,'path');
+                array_push($arr,$path);
+                array_push($arr,$goalnums);
+
+                return $arr;
+            }
+        }
+    }
 
 
 }
 //$sport=new Sport('22222','sqlite:../AccountInfo/mydatabase.sqlite');
-//$total=$sport->getNewData();
+//$total=$sport->getGoalData('22222');
+//echo $total[1];
 //echo $total;
 //$sql = 'CREATE TABLE  tt (
 //    date VARCHAR(30) NOT NULL PRIMARY KEY,

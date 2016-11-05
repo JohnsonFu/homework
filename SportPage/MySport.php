@@ -63,7 +63,7 @@ session_write_close();
 <div id="content">
     <div class="insidecontent">
         <div class="mylabel" style="padding-top:10px;">我的运动</div><hr style="margin-right: 50px;">
-
+        <div id="piechart" style="width: 500px;height:200px;align:center"></div>
             <div id="main" style="width: 650px;height:400px;"></div>
             <label style="margin-top:0; font-family:微软雅黑;font-size:20px;color:#000000;">近一个月运动量</label>
             <label style="font-size:18px;margin-left:0;color:#55555c;font-family: 微软雅黑;">运动距离:</label>
@@ -255,6 +255,71 @@ session_write_close();
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    var myChart2 = echarts.init(document.getElementById('piechart'));
+    var goal=0;
+    var temp=0;
+    function arrTest(){
+        $.ajax({
+            type: "post",
+            async: false, //同步执行
+            url: "../DataProcess/SportInfo/getGoalData.php",
+            dataType: "json", //返回数据形式为json
+            success: function(result) {
+                myChart.hideLoading(); //隐藏加载动画
+                  if(result[0]=='distance'){
+                      temp=result[1];
+                      goal=result[2];
+                  }if(result[0]=='path'){
+                      temp=result[1];
+                      goal=result[2];
+                  }
+            },
+            error: function() {
+                alert("请求数据失败!");
+            }
+        });
+    }
+    arrTest();
+    option = {
+        title: {
+            text: '目标完成情况',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+
+        series : [
+            {
+                name:'目标情况',
+                type:'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+
+                    {value:temp, name:'完成'},
+                    {value:goal-temp, name:'未完成'}
+                ],
+                itemStyle:{
+                    normal:{
+                        label:{
+                            show: true,
+                            formatter: '{b} : {c} ({d}%)'
+                        },
+                        labelLine :{show:true}
+                    }
+                }
+            }
+        ]
+
+    };
+    myChart2.setOption(option);
+
+
+
 </script>
 </body>
 
