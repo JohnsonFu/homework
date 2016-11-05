@@ -31,6 +31,8 @@ $long=$sport->getNearMonthKM();
 $time=$sport->getNearMonthTime();
 $path=$sport->getNearMonthPath();
 $heat=$sport->getNearMonthHeat();
+$goal=$sport->getGoal();
+
 session_write_close();
 ?>
 <body>
@@ -63,7 +65,14 @@ session_write_close();
 <div id="content">
     <div class="insidecontent">
         <div class="mylabel" style="padding-top:10px;">我的运动</div><hr style="margin-right: 50px;">
-        <div id="piechart" style="width: 500px;height:200px;align:center"></div>
+        <div>
+        <div id="piechart" style="width: 420px;height:150px;display:inline-block"></div>
+            <div style="display:inline-block;margin-top:20px;margin-right:5%;float:right;width:200px;height:150px">
+                <label style="font-size:20px;color:#55555c;font-family: 微软雅黑;">目标类型:<?PHP echo $goal[0] ?></label><br>
+                <label style="font-size:20px;color:#55555c;font-family: 微软雅黑;">目标数值:<label style="font-size:24px;"><?PHP echo $goal[1] ?></label></label><br>
+                <label style="font-size:20px;color:#55555c;font-family: 微软雅黑;">今日成果:<label id="today" style="font-size:24px;">0</label></label>
+            </div>
+            </div>
             <div id="main" style="width: 650px;height:400px;"></div>
             <label style="margin-top:0; font-family:微软雅黑;font-size:20px;color:#000000;">近一个月运动量</label>
             <label style="font-size:18px;margin-left:0;color:#55555c;font-family: 微软雅黑;">运动距离:</label>
@@ -271,10 +280,13 @@ session_write_close();
                   if(result[0]=='distance'){
                       temp=result[1];
                       goal=result[2];
+                      $("#today").text(temp+'KM');
                   }if(result[0]=='path'){
                       temp=result[1];
                       goal=result[2];
+                    $("#today").text(temp+'步');
                   }
+
             },
             error: function() {
                 alert("请求数据失败!");
@@ -287,10 +299,7 @@ session_write_close();
             text: '目标完成情况',
             x: 'center'
         },
-        tooltip: {
-            trigger: 'item',
-            formatter: "{a} <br/>{b}: {c} ({d}%)"
-        },
+
 
         series : [
             {
@@ -301,7 +310,7 @@ session_write_close();
                 data:[
 
                     {value:temp, name:'完成'},
-                    {value:goal-temp, name:'未完成'}
+                    {value:(goal-temp).toFixed(1), name:'未完成'}
                 ],
                 itemStyle:{
                     normal:{

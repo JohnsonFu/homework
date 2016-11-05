@@ -218,6 +218,27 @@ class Sport
         }
         return null;
     }
+    public function getGoal(){
+        $goal=$this->db->query("select * from goal where uid='$this->id' ")->fetchAll();
+        $arr=array();
+        if(count($goal)==0){
+            array_push($arr,'无');
+            array_push($arr,'无');
+            return $arr;
+        }else{
+            if($goal[0]['type']=='distance'){
+                array_push($arr,'运动距离');
+                array_push($arr,$goal[0]['nums'].'KM');
+            }
+            if($goal[0]['type']=='walk'){
+                array_push($arr,'运动步数');
+                array_push($arr,round($goal[0]['nums'],0).'步');
+            }
+
+            return $arr;
+        }
+    }
+
     public function getGoalData($userid){
         $sql=("select * from '$this->tablename'");
         $result=$this->db->query($sql)->fetchAll();
@@ -242,8 +263,8 @@ class Sport
                 return $arr;
             }else{
                 array_push($arr,'path');
-                array_push($arr,$path);
-                array_push($arr,$goalnums);
+                array_push($arr,round($path,0));
+                array_push($arr,round($goalnums,0));
 
                 return $arr;
             }

@@ -4,12 +4,8 @@
     <list default="true" id="d873dfbb-9bb4-4c07-8125-3bc64292ce6e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/AccountInfo/mydatabase.sqlite" afterPath="$PROJECT_DIR$/DataProcess/AccountInfo/mydatabase.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/GameInfo/ChangeGoal.php" afterPath="$PROJECT_DIR$/DataProcess/GameInfo/ChangeGoal.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/SportInfo/Sport.php" afterPath="$PROJECT_DIR$/DataProcess/SportInfo/Sport.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/SportInfo/getAllData.php" afterPath="$PROJECT_DIR$/DataProcess/SportInfo/getAllData.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SportPage/MySport.php" afterPath="$PROJECT_DIR$/SportPage/MySport.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SportPage/SetGoal.php" afterPath="$PROJECT_DIR$/SportPage/SetGoal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SportPage/health.php" afterPath="$PROJECT_DIR$/SportPage/health.php" />
     </list>
     <ignored path="homework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,13 +74,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySport.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MySport.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SportPage/MySport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45091513">
-              <caret line="276" column="19" selection-start-line="276" selection-start-column="19" selection-end-line="276" selection-end-column="19" />
+            <state vertical-scroll-proportion="-18.791666">
+              <caret line="286" column="41" selection-start-line="286" selection-start-column="41" selection-end-line="286" selection-end-column="41" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#label#1;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#2;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#label#2;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#9;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -131,40 +139,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sport.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sport.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/Sport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.791667">
-              <caret line="232" column="24" selection-start-line="232" selection-start-column="24" selection-end-line="232" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.52579033">
+              <caret line="266" column="50" selection-start-line="266" selection-start-column="50" selection-end-line="266" selection-end-column="50" />
               <folding>
-                <marker date="1478347373000" expanded="true" signature="2277:2463" placeholder="CREATE TABLE..IF..." />
-                <marker date="1478347373000" expanded="true" signature="2526:2557" placeholder="DELETE FROM ..." />
-                <marker date="1478347373000" expanded="true" signature="3214:3244" placeholder="insert into ..." />
-                <marker date="1478347373000" expanded="true" signature="3214:3279" placeholder="insert into ..." />
-                <marker date="1478347373000" expanded="true" signature="3214:3338" placeholder="insert into ..." />
-                <marker date="1478347373000" expanded="true" signature="3448:3480" placeholder="select * fro..." />
-                <marker date="1478347373000" expanded="true" signature="3616:3663" placeholder="select sum(k..." />
-                <marker date="1478347373000" expanded="true" signature="4357:4398" placeholder="select max(r..." />
-                <marker date="1478347373000" expanded="true" signature="4455:4544" placeholder="select sum(k..." />
-                <marker date="1478347373000" expanded="true" signature="4697:4738" placeholder="select max(r..." />
-                <marker date="1478347373000" expanded="true" signature="4803:4894" placeholder="select sum(p..." />
-                <marker date="1478347373000" expanded="true" signature="5069:5110" placeholder="select max(r..." />
-                <marker date="1478347373000" expanded="true" signature="5175:5266" placeholder="select sum(h..." />
-                <marker date="1478347373000" expanded="true" signature="5418:5467" placeholder="select sum(p..." />
-                <marker date="1478347373000" expanded="true" signature="5640:5681" placeholder="select max(r..." />
-                <marker date="1478347373000" expanded="true" signature="5746:5841" placeholder="select sum(d..." />
-                <marker date="1478347373000" expanded="true" signature="5996:6049" placeholder="select sum(d..." />
-                <marker date="1478347373000" expanded="true" signature="6248:6297" placeholder="select sum(h..." />
-                <marker date="1478347373000" expanded="true" signature="6560:6575" placeholder="select * fro..." />
-                <marker date="1478347373000" expanded="true" signature="6560:6592" placeholder="select * fro..." />
-                <marker date="1478347373000" expanded="true" signature="6909:6941" placeholder="select * fro..." />
-                <marker date="1478347373000" expanded="true" signature="7303:7335" placeholder="select * fro..." />
-                <marker date="1478347373000" expanded="true" signature="7552:7576" placeholder="select * fro..goal..." />
-                <marker date="1478347373000" expanded="true" signature="7552:7590" placeholder="select * fro..goal..." />
-                <marker date="1478347373000" expanded="true" signature="8376:8545" placeholder="CREATE TABLE..tt..." />
-                <marker date="1478347373000" expanded="true" signature="8376:8563" placeholder="CREATE TABLE..tt..." />
-                <marker date="1478347373000" expanded="true" signature="8715:8772" placeholder="insert into tally..." />
-                <marker date="1478347373000" expanded="true" signature="8799:8818" placeholder="select * fro..tally..." />
+                <marker date="1478357095000" expanded="true" signature="2277:2463" placeholder="CREATE TABLE..IF..." />
+                <marker date="1478357095000" expanded="true" signature="2526:2557" placeholder="DELETE FROM ..." />
+                <marker date="1478357095000" expanded="true" signature="3214:3244" placeholder="insert into ..." />
+                <marker date="1478357095000" expanded="true" signature="3214:3279" placeholder="insert into ..." />
+                <marker date="1478357095000" expanded="true" signature="3214:3338" placeholder="insert into ..." />
+                <marker date="1478357095000" expanded="true" signature="3448:3480" placeholder="select * fro..." />
+                <marker date="1478357095000" expanded="true" signature="3616:3663" placeholder="select sum(k..." />
+                <marker date="1478357095000" expanded="true" signature="4357:4398" placeholder="select max(r..." />
+                <marker date="1478357095000" expanded="true" signature="4455:4544" placeholder="select sum(k..." />
+                <marker date="1478357095000" expanded="true" signature="4697:4738" placeholder="select max(r..." />
+                <marker date="1478357095000" expanded="true" signature="4803:4894" placeholder="select sum(p..." />
+                <marker date="1478357095000" expanded="true" signature="5069:5110" placeholder="select max(r..." />
+                <marker date="1478357095000" expanded="true" signature="5175:5266" placeholder="select sum(h..." />
+                <marker date="1478357095000" expanded="true" signature="5418:5467" placeholder="select sum(p..." />
+                <marker date="1478357095000" expanded="true" signature="5640:5681" placeholder="select max(r..." />
+                <marker date="1478357095000" expanded="true" signature="5746:5841" placeholder="select sum(d..." />
+                <marker date="1478357095000" expanded="true" signature="5996:6049" placeholder="select sum(d..." />
+                <marker date="1478357095000" expanded="true" signature="6248:6297" placeholder="select sum(h..." />
+                <marker date="1478357095000" expanded="true" signature="6560:6575" placeholder="select * fro..." />
+                <marker date="1478357095000" expanded="true" signature="6560:6592" placeholder="select * fro..." />
+                <marker date="1478357095000" expanded="true" signature="6909:6941" placeholder="select * fro..." />
+                <marker date="1478357095000" expanded="true" signature="7309:7349" placeholder="select * fro..goal..." />
+                <marker date="1478357095000" expanded="true" signature="7943:7975" placeholder="select * fro..." />
+                <marker date="1478357095000" expanded="true" signature="8192:8216" placeholder="select * fro..goal..." />
+                <marker date="1478357095000" expanded="true" signature="8192:8230" placeholder="select * fro..goal..." />
+                <marker date="1478357095000" expanded="true" signature="9034:9203" placeholder="CREATE TABLE..tt..." />
+                <marker date="1478357095000" expanded="true" signature="9034:9221" placeholder="CREATE TABLE..tt..." />
+                <marker date="1478357095000" expanded="true" signature="9373:9430" placeholder="insert into tally..." />
+                <marker date="1478357095000" expanded="true" signature="9457:9476" placeholder="select * fro..tally..." />
               </folding>
             </state>
           </provider>
@@ -455,7 +464,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1260" height="722" extended-state="1" />
+    <frame x="0" y="23" width="1260" height="722" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2642857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -922,6 +931,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/getAllData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/getWeightData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25">
@@ -938,47 +955,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/getAllData.php">
+    <entry file="file://$PROJECT_DIR$/SportPage/MySport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/Sport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.791667">
-          <caret line="232" column="24" selection-start-line="232" selection-start-column="24" selection-end-line="232" selection-end-column="24" />
+        <state vertical-scroll-proportion="-18.791666">
+          <caret line="286" column="41" selection-start-line="286" selection-start-column="41" selection-end-line="286" selection-end-column="41" />
           <folding>
-            <marker date="1478347373000" expanded="true" signature="2277:2463" placeholder="CREATE TABLE..IF..." />
-            <marker date="1478347373000" expanded="true" signature="2526:2557" placeholder="DELETE FROM ..." />
-            <marker date="1478347373000" expanded="true" signature="3214:3244" placeholder="insert into ..." />
-            <marker date="1478347373000" expanded="true" signature="3214:3279" placeholder="insert into ..." />
-            <marker date="1478347373000" expanded="true" signature="3214:3338" placeholder="insert into ..." />
-            <marker date="1478347373000" expanded="true" signature="3448:3480" placeholder="select * fro..." />
-            <marker date="1478347373000" expanded="true" signature="3616:3663" placeholder="select sum(k..." />
-            <marker date="1478347373000" expanded="true" signature="4357:4398" placeholder="select max(r..." />
-            <marker date="1478347373000" expanded="true" signature="4455:4544" placeholder="select sum(k..." />
-            <marker date="1478347373000" expanded="true" signature="4697:4738" placeholder="select max(r..." />
-            <marker date="1478347373000" expanded="true" signature="4803:4894" placeholder="select sum(p..." />
-            <marker date="1478347373000" expanded="true" signature="5069:5110" placeholder="select max(r..." />
-            <marker date="1478347373000" expanded="true" signature="5175:5266" placeholder="select sum(h..." />
-            <marker date="1478347373000" expanded="true" signature="5418:5467" placeholder="select sum(p..." />
-            <marker date="1478347373000" expanded="true" signature="5640:5681" placeholder="select max(r..." />
-            <marker date="1478347373000" expanded="true" signature="5746:5841" placeholder="select sum(d..." />
-            <marker date="1478347373000" expanded="true" signature="5996:6049" placeholder="select sum(d..." />
-            <marker date="1478347373000" expanded="true" signature="6248:6297" placeholder="select sum(h..." />
-            <marker date="1478347373000" expanded="true" signature="6560:6575" placeholder="select * fro..." />
-            <marker date="1478347373000" expanded="true" signature="6560:6592" placeholder="select * fro..." />
-            <marker date="1478347373000" expanded="true" signature="6909:6941" placeholder="select * fro..." />
-            <marker date="1478347373000" expanded="true" signature="7303:7335" placeholder="select * fro..." />
-            <marker date="1478347373000" expanded="true" signature="7552:7576" placeholder="select * fro..goal..." />
-            <marker date="1478347373000" expanded="true" signature="7552:7590" placeholder="select * fro..goal..." />
-            <marker date="1478347373000" expanded="true" signature="8376:8545" placeholder="CREATE TABLE..tt..." />
-            <marker date="1478347373000" expanded="true" signature="8376:8563" placeholder="CREATE TABLE..tt..." />
-            <marker date="1478347373000" expanded="true" signature="8715:8772" placeholder="insert into tally..." />
-            <marker date="1478347373000" expanded="true" signature="8799:8818" placeholder="select * fro..tally..." />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#label#1;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#label#2;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#9;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -991,13 +986,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SportPage/MySport.php">
+    <entry file="file://$PROJECT_DIR$/DataProcess/SportInfo/Sport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45091513">
-          <caret line="276" column="19" selection-start-line="276" selection-start-column="19" selection-end-line="276" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.52579033">
+          <caret line="266" column="50" selection-start-line="266" selection-start-column="50" selection-end-line="266" selection-end-column="50" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1478357095000" expanded="true" signature="2277:2463" placeholder="CREATE TABLE..IF..." />
+            <marker date="1478357095000" expanded="true" signature="2526:2557" placeholder="DELETE FROM ..." />
+            <marker date="1478357095000" expanded="true" signature="3214:3244" placeholder="insert into ..." />
+            <marker date="1478357095000" expanded="true" signature="3214:3279" placeholder="insert into ..." />
+            <marker date="1478357095000" expanded="true" signature="3214:3338" placeholder="insert into ..." />
+            <marker date="1478357095000" expanded="true" signature="3448:3480" placeholder="select * fro..." />
+            <marker date="1478357095000" expanded="true" signature="3616:3663" placeholder="select sum(k..." />
+            <marker date="1478357095000" expanded="true" signature="4357:4398" placeholder="select max(r..." />
+            <marker date="1478357095000" expanded="true" signature="4455:4544" placeholder="select sum(k..." />
+            <marker date="1478357095000" expanded="true" signature="4697:4738" placeholder="select max(r..." />
+            <marker date="1478357095000" expanded="true" signature="4803:4894" placeholder="select sum(p..." />
+            <marker date="1478357095000" expanded="true" signature="5069:5110" placeholder="select max(r..." />
+            <marker date="1478357095000" expanded="true" signature="5175:5266" placeholder="select sum(h..." />
+            <marker date="1478357095000" expanded="true" signature="5418:5467" placeholder="select sum(p..." />
+            <marker date="1478357095000" expanded="true" signature="5640:5681" placeholder="select max(r..." />
+            <marker date="1478357095000" expanded="true" signature="5746:5841" placeholder="select sum(d..." />
+            <marker date="1478357095000" expanded="true" signature="5996:6049" placeholder="select sum(d..." />
+            <marker date="1478357095000" expanded="true" signature="6248:6297" placeholder="select sum(h..." />
+            <marker date="1478357095000" expanded="true" signature="6560:6575" placeholder="select * fro..." />
+            <marker date="1478357095000" expanded="true" signature="6560:6592" placeholder="select * fro..." />
+            <marker date="1478357095000" expanded="true" signature="6909:6941" placeholder="select * fro..." />
+            <marker date="1478357095000" expanded="true" signature="7309:7349" placeholder="select * fro..goal..." />
+            <marker date="1478357095000" expanded="true" signature="7943:7975" placeholder="select * fro..." />
+            <marker date="1478357095000" expanded="true" signature="8192:8216" placeholder="select * fro..goal..." />
+            <marker date="1478357095000" expanded="true" signature="8192:8230" placeholder="select * fro..goal..." />
+            <marker date="1478357095000" expanded="true" signature="9034:9203" placeholder="CREATE TABLE..tt..." />
+            <marker date="1478357095000" expanded="true" signature="9034:9221" placeholder="CREATE TABLE..tt..." />
+            <marker date="1478357095000" expanded="true" signature="9373:9430" placeholder="insert into tally..." />
+            <marker date="1478357095000" expanded="true" signature="9457:9476" placeholder="select * fro..tally..." />
           </folding>
         </state>
       </provider>
