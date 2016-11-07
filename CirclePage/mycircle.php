@@ -124,7 +124,8 @@ session_write_close();
                     <td style="width:80%;font-size:16px;"><?PHP echo($item['content']); ?>.</td>
                 </tr>
      <?PHP if($account->isFriend($item['masterid'])) {?>
-     <tr  id="commentbar" style="font-size:16px;"><td style="text-align:center">我的评论<input type="text" name="postid" style="display: none" value="<?PHP echo($item['postid']) ?>"><input type="text" name="toid" style="display: none" value="<?PHP echo($item['masterid']) ?>"></td><td>评论内容<input type="text" name="comment"><input type="submit" value="评论" onclick="submit" style="float:right;"></td></tr>
+     <tr  id="commentbar" style="font-size:16px;"><td style="text-align:center">我的评论<input type="text" name="postid" style="display: none" value="<?PHP echo($item['postid']) ?>"><input type="text" name="toid" style="display: none" value="<?PHP echo($item['masterid']) ?>"></td>
+         <td>评论内容<input type="text" id="commenttext" name="comment"><input type="submit" value="评论" onclick="submit" style="float:right;"></td></tr>
      <?PHP }?>
      <tr style="font-size:16px;"><td style="text-align:center">评论者</td><td style="text-align:center">评论内容</td></tr>
      </form>
@@ -142,7 +143,9 @@ foreach($comments as $temp){
     $ctime=$temp['time'];
     ?>
 
-    <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><img src="../headpics/<?PHP echo($cpicid);?>.gif" width="10px;" height="10px" ><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;&nbsp;<img src="../headpics/<?PHP echo($topicid);?>.gif" width="10px;" height="10px" ><?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?></div></td></tr>
+    <tr style="font-size:16px;background-color: #f4f4f4">
+        <td style="border-style:none;text-align:center;font-size:12px;"><img src="../headpics/<?PHP echo($cpicid);?>.gif" width="10px;" height="10px" ><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;&nbsp;<img src="../headpics/<?PHP echo($topicid);?>.gif" width="10px;" height="10px" ><?PHP echo($tonick) ?></td>
+        <td style="border-style:none;padding-left:5%"><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?></div></td></tr>
     <?PHP
 }
 ?>
@@ -154,6 +157,9 @@ foreach($comments as $temp){
 <?PHP unset($list); ?>
 </div>
             <script language="javascript">
+
+
+
                 function jump(){
                     window.location.href="SetCircle.php";
                 }

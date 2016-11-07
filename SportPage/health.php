@@ -38,6 +38,7 @@ $bmi=round($bmi/$height2,1);
 $idealweight=$account->getIdealWeight();
 $sport->ImportXMLDATA('../DataProcess/SportXML/test.xml');
 $advice=$sport->WeightAdvice($latestweight,$idealweight);
+$bmiinfo=$sport->getBMIAnlysis($bmi);
 session_write_close();
 ?>
 <body>
@@ -86,7 +87,7 @@ session_write_close();
         <label style="font-size:18px;color:#55555c;font-family: 微软雅黑;">BMI:</label>
         <label style="font-family:微软雅黑;font-size:35px; color:black;"><?PHP echo $bmi; ?></label><br>
        <div style="width:90%;height:80px;margin-bottom:20px;background-color: #ebebeb">
-        <div style="padding-right:10px;padding-top:10px;padding-left:10px; font-family:微软雅黑;font-size:20px;color:#000000;">你的理想体重<label style="font-size:26px;"><?PHP echo $idealweight?></label>Kg
+        <div style="padding-right:10px;padding-top:10px;padding-left:10px; font-family:微软雅黑;font-size:20px;color:#000000;"><?PHP echo $bmiinfo; ?>&nbsp;&nbsp;&nbsp你的理想体重<label style="font-size:26px;"><?PHP echo $idealweight?></label>Kg
         <?PHP echo $advice; ?>
         </div><br>
        </div>

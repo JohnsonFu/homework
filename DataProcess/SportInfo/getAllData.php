@@ -12,7 +12,7 @@ $sport=new Sport($id,'sqlite:../AccountInfo/mydatabase.sqlite');
 $data=$sport->getAllData();
 $arr=array();
 $count=count($data);
-for($j=$count-15;$j<$count;$j++){
+for($j=0;$j<$count;$j++){
     array_push($arr,$data[$j]);
 }
 

@@ -116,7 +116,9 @@ session_write_close();
                     $ctime=$temp['time'];
                     ?>
 
-                    <tr style="font-size:16px;"><td style="text-align:center;font-size:12px;"><img src="../headpics/<?PHP echo($cpicid);?>.gif" width="10px;" height="10px" ><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;<img src="../headpics/<?PHP echo($topicid);?>.gif" width="10px;" height="10px"> <?PHP echo($tonick) ?></td><td><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?>
+                    <tr style="font-size:16px;background-color: #f4f4f4">
+                        <td style="border-style:none;text-align:center;font-size:12px;"><img src="../headpics/<?PHP echo($cpicid);?>.gif" width="10px;" height="10px" ><?PHP echo($cnick)?>&nbsp;&nbsp;to&nbsp;<img src="../headpics/<?PHP echo($topicid);?>.gif" width="10px;" height="10px"> <?PHP echo($tonick) ?></td>
+                        <td style="padding-left:5%;border-style: none"><?PHP echo($ccontent)?><div style="float:right"><?PHP echo($ctime); ?>
                  <?PHP  if($temp['masterid']!=$id){  ?>               <input type="button" name=<?PHP echo $cnick,'-',$temp['masterid'],'-',$item['postid'],'-',$cpicid;  ?>  onclick="comment(this.name)" value="回复" > <?PHP } ?> </div></td></tr>
                     <?PHP
                 }

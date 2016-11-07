@@ -238,6 +238,25 @@ class Sport
             return $arr;
         }
     }
+    public function getBMIAnlysis($num){
+        if($num<18.5){
+            return 'BMI分析:体重过轻!';
+        }
+        if($num>=18.5&&$num<=25){
+            return 'BMI分析:体重正常.';
+        }
+        if($num>25&&$num<=28){
+            return 'BMI分析:体重过重!';
+        }
+        if($num>28&&$num<32){
+            return 'BMI分析:肥胖!';
+        }
+        if($num>=32){
+            return 'BMI分析:非常肥胖!';
+        }
+
+
+    }
 
     public function getGoalData($userid){
         $sql=("select * from '$this->tablename'");
