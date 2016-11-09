@@ -258,6 +258,30 @@ class Sport
 
     }
 
+    public function FollowingSort($users){
+        $arr=array();
+        $count=0;
+        foreach($users as $item){
+            $tablename=$item['id'].'data';
+            $name=$item['nickname'];
+            $pic=$item['picid'];
+            $result=$this->db->query("select * from '$tablename'");
+            if($result&&$count<10){
+                $count++;
+                $totalkm=$this->db->query("select sum(km) from '$tablename'")->fetchAll()[0][0];
+                $totalpath=$this->db->query("select sum(path) from '$tablename'")->fetchAll()[0][0];
+                $single['nick']=$name;
+                $single['picid']=$pic;
+                $single['km']=$totalkm;
+                $single['path']=round($totalpath,0);
+                array_push($arr,$single);
+            }
+
+        }
+
+        return $arr;
+    }
+
     public function datasort(){
         $users=$this->db->query("select * from 'users'")->fetchAll();
         $arr=array();
@@ -295,6 +319,18 @@ class Sport
         return $arr2;
     }
 
+
+    public function getFollowPathSort($users){
+        $arr=$this->FollowingSort($users);
+        $arr2=arra_sort($arr,'path','s');
+        return $arr2;
+    }
+
+    public function getFollowKmSort($users){
+        $arr=$this->FollowingSort($users);
+        $arr2=arra_sort($arr,'km','s');
+        return $arr2;
+    }
 
 
 

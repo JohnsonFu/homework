@@ -25,6 +25,9 @@ session_start();
 $id=$_SESSION['userid'];
 $dbaddr='sqlite:../DataProcess/AccountInfo/mydatabase.sqlite';
 include('../DataProcess/SportInfo/Sport.php');
+include('../DataProcess/AccountInfo/Account.php');
+$account=new Account($id,$dbaddr);
+$followAndI=$account->getMyfollowAndMe();
 $sport=new Sport($id,$dbaddr);
 $sport->ImportXMLDATA('../DataProcess/SportXML/test.xml');
 $long=$sport->getNearMonthKM();
@@ -32,7 +35,8 @@ $time=$sport->getNearMonthTime();
 $path=$sport->getNearMonthPath();
 $heat=$sport->getNearMonthHeat();
 $goal=$sport->getGoal();
-
+$kmrank=$sport->getFollowKmSort($followAndI);
+$pathrank=$sport->getFollowPathSort($followAndI);
 session_write_close();
 ?>
 <body>
@@ -91,6 +95,33 @@ session_write_close();
         <div style="display:inline-block;"><img src="../img/feirou.png" width="150px" height="100px"><br> <label style="font-family:微软雅黑;padding-left:30%;font-size:18px;"><?PHP echo round($heat/7700,1) ?>公斤</label></div>
         <div style="display:inline-block;"><img src="../img/qiyou.png" width="150px" height="100px"><br> <label style="font-family:微软雅黑;padding-left:30%;font-size:18px;"><?PHP echo round($heat*1.74/10000,2) ?>升</label></div>
         <div style="display:inline-block;"><img src="../img/dengpao.png" width="150px" height="100px"><br> <label style="font-family:微软雅黑;padding-left:30%;font-size:18px;"><?PHP echo round($heat*4.18*1000/216000,0); ?>小时</label></div>
+<br>
+           <label style="margin-left:35%;font-family:Helvetica;padding-top:20px;">关注者排行</label><br>
+        <div style="display:inline-block;width:300px;font-family:Helvetica;">
+            <header >距离排行榜</header>
+            <?PHP $count=0;
+            foreach ($kmrank as $item) {
+                $count++;
+                echo $count." "; ?>
+                <img src="../headpics/<?PHP echo($item['picid']);?>.gif" width="30px" height="30px">
+                <?PHP echo $item['nick'].' '.$item['km'].'Km' ?>
+                <br>
+                <?PHP
+            }?>
+        </div>
+
+        <div style="display:inline-block;width:300px;float:right;margin-right:50px;font-family:Helvetica;">
+            <header>步数排行榜</header>
+            <?PHP $count2=0;
+            foreach ($pathrank as $item) {
+                $count2++;
+                echo $count2." "; ?>
+                <img src="../headpics/<?PHP echo($item['picid']);?>.gif" width="30px" height="30px">
+                <?PHP echo $item['nick'].' '.$item['path'].'步' ?>
+                <br>
+                <?PHP
+            }?>
+        </div>
 
 
     </div>

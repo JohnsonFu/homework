@@ -119,6 +119,14 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
 
         return $arr1;
     }
+    public function getMyfollowAndMe(){
+        $res1=$this->db->query("select * from users where id in (select friendid from friend where id='$this->id')")->fetchAll();
+        $me=$this->db->query("select * from users where id='$this->id'")->fetchAll()[0];
+        array_push($res1,$me);
+        return $res1;
+
+
+    }
 
     public function getFollowme(){
         $res1=$this->db->query("select * from friend where friendid='$this->id'")->fetchAll();
@@ -210,6 +218,8 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
 //$result=$db->query("insert into comment(pid,masterid)values('599d99','222d22')");
 //echo $result;
 //$account=new Account('22222','sqlite:mydatabase.sqlite');
+//$res=$account->getMyfollowAndMe();
+//print_r($res);
 //$res1=$account->getMyFollowPosts();
 //echo $res1[0]['tittle'];
 //$account->hasThumb('1018');
