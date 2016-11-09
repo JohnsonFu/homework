@@ -121,6 +121,8 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
     }
     public function getMyfollowAndMe(){
         $res1=$this->db->query("select * from users where id in (select friendid from friend where id='$this->id')")->fetchAll();
+       // $res1=$this->db->query("select * from users u where exists(select friendid  from friend  where id='$this->id' and u.id=friendid  )")->fetchAll();
+
         $me=$this->db->query("select * from users where id='$this->id'")->fetchAll()[0];
         array_push($res1,$me);
         return $res1;

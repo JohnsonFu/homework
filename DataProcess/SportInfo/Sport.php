@@ -309,26 +309,26 @@ class Sport
 
     public function getPathSort(){
         $arr=$this->datasort();
-        $arr2=arra_sort($arr,'path','s');
+        $arr2=arra_sort($arr,'path','j');
         return $arr2;
     }
 
     public function getKmSort(){
         $arr=$this->datasort();
-        $arr2=arra_sort($arr,'km','s');
+        $arr2=arra_sort($arr,'km','j');
         return $arr2;
     }
 
 
     public function getFollowPathSort($users){
         $arr=$this->FollowingSort($users);
-        $arr2=arra_sort($arr,'path','s');
+        $arr2=arra_sort($arr,'path','j');
         return $arr2;
     }
 
     public function getFollowKmSort($users){
         $arr=$this->FollowingSort($users);
-        $arr2=arra_sort($arr,'km','s');
+        $arr2=arra_sort($arr,'km','j');
         return $arr2;
     }
 
@@ -380,7 +380,7 @@ function arra_sort($arr,$keys,$type){
         asort($keysvalue);
     }
     if($type=='j') {
-        reset($keysvalue);
+        arsort($keysvalue);
     }
     foreach ($keysvalue as $k=>$v){
         $new_array[$k] = $arr[$k];
