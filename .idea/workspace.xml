@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d873dfbb-9bb4-4c07-8125-3bc64292ce6e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/AccountInfo/Account.php" afterPath="$PROJECT_DIR$/DataProcess/AccountInfo/Account.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataProcess/SportInfo/Sport.php" afterPath="$PROJECT_DIR$/DataProcess/SportInfo/Sport.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SportPage/MySport.php" afterPath="$PROJECT_DIR$/SportPage/MySport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homepage.php" afterPath="$PROJECT_DIR$/homepage.php" />
     </list>
     <ignored path="homework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,18 +71,18 @@
       <file leaf-file-name="health.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SportPage/health.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-71.916664">
               <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySport.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MySport.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SportPage/MySport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59900165">
-              <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+            <state vertical-scroll-proportion="-13.125">
+              <caret line="98" column="89" selection-start-line="97" selection-start-column="0" selection-end-line="98" selection-end-column="99" />
               <folding />
             </state>
           </provider>
@@ -131,12 +128,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homepage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homepage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="118" column="118" selection-start-line="118" selection-start-column="118" selection-end-line="118" selection-end-column="118" />
-              <folding />
+            <state vertical-scroll-proportion="0.2512479">
+              <caret line="118" column="218" selection-start-line="118" selection-start-column="218" selection-end-line="118" selection-end-column="218" />
+              <folding>
+                <element signature="n#style#0;n#label#16;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -267,10 +267,10 @@
         <option value="$PROJECT_DIR$/CirclePage/owncircle.php" />
         <option value="$PROJECT_DIR$/CirclePage/mycircle.php" />
         <option value="$PROJECT_DIR$/DataProcess/SportInfo/GetAllUserRank.php" />
-        <option value="$PROJECT_DIR$/homepage.php" />
         <option value="$PROJECT_DIR$/DataProcess/AccountInfo/Account.php" />
         <option value="$PROJECT_DIR$/DataProcess/SportInfo/Sport.php" />
         <option value="$PROJECT_DIR$/SportPage/MySport.php" />
+        <option value="$PROJECT_DIR$/homepage.php" />
       </list>
     </option>
   </component>
@@ -958,14 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SportPage/health.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homestyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22462562">
@@ -985,14 +977,6 @@
             <marker date="1478692557000" expanded="true" signature="432:464" placeholder="select sum(k..." />
             <marker date="1478692557000" expanded="true" signature="517:551" placeholder="select sum(p..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/homepage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="118" column="118" selection-start-line="118" selection-start-column="118" selection-end-line="118" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1079,11 +1063,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SportPage/health.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-71.916664">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SportPage/MySport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59900165">
-          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="98" column="89" selection-start-line="97" selection-start-column="0" selection-end-line="98" selection-end-column="99" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2512479">
+          <caret line="118" column="218" selection-start-line="118" selection-start-column="218" selection-end-line="118" selection-end-column="218" />
+          <folding>
+            <element signature="n#style#0;n#label#16;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
