@@ -258,6 +258,47 @@ class Sport
 
     }
 
+    public function datasort(){
+        $users=$this->db->query("select * from 'users'")->fetchAll();
+        $arr=array();
+        $count=0;
+        foreach($users as $item){
+            $tablename=$item['id'].'data';
+            $name=$item['nickname'];
+            $pic=$item['picid'];
+            $result=$this->db->query("select * from '$tablename'");
+            if($result&&$count<10){
+                $count++;
+                $totalkm=$this->db->query("select sum(km) from '$tablename'")->fetchAll()[0][0];
+                $totalpath=$this->db->query("select sum(path) from '$tablename'")->fetchAll()[0][0];
+                $single['nick']=$name;
+                $single['picid']=$pic;
+                $single['km']=$totalkm;
+                $single['path']=round($totalpath,0);
+                array_push($arr,$single);
+            }
+
+        }
+
+        return $arr;
+    }
+
+    public function getPathSort(){
+        $arr=$this->datasort();
+        $arr2=arra_sort($arr,'path','s');
+        return $arr2;
+    }
+
+    public function getKmSort(){
+        $arr=$this->datasort();
+        $arr2=arra_sort($arr,'km','s');
+        return $arr2;
+    }
+
+
+
+
+
     public function getGoalData($userid){
         $sql=("select * from '$this->tablename'");
         $result=$this->db->query($sql)->fetchAll();
@@ -291,6 +332,24 @@ class Sport
     }
 
 
+}
+
+
+function arra_sort($arr,$keys,$type){
+    $keysvalue = $new_array = array();
+    foreach ($arr as $k=>$v){
+        $keysvalue[$k] = $v[$keys];
+    }
+    if($type=='s') {
+        asort($keysvalue);
+    }
+    if($type=='j') {
+        reset($keysvalue);
+    }
+    foreach ($keysvalue as $k=>$v){
+        $new_array[$k] = $arr[$k];
+    }
+    return $new_array;
 }
 //$sport=new Sport('22222','sqlite:../AccountInfo/mydatabase.sqlite');
 //$total=$sport->getGoalData('22222');

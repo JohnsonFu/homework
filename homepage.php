@@ -48,6 +48,8 @@ $time=$sport->getTotalTime();
 $path=$sport->getTotalPath();
 $heat=$sport->getTotalHeat();
 $quanshu=$sport->getCircle($long*1000);
+$kmrank=$sport->getKmSort();
+$pathrank=$sport->getPathSort();
 session_write_close();
 ?>
 <body>
@@ -72,8 +74,8 @@ session_write_close();
         <label>等级:Level<?PHP echo $level ?></label><br>
         <label>胜率:</label><br>
         <label>我的金币:<?PHP echo $money ?></label>
-        <label>个性签名:</label>
-        <textarea style="width:80%; height:60px;  font-family:Helvetica; font-size:15px;text-align:center;resize:none;background-color:#eaf2f2"><?PHP echo $sig ?></textarea>
+        <label>个性签名:</label><br>
+        <label style="color:lightskyblue;font-size:15px;"><?PHP echo $sig ?></label>
 
 
 
@@ -114,8 +116,32 @@ session_write_close();
         <div style="display: inline-block;margin-top:20px;"><img src="img/paodao.png" width="150px" height="100px"><br> <label style="padding-left:20%;font-size:18px;"><?PHP echo $quanshu;?>圈</label></div>
         <div style="display:inline-block;"><img src="img/feirou.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat/7700,1) ?>公斤</label></div>
        <div style="display:inline-block;"><img src="img/qiyou.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat*1.74/10000,2) ?>升</label></div>
-        <div style="display:inline-block;"><img src="img/dengpao.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat*4.18*1000/216000,0); ?>小时</label></div>
+        <div style="display:inline-block;"><img src="img/dengpao.png" width="150px" height="100px"><br> <label style="padding-left:30%;font-size:18px;"><?PHP echo round($heat*4.18*1000/216000,0); ?>小时</label></div><br>
+        <div style="display:inline-block;width:300px;">
+            <header>距离排行榜</header>
+            <?PHP $count=0;
+            foreach ($kmrank as $item) {
+                $count++;
+                echo $count." "; ?>
+                <img src="headpics/<?PHP echo($item['picid']);?>.gif" width="30px" height="30px">
+                <?PHP echo $item['nick'].' '.$item['km'].'Km' ?>
+                <br>
+                <?PHP
+            }?>
+        </div>
 
+        <div style="display:inline-block;width:300px;float:right;margin-right:50px;">
+            <header>步数排行榜</header>
+            <?PHP $count2=0;
+            foreach ($pathrank as $item) {
+                $count2++;
+                echo $count2." "; ?>
+                <img src="headpics/<?PHP echo($item['picid']);?>.gif" width="30px" height="30px">
+                <?PHP echo $item['nick'].' '.$item['path'].'步' ?>
+                <br>
+                <?PHP
+            }?>
+        </div>
     </div>
 
 </div>
