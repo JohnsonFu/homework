@@ -22,6 +22,11 @@
 </head>
 <?PHP
 session_start();
+if(!isset($_SESSION['userid'])){
+    echo "<script>alert('未登录!将返回登录界面....');</script>";
+    echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
+}
+else {
 $id=$_SESSION['userid'];
 $dbaddr='sqlite:../DataProcess/AccountInfo/mydatabase.sqlite';
 include('../DataProcess/SportInfo/Sport.php');
@@ -96,7 +101,7 @@ session_write_close();
     </div>
 </div>
 </div>
-
+<?PHP } ?>
 
 
 <script src="../js/echarts.min.js" type="text/javascript"></script>
