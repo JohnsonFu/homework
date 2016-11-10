@@ -99,7 +99,7 @@ session_write_close();
         <div style="display:inline-block;"><img src="../img/qiyou.png" width="150px" height="100px"><br> <label style="font-family:微软雅黑;padding-left:30%;font-size:18px;"><?PHP echo round($heat*1.74/10000,2) ?>升</label></div>
         <div style="display:inline-block;"><img src="../img/dengpao.png" width="150px" height="100px"><br> <label style="font-family:微软雅黑;padding-left:30%;font-size:18px;"><?PHP echo round($heat*4.18*1000/216000,0); ?>小时</label></div>
 <br>
-           <label style="margin-left:35%;font-family:Helvetica;padding-top:20px;">关注者排行</label><br>
+           <label style="margin-left:35%;font-family:Helvetica;padding-top:20px;">关注者排行(月)</label><br>
         <div style="display:inline-block;width:300px;font-family:Helvetica;">
             <header >距离排行榜</header>
             <?PHP $count=0;

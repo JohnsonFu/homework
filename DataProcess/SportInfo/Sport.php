@@ -311,8 +311,15 @@ class Sport
             $result=$this->db->query("select * from '$tablename'");
             if($result&&$count<10){
                 $count++;
-                $totalkm=$this->db->query("select sum(km) from '$tablename'")->fetchAll()[0][0];
-                $totalpath=$this->db->query("select sum(path) from '$tablename'")->fetchAll()[0][0];
+                $totalkm=0;
+                $totalpath=0;
+              //  $rowid=$this->db->query("select max(rowid) from '$tablename'");
+                $total=$this->db->query("select * from '$tablename' order by rowid desc ")->fetchAll();
+                for($j=0;$j<31;$j++){
+                    $totalkm+=$total[$j]['km'];
+                    $totalpath+=$total[$j]['path'];
+                }
+
                 $single['nick']=$name;
                 $single['picid']=$pic;
                 $single['km']=$totalkm;
