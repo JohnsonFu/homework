@@ -96,7 +96,9 @@ session_write_close();
 </div>
 <div id="content">
     <div class="insidecontent">
-        <div class="mylabel">运动轨迹</div><hr style="margin-right: 50px;">
+        <div class="mylabel">运动轨迹
+            <button style="margin-top:-50px;margin-bottom:15px;" type="button" name="<?PHP echo $id; ?>"  class="login-btn register-btn" id="button" onclick="loadnew(this.name)">导入最新数据</button>
+        </div><hr style="margin-right: 50px;">
 
             <div id="main" style="width: 640px;height:350px;"></div>
 
@@ -151,6 +153,64 @@ session_write_close();
 
 <script src="jquery-1.8.3/jquery.min.js"></script>
 <script src="js/echarts.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function loadnew(str){
+       // if (str.length==0)
+        //{
+
+          //  return
+        //}
+        xmlHttp=GetXmlHttpObject()
+        if (xmlHttp==null)
+        {
+            alert ("Browser does not support HTTP Request")
+            return
+        }
+        var url="DataProcess/SportInfo/UpdateData.php"
+        url=url+"?q="+str
+        url=url+"&sid="+Math.random()
+        xmlHttp.onreadystatechange=stateChanged1
+        xmlHttp.open("GET",url,true)
+        xmlHttp.send(null)
+    }
+
+    function stateChanged1()
+    {
+        if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+        {
+            alert(xmlHttp.responseText);
+            if(xmlHttp.responseText=='最新数据导入成功!')
+                window.location.reload();
+        }
+    }
+
+
+    function GetXmlHttpObject()
+    {
+        var xmlHttp=null;
+        try
+        {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            // Internet Explorer
+            try
+            {
+                xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+        return xmlHttp;
+    }
+
+
+
+</script>
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));

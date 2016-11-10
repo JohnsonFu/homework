@@ -76,6 +76,41 @@ class Sport
     }
 
 
+    public function ImportNewData($dataaddr){
+        $sql = "CREATE TABLE IF NOT EXISTS '$this->tablename' (
+    date VARCHAR(30) NOT NULL PRIMARY KEY,
+    weight DOUBLE  ,
+    km DOUBLE,
+    path DOUBLE,
+    duration DOUBLE,
+    heat DOUBLE
+    )";
+
+        $this->db->query($sql);
+        $res=$this->db->query("select * from '$this->tablename'")->fetchAll();
+
+            $this->getNewData($dataaddr);
+            $this->db->query("DELETE FROM  '$this->tablename'");
+
+
+            //  $this->db->query("DELETE FROM  '$this->tablename'");
+            $xmldoc = new DOMDocument();
+            $xmldoc->load($dataaddr);
+            $stu = $xmldoc->getElementsByTagName("item");//直接找到节点name
+
+            foreach ($stu as $item) {
+                $date = $item->getElementsByTagName("date")->item(0)->nodeValue;
+                $weight = $item->getElementsByTagName("weight")->item(0)->nodeValue;
+                $km = $item->getElementsByTagName("km")->item(0)->nodeValue;
+                $path = $item->getElementsByTagName("path")->item(0)->nodeValue;
+                $duration = $item->getElementsByTagName("duration")->item(0)->nodeValue;
+                $heat = $item->getElementsByTagName("heat")->item(0)->nodeValue;
+                $sentence = "insert into '$this->tablename'(date,weight,km,path,duration,heat)values('$date','$weight','$km','$path','$duration','$heat')";
+                $this->db->query($sentence);
+            }
+
+    }
+
 
 
     public function ImportXMLDATA($dataaddr){
@@ -89,21 +124,29 @@ class Sport
     duration DOUBLE,
     heat DOUBLE
     )";
-        $this->db->query($sql);
-      //  $this->db->query("DELETE FROM  '$this->tablename'");
-        $xmldoc = new DOMDocument();
-        $xmldoc->load($dataaddr);
-        $stu = $xmldoc->getElementsByTagName("item");//直接找到节点name
 
-        foreach ($stu as $item) {
-            $date=$item->getElementsByTagName("date")->item(0)->nodeValue;
-            $weight=$item->getElementsByTagName("weight")->item(0)->nodeValue;
-            $km=$item->getElementsByTagName("km")->item(0)->nodeValue;
-            $path=$item->getElementsByTagName("path")->item(0)->nodeValue;
-            $duration=$item->getElementsByTagName("duration")->item(0)->nodeValue;
-            $heat=$item->getElementsByTagName("heat")->item(0)->nodeValue;
-            $sentence="insert into '$this->tablename'(date,weight,km,path,duration,heat)values('$date','$weight','$km','$path','$duration','$heat')";
-            $this->db->query($sentence);
+        $this->db->query($sql);
+        $res=$this->db->query("select * from '$this->tablename'")->fetchAll();
+        if(count($res)==0) {
+            $this->getNewData($dataaddr);
+            $this->db->query("DELETE FROM  '$this->tablename'");
+
+
+            //  $this->db->query("DELETE FROM  '$this->tablename'");
+            $xmldoc = new DOMDocument();
+            $xmldoc->load($dataaddr);
+            $stu = $xmldoc->getElementsByTagName("item");//直接找到节点name
+
+            foreach ($stu as $item) {
+                $date = $item->getElementsByTagName("date")->item(0)->nodeValue;
+                $weight = $item->getElementsByTagName("weight")->item(0)->nodeValue;
+                $km = $item->getElementsByTagName("km")->item(0)->nodeValue;
+                $path = $item->getElementsByTagName("path")->item(0)->nodeValue;
+                $duration = $item->getElementsByTagName("duration")->item(0)->nodeValue;
+                $heat = $item->getElementsByTagName("heat")->item(0)->nodeValue;
+                $sentence = "insert into '$this->tablename'(date,weight,km,path,duration,heat)values('$date','$weight','$km','$path','$duration','$heat')";
+                $this->db->query($sentence);
+            }
         }
     }
 
