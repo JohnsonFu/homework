@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" type="text/css" href="SportCss.css">
     <link rel="stylesheet" type="text/css" href="../jQuery多功能日期时间插件DateTimePicker/jquery.datetimepicker.css">
+    <link href="../logregis.css"  rel="stylesheet" type="text/css" />
     <script src="../jQuery多功能日期时间插件DateTimePicker/jquery.js"></script>
     <script src="../jQuery多功能日期时间插件DateTimePicker/jquery.datetimepicker.js"></script>
 
@@ -57,7 +58,6 @@ if(!isset($_SESSION['userid'])){
                 <li><a href="#" style="color:#daddf0; background-color: #80c3f7;">
                 设定目标</a></li>
                 <li><a href="health.php">身体分析</a></li>
-                <li><a href="#">睡眠分析</a></li>
             </ul>
         </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="../css/radialindicator.css"  rel="stylesheet" type="text/css" />
+    <link href="../logregis.css"  rel="stylesheet" type="text/css" />
  <link rel="stylesheet" type="text/css" href="../AccountPage/AccountCss.css">
     <script>
         function menuFix(){
@@ -61,14 +61,17 @@ session_write_close();
             <li><a href="MySport.php" style="color:#daddf0; background-color: #80c3f7;">我的运动</a></li>
             <li><a href="SetGoal.php">设定目标</a></li>
             <li><a href="health.php">身体分析</a></li>
-            <li><a href="#">睡眠分析</a></li>
         </ul>
     </div>
 </div>
 
 <div id="content">
     <div class="insidecontent">
-        <div class="mylabel" style="padding-top:10px;">我的运动</div><hr style="margin-right: 50px;">
+        <div class="mylabel" style="padding-top:10px;">我的运动</div>
+        <button style="margin-top:-50px;margin-bottom:15px;" type="button" name="<?PHP echo $id; ?>"  class="login-btn register-btn" id="button" onclick="loadnew(this.name)">导入最新数据</button>
+
+        <hr style="margin-right: 50px;">
+
         <div>
         <div id="piechart" style="width: 420px;height:150px;display:inline-block"></div>
             <div style="display:inline-block;margin-top:20px;margin-right:5%;float:right;width:200px;height:150px">
@@ -133,6 +136,64 @@ session_write_close();
 <script src="../js/echarts.min.js" type="text/javascript"></script>
 
 <script src="../jquery-1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    function loadnew(str){
+        // if (str.length==0)
+        //{
+
+        //  return
+        //}
+        xmlHttp=GetXmlHttpObject()
+        if (xmlHttp==null)
+        {
+            alert ("Browser does not support HTTP Request")
+            return
+        }
+        var url="../DataProcess/SportInfo/UpdateData.php"
+        url=url+"?q="+str
+        url=url+"&sid="+Math.random()
+        xmlHttp.onreadystatechange=stateChanged1
+        xmlHttp.open("GET",url,true)
+        xmlHttp.send(null)
+    }
+
+    function stateChanged1()
+    {
+        if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+        {
+            alert(xmlHttp.responseText);
+            if(xmlHttp.responseText=='最新数据导入成功!')
+                window.location.reload();
+        }
+    }
+
+
+    function GetXmlHttpObject()
+    {
+        var xmlHttp=null;
+        try
+        {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            // Internet Explorer
+            try
+            {
+                xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+        return xmlHttp;
+    }
+
+
+
+</script>
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
