@@ -8,14 +8,7 @@
  */
 class Game
 {
-public $name;
-public $type;
-    public $id;
-    public $starttime;
-    public $endtime;
-    public $joinmoney;
-    public $allmoney;
-    public $description;
+
     public function __construct()
     {
     }

@@ -78,7 +78,7 @@ class Sport
 
     public function ImportNewData($dataaddr){
         $sql = "CREATE TABLE IF NOT EXISTS '$this->tablename' (
-    date VARCHAR(30) NOT NULL PRIMARY KEY,
+    date DATE NOT NULL PRIMARY KEY,
     weight DOUBLE  ,
     km DOUBLE,
     path DOUBLE,
@@ -117,7 +117,7 @@ class Sport
 
      // $this-> getNewData($dataaddr);
         $sql = "CREATE TABLE IF NOT EXISTS '$this->tablename' (
-    date VARCHAR(30) NOT NULL PRIMARY KEY,
+    date DATE NOT NULL PRIMARY KEY,
     weight DOUBLE  ,
     km DOUBLE,
     path DOUBLE,
