@@ -139,7 +139,7 @@ include('../DataProcess/GameInfo/TimeProcess.php');
                 </tr>
                 <tr style="font-size:13px;background-color:#ececec;">
                     <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($mygame->getgamejoiner($item['id']))?></td>
-                    <td style="border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo getTimeMinus($item['starttime'],$item['endtime'])   ?></td>
+                    <td style="border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo getTimeMinus($item['starttime'],$item['endtime'])?></td>
                     <td style=" border-width:1px;border-color:#000;"><?PHP echo($item['joinmoney'])?></td>
                 </tr>
             </table>

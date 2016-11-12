@@ -104,7 +104,10 @@ function getNick($id){
             $joinerist=$mygame->getgamejoiner($item['id']);
             ?>
             <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
-                <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($item['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($item['gamename'])?><input type="button" name=<?PHP echo($item['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+                <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($item['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($item['gamename'])?>
+                    <input type="button" value="详细信息" name=<?PHP echo $item['gamename'].'-' ?><?PHP echo $item['id']?> onclick="showsingle(this.name)"  style="font-size:15px;">
+
+                    <input type="button" name=<?PHP echo($item['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
                 </div>
                 <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                     <tr style="font-size:13px;">
@@ -156,6 +159,34 @@ function getNick($id){
     function jump(){
         window.location.href="SetGame.php";
     }
+
+    function showsingle(str){
+        if (str.length==0)
+        {
+
+            return
+        }
+        xmlHttp=GetXmlHttpObject()
+        if (xmlHttp==null)
+        {
+            alert ("Browser does not support HTTP Request")
+            return
+        }
+        var url="../DataProcess/GameInfo/ShowSingleGame.php"
+        url=url+"?q="+str
+        url=url+"&sid="+Math.random()
+        xmlHttp.onreadystatechange=stateChanged2
+        xmlHttp.open("GET",url,true)
+        xmlHttp.send(null)
+    }
+    function stateChanged2()
+    {
+        if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+        {
+            window.location.href="SingleGame.php";
+        }
+    }
+
     function deletegame(str){
         if (str.length==0)
         {

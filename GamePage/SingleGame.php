@@ -55,8 +55,15 @@ $mygame=new mygame('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite',$id);
 $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 $name= $_SESSION['gamename'];
 $gameid=$_SESSION['gameid'];
+$joinlist=$mygame->getJoinerRankInfo($gameid);
+$game=$mygame->getGame($gameid);
+include('../DataProcess/GameInfo/TimeProcess.php');
 session_write_close();
+function cuttime($time){
+    $arr=explode("/",$time);
+    return $arr[1].'-'.$arr[2];
 
+}
 ?>
 <body>
 <div id="top_bg">
@@ -101,24 +108,25 @@ session_write_close();
        <header><img style="padding-top:10px;" src="../headpics/yundong.png" width="25px" height="25px">&nbsp;&nbsp;多人竞赛</header>
 <div style="width:80%;border-radius:5px;height:100px;background-color: #dddddd">
 
-<label style="font-size:18px;margin-left:20px">离比赛结束<label style="font-size:21px">9天8小时41分</label></label>
-<label style="font-size:18px;margin-left:100px">总金额<label style="font-size:21px">80</label>金币</label><br>
-    <label style="font-size:18px;margin-left:20px">11-20 0:11 至 11-30 5:00</label>
-    <label style="font-size:18px;margin-left:100px">保证金<label style="font-size:21px">200</label>金  等差分配
+<label style="font-size:18px;margin-left:20px"><?PHP echo getTimeMinus($game['starttime'],$game['endtime'])?></label>
+<label style="font-size:18px;margin-left:80px">总金额&nbsp;&nbsp;<label style="font-size:21px"><?PHP echo $game['allmoney'] ?></label>金</label><br>
+    <label style="font-size:18px;margin-left:20px"><?PHP echo cuttime($game['starttime']) ?> 至 <?PHP echo cuttime($game['endtime'])?></label>
+    <label style="font-size:18px;margin-left:150px">保证金&nbsp;&nbsp;<label style="font-size:21px"><?PHP echo $game['joinmoney']?></label>金  等差分配
 
 </label>
 </div>
         <header style="margin-left:40px;"></header>
-        1<img src="../headpics/15.gif" width="30px" height="30px">
-        且听风吟 22000步
-        <br>
-        1<img src="../headpics/15.gif" width="30px" height="30px">
-        且听风吟 22000步
-        <br>
-        1<img src="../headpics/15.gif" width="30px" height="30px">
-        且听风吟 22000步
+
+        <?PHP
+        $count=0;
+        foreach($joinlist as $item){
+            $count++;
+            ?>
+       <?PHP echo $count.' ';?><img src="../headpics/<?PHP echo $item['picid']?>.gif" width="30px" height="30px">
+        <?PHP echo $item['nickname']."----".$item['totalkm'].'KM';?>
         <br>
 
+<?PHP } ?>
 </div>
 <?PHP }unset($list); ?>
 

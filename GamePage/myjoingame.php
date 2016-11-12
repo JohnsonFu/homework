@@ -109,6 +109,7 @@ function getNick($id){
                 <?PHP if($account->isJoinGame($item['id'])){ ?>
             <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
                 <div class="gameheader" style="padding-bottom:3px; border-bottom-style:solid;font-size:18px; border-width:1px; border-color:#000"><?PHP echo($item['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($item['gamename'])?>
+                    <input type="button" value="详细信息" name=<?PHP echo $item['gamename'].'-' ?><?PHP echo $item['id']?> onclick="showsingle(this.name)"  style="font-size:15px;">
                     <input type="button" value="退出" name=<?PHP echo $id,'-' ?><?PHP echo $item['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
 
                 </div>
@@ -150,7 +151,32 @@ function getNick($id){
         window.location.href="SetGame.php";
     }
 
+    function showsingle(str){
+        if (str.length==0)
+        {
 
+            return
+        }
+        xmlHttp=GetXmlHttpObject()
+        if (xmlHttp==null)
+        {
+            alert ("Browser does not support HTTP Request")
+            return
+        }
+        var url="../DataProcess/GameInfo/ShowSingleGame.php"
+        url=url+"?q="+str
+        url=url+"&sid="+Math.random()
+        xmlHttp.onreadystatechange=stateChanged2
+        xmlHttp.open("GET",url,true)
+        xmlHttp.send(null)
+    }
+    function stateChanged2()
+    {
+        if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+        {
+            window.location.href="SingleGame.php";
+        }
+    }
 
     function quitgame(str){
 
