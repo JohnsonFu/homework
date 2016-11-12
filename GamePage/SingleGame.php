@@ -60,7 +60,7 @@ $game=$mygame->getGame($gameid);
 include('../DataProcess/GameInfo/TimeProcess.php');
 session_write_close();
 function cuttime($time){
-    $arr=explode("/",$time);
+    $arr=explode("-",$time);
     return $arr[1].'-'.$arr[2];
 
 }

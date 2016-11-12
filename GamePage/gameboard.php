@@ -114,7 +114,7 @@ include('../DataProcess/GameInfo/TimeProcess.php');
                 <?PHP if($id!=$a->id){ ?>
                    <?PHP if($account->isJoinGame($item['id'])){ ?>
                 <input type="button" value="退出" name=<?PHP echo $id.'-' ?><?PHP echo $item['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
-                <?PHP }else{ ?>
+                <?PHP }else if($account->JoinOK($item['id'])){ ?>
                        <input type="button" value="加入" class="tablebutton" name=<?PHP echo $id,'-' ?><?PHP echo $item['id']?> onclick="joingame(this.name)" style=";font-size:20px;width:70px;float:right;height:25px;">
             <?PHP }} ?>
                 <?PHP if($id==$a->id){ ?>

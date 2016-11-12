@@ -84,14 +84,14 @@ if(!isset($_SESSION['userid'])){
     $('#datetimepicker2').datetimepicker({
         lang:'en',
         timepicker:false,
-        format:'Y/m/d',
+        format:'Y-m-d',
         formatDate:'Y/m/d',
     });
     $('#datetimepicker7').datetimepicker({
         lang:'en',
         timepicker:false,
-        format:'Y/m/d',
-        formatDate:'Y/m/d',
+        format:'Y-m-d',
+        formatDate:'Y-m-d',
     });
     $('#datetimepicker2').datetimepicker();
     $('#datetimepicker7').datetimepicker();

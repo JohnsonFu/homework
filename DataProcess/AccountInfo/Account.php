@@ -211,6 +211,26 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         $result=$this->db->query("select * from goal where uid='$this->id'")->fetchAll();
         return $result;
     }
+    public function JoinOK($gameid){
+        $time =time()+8*60*60;
+        $date="20".date("y-m-d",$time);
+        $result=$this->db->query("select * from game where id='$gameid' and endtime>'$date'")->fetchAll();
+       $count=count($result);
+
+        if($count>0){
+            $temp=$this->db->query("select * from gamejoiner where gameid='$gameid'")->fetchAll();
+            $count=count($temp);
+            if($result[0]['gametype']=='单人PK' and $count>=2 ){
+                return false;
+            }else {
+                return true;
+            }
+        }else{
+            return false;
+        }
+        return false;
+
+    }
 
 }
 
