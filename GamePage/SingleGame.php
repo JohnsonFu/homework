@@ -109,9 +109,9 @@ function cuttime($time){
 <div style="width:80%;border-radius:5px;height:100px;background-color: #dddddd">
 
 <label style="font-size:18px;margin-left:20px"><?PHP echo getTimeMinus($game['starttime'],$game['endtime'])?></label>
-<label style="font-size:18px;margin-left:80px">总金额&nbsp;&nbsp;<label style="font-size:21px"><?PHP echo $game['allmoney'] ?></label>金</label><br>
+<label style="font-size:18px;float:right;margin-right:50px">总金额&nbsp;&nbsp;<label style="font-size:21px"><?PHP echo $game['allmoney'] ?></label>金</label><br>
     <label style="font-size:18px;margin-left:20px"><?PHP echo cuttime($game['starttime']) ?> 至 <?PHP echo cuttime($game['endtime'])?></label>
-    <label style="font-size:18px;margin-left:150px">保证金&nbsp;&nbsp;<label style="font-size:21px"><?PHP echo $game['joinmoney']?></label>金  等差分配
+    <label style="font-size:18px;float:right;margin-right:50px;">保证金&nbsp;&nbsp;<label style="font-size:21px"><?PHP echo $game['joinmoney']?></label>金
 
 </label>
 </div>
