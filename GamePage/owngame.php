@@ -51,7 +51,6 @@ $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
 session_write_close();
 include('../DataProcess/GameInfo/mygame.php');
-//include('../DataProcess/AccountInfo/mydatabase.sqlite')
 $mygame=new mygame('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite',$id);
 $list=$mygame->getowngame();
 function getNick($id){
@@ -102,12 +101,18 @@ function getNick($id){
         <div class="mylabel">我发起的竞赛</div><hr style="margin-right: 50px;">
         <?PHP foreach($list as $item) {
             $joinerist=$mygame->getgamejoiner($item['id']);
+            $isOver=$mygame->GameOver($item['id']);
+            $isSettle=$mygame->isSettle($item['id']);
             ?>
             <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
-                <div class="gameheader" style="border-bottom-style:solid; border-width:1px; border-color:#000"><?PHP echo($item['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($item['gamename'])?>
+                <div class="gameheader" style="padding-bottom:3px; border-bottom-style:solid;font-size:18px; border-width:1px; border-color:#000"><?PHP echo($item['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($item['gamename'])?>
                     <input type="button" value="详细信息" name=<?PHP echo $item['gamename'].'-' ?><?PHP echo $item['id']?> onclick="showsingle(this.name)"  style="font-size:15px;">
+                    <?PHP if($isOver){?>
+                    <input type="button"  value="结算" name=<?PHP echo($item['id'].'-'.$id)?> onclick="Settle(this.name)"  style="font-size:15px;">
+                    <?PHP }if($isSettle){echo '已结算';}?>
 
-                    <input type="button" name=<?PHP echo($item['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
+
+                    <input type="button" name=<?PHP echo($item['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style="font-size:20px;width:70px;float:right;height:25px;">
                 </div>
                 <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                     <tr style="font-size:13px;">
@@ -206,6 +211,37 @@ function getNick($id){
         xmlHttp.open("GET",url,true)
         xmlHttp.send(null)
     }
+
+    function Settle(str){
+        if (str.length==0)
+        {
+
+            return
+        }
+        xmlHttp=GetXmlHttpObject()
+        if (xmlHttp==null)
+        {
+            alert ("Browser does not support HTTP Request")
+            return
+        }
+        var url="../DataProcess/GameInfo/SettleGame.php"
+        url=url+"?q="+str
+        url=url+"&sid="+Math.random()
+        xmlHttp.onreadystatechange=stateChanged3
+        xmlHttp.open("GET",url,true)
+        xmlHttp.send(null)
+    }
+
+    function stateChanged3()
+    {
+        if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+        {
+            alert(xmlHttp.responseText);
+            window.location.reload();
+        }
+    }
+
+
 
     function stateChanged1()
     {

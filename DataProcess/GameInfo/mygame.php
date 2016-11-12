@@ -49,12 +49,35 @@ public $id;
             $tablename=$item['id'].'data';
             $totalkm=$this->db->query("select sum(km) from '$tablename' where date>='$starttime' and date<='$endtime'")->fetchAll()[0][0];
             $single['nickname']=$item['nickname'];
+            $single['id']=$item['id'];
             $single['totalkm']=$totalkm;
             $single['picid']=$item['picid'];
             array_push($arr,$single);
         }
        $res=arra_sort($arr,'totalkm','j');
         return $res;
+    }
+
+    public function GameOver($gameid){
+        $time =time()+8*60*60;
+        $date="20".date("y-m-d",$time);
+        $result=$this->db->query("select * from game where id='$gameid' and endtime<'$date' and issettle='0'")->fetchAll();
+        $count=count($result);
+        if($count>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function isSettle($gameid){
+        $result=$this->db->query("select * from game where id='$gameid' and issettle='1'")->fetchAll();
+        $count=count($result);
+        if($count>0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function getjoinerInfo($gameid){

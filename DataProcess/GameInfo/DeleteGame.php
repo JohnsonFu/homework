@@ -8,6 +8,8 @@
 $gameid=$_GET['q'];
 
 $db = new PDO("sqlite:../AccountInfo/mydatabase.sqlite");
+$joinmoney=$db->query("select joinmoney from game where id='$gameid'")->fetchAll()[0][0];
+$res1=$db->query("update users set money=money+'$joinmoney' where id in(select joinerid from gamejoiner where gameid='$gameid')");
 $result=$db->query("delete from gamejoiner where gameid='$gameid'");
 $res2=$db->query("delete from game where id='$gameid'");
 if($result&&$res2) {

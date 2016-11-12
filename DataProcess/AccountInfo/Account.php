@@ -211,6 +211,7 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         $result=$this->db->query("select * from goal where uid='$this->id'")->fetchAll();
         return $result;
     }
+
     public function JoinOK($gameid){
         $time =time()+8*60*60;
         $date="20".date("y-m-d",$time);
