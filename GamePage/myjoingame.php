@@ -52,6 +52,7 @@ session_write_close();
 include('../DataProcess/GameInfo/Game.php');
 include('../DataProcess/GameInfo/mygame.php');
 include('../DataProcess/AccountInfo/Account.php');
+include('../DataProcess/GameInfo/TimeProcess.php');
 $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 $list=getGameList('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
 $mygame=new mygame('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite',$id);
@@ -90,7 +91,7 @@ function getNick($id){
     <div id="vertmenu" >
         <ul>
             <li style="margin-top:10px; "><a href="gameboard.php" >竞赛场</a></li>
-            <li style="margin-top:10px;"><a href="#">我的战绩</a></li>
+            <li style="margin-top:10px;"><a href="myGameResult.php">我的战绩</a></li>
             <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="owngame.php">发起的竞赛</a></li>
             <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="myjoingame.php" style="color:#daddf0; background-color: #80c3f7;">参加的竞赛</a></li>
         </ul>
@@ -104,14 +105,17 @@ function getNick($id){
         <?PHP foreach($list as $item) {
             $a=new Account($item['masterid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
             $picid=$a->getPicId();
+            $isSettle=$mygame->isSettle($item['id']);
             ?>
             <?PHP if($id!=$a->id){ ?>
                 <?PHP if($account->isJoinGame($item['id'])){ ?>
             <div class="gameinfo" style="border-style:solid; border-width:1px; border-color:#000">
                 <div class="gameheader" style="padding-bottom:3px; border-bottom-style:solid;font-size:18px; border-width:1px; border-color:#000"><?PHP echo($item['id']) ?>&nbsp;&nbsp;&nbsp;<?PHP echo($item['gamename'])?>
                     <input type="button" value="详细信息" name=<?PHP echo $item['gamename'].'-' ?><?PHP echo $item['id']?> onclick="showsingle(this.name)"  style="font-size:15px;">
+                    <?PHP if($isSettle){echo '已结算';} ?>
+                   <?PHP if(!$isSettle){ ?>
                     <input type="button" value="退出" name=<?PHP echo $id,'-' ?><?PHP echo $item['id']?> onclick="quitgame(this.name)" class="tablebutton" style=";font-size:20px;width:70px;float:right;height:25px;">
-
+                   <?PHP } ?>
                 </div>
                 <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                     <tr style="font-size:13px;">
@@ -131,8 +135,8 @@ function getNick($id){
                     </tr>
                     <tr style="font-size:13px;background-color:#ececec;">
                         <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($mygame->getgamejoiner($item['id']))?></td>
-                        <td style="border-width:1px;border-color:#000;border-right-style:solid;">1天2小时3分</td>
-                        <td style=" border-width:1px;border-color:#000;">1000</td>
+                        <td style="border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo getTimeMinus($item['starttime'],$item['endtime'])?></td>
+                        <td style=" border-width:1px;border-color:#000;"><?PHP echo($item['joinmoney'])?></td>
                     </tr>
                 </table>
             </div>

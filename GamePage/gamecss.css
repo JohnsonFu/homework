@@ -141,6 +141,21 @@ body{
 
 
 }
+.ilabel{
+    font-family:"Yuanti SC";
+    color:whitesmoke;
+    font-size:15px;
+}
+.ilabel2{
+    font-family:"Yuanti SC";
+    color:whitesmoke;
+    font-size:18px;
+}
+.peopleitem{
+    padding-top:10px;
+    width:90%;
+    padding-bottom:10px;
+}
 .infobar label{
     margin-top:25px;
     float:none;

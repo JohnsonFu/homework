@@ -88,7 +88,7 @@ function getNick($id){
     <div id="vertmenu" >
         <ul>
             <li style="margin-top:10px; "><a href="gameboard.php">竞赛场</a></li>
-            <li style="margin-top:10px;"><a href="#">我的战绩</a></li>
+            <li style="margin-top:10px;"><a href="myGameResult.php">我的战绩</a></li>
             <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="owngame.php"  style="color:#daddf0; background-color: #80c3f7;">发起的竞赛</a></li>
             <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="myjoingame.php">参加的竞赛</a></li>
         </ul>
@@ -109,10 +109,11 @@ function getNick($id){
                     <input type="button" value="详细信息" name=<?PHP echo $item['gamename'].'-' ?><?PHP echo $item['id']?> onclick="showsingle(this.name)"  style="font-size:15px;">
                     <?PHP if($isOver){?>
                     <input type="button"  value="结算" name=<?PHP echo($item['id'].'-'.$id)?> onclick="Settle(this.name)"  style="font-size:15px;">
-                    <?PHP }if($isSettle){echo '已结算';}?>
-
-
+                    <?PHP }if($isSettle){echo '已结算';}
+                    if(!$isSettle){
+                    ?>
                     <input type="button" name=<?PHP echo($item['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style="font-size:20px;width:70px;float:right;height:25px;">
+               <?PHP } ?>
                 </div>
                 <table  style="font-size:10px;width:100%;text-align:center"  cellspacing="0" >
                     <tr style="font-size:13px;">
@@ -144,7 +145,7 @@ function getNick($id){
                                 $kpicid = $kaccount->getPicId();
                                 echo $knick,' ';
  ?>
-                            <img src="../headpics/<?PHP echo($kpicid)?>.gif" width="20px" height="20px">
+                                <img src="../headpics/<?PHP echo($kpicid)?>.gif" width="20px" height="20px">
                             <?PHP } ?>
                         <td style=" border-width:1px;border-color:#000;border-top-style:solid;">总奖池:<?PHP echo($item['allmoney'])?></td>
                         </td>

@@ -42,6 +42,7 @@ public $id;
     public function getJoinerRankInfo($gameid){
         $result=$this->db->query("select * from users where id in (select joinerid from gamejoiner where gameid='$gameid')")->fetchAll();
         $game=$this->db->query("select * from game where id='$gameid'")->fetchAll()[0];
+        $gameowner=$this->db->query("select nickname from users where id='$this->id'")->fetchAll()[0][0];
         $starttime=$game['starttime'];
         $endtime=$game['endtime'];
         $arr=array();
@@ -51,6 +52,7 @@ public $id;
             $single['nickname']=$item['nickname'];
             $single['id']=$item['id'];
             $single['totalkm']=$totalkm;
+            $single['owner']=$gameowner;
             $single['picid']=$item['picid'];
             array_push($arr,$single);
         }
@@ -87,6 +89,10 @@ public $id;
     }
     public function getGame($gameid){
         $result=$this->db->query("select * from game where id='$gameid'")->fetchAll()[0];
+        return $result;
+    }
+    public function getGameResult(){
+        $result=$this->db->query("select * from gameresult where id='$this->id'")->fetchAll();
         return $result;
     }
 

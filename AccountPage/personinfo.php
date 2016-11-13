@@ -45,7 +45,6 @@ $money=$account->getMoney();
     <div id="vertmenu">
         <ul>
             <li><a href="#" style=" color: #daddf0; background-color: #80c3f7;">基本信息</a></li>
-            <li><a href="#">头像设置</a></li>
         </ul>
     </div>
 </div>

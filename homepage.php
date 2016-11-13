@@ -69,7 +69,7 @@ session_write_close();
 </div>
 <div id="leftbar">
     <div align="center" class="infobar" >
-        <label>用户名:<?PHP echo $nickname ?></label><br>
+        <label><?PHP echo $nickname ?></label><br>
         <img src="headpics/<?PHP echo($picid); ?>.gif"  alt="找不到头像" /><br>
         <label>等级:Level<?PHP echo $level ?></label><br>
         <label>胜率:</label><br>
@@ -85,7 +85,7 @@ session_write_close();
         <ul>
             <li style="margin-top:10px;"><a href="AccountPage/personinfo.php">账户设置</a></li>
             <li style="margin-top:10px;"><a href="AccountPage/friend.php">我的好友</a></li>
-            <li style="margin-top:10px;"><a href="#">我的活动</a></li>
+            <li style="margin-top:10px;"><a href="GamePage/gameboard.php">我的竞赛</a></li>
             <?PHP if($noread!=0){?>
             <li style="margin-top:10px;font-size:18px;"><a href="AccountPage/mail.php">邮箱(<?PHP echo $noread.'未读'; ?>)</a></li>
        <?PHP }else{ ?>
