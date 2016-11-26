@@ -46,9 +46,6 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
     }
 
 
-  public  function getLevel(){
-        return $this->infolist['level'];
-    }
   public  function getMoney(){
         return $this->infolist['money'];
     }
@@ -210,6 +207,12 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
     public function getGoal(){
         $result=$this->db->query("select * from goal where uid='$this->id'")->fetchAll();
         return $result;
+    }
+    public function getLevel(){
+        $result=$this->db->query("select * from users where id='$this->id'")->fetchAll()[0];
+        $exp=$result['baseexp']+$result['gameexp'];
+        $level=floor($exp/100);
+        return $level;
     }
 
     public function JoinOK($gameid){

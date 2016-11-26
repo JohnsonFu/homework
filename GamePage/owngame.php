@@ -51,6 +51,7 @@ $nickname=$_SESSION['nickname'];
 $level=$_SESSION['level'];
 session_write_close();
 include('../DataProcess/GameInfo/mygame.php');
+include('../DataProcess/GameInfo/TimeProcess.php');
 $mygame=new mygame('sqlite:../DataProcess/AccountInfo/mydatabase.sqlite',$id);
 $list=$mygame->getowngame();
 function getNick($id){
@@ -81,7 +82,7 @@ function getNick($id){
         <img src="../headpics/<?PHP echo($account->getPicId())?>.gif"><br>
         <label><?PHP echo $nickname ?></label><br>
         <label>等级:Level<?PHP echo $level; ?></label><br>
-        <label style="margin-left:-40px;">胜率:</label><hr>
+        <hr>
         <button type="button"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发起竞赛</button>
         <a href="#" style="font-size:18px;">规则介绍</a>
     </div>
@@ -128,12 +129,12 @@ function getNick($id){
                     </tr>
                     <tr style="font-size:13px;">
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">人数</td>
-                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">离竞赛开始还有</td>
+                        <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">比赛时间</td>
                         <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">保证金</td>
                     </tr>
                     <tr style="font-size:13px;background-color:#ececec;">
                         <td style=" border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo count($joinerist);  ?></td>
-                        <td style="border-width:1px;border-color:#000;border-right-style:solid;">1天2小时3分</td>
+                        <td style="border-width:1px;border-color:#000;border-right-style:solid;"><?PHP echo getTimeMinus($item['starttime'],$item['endtime'])?></td>
                         <td style=" border-width:1px;border-color:#000;"><?PHP echo($item['joinmoney'])?></td>
                     </tr>
                     <tr style="font-size:13px;">

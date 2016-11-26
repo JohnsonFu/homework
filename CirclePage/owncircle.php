@@ -70,7 +70,8 @@ session_write_close();
 </div>
 <div id="leftbar">
     <img style="margin-left:32%;" src="../headpics/<?PHP echo($account->getPicId()); ?>.gif"><br>
-    <label style="margin-left:36%;"><?PHP echo($account->getNick()); ?></label>
+    <label style="margin-left:36%;font-family:Helvetica;font-size:22px"><?PHP echo($account->getNick()); ?></label>
+    <label style="margin-left:36%;font-family:Helvetica;font-size:22px">Level<?PHP echo $account->getLevel(); ?></label>
     <div id="header" style="margin-left:33%;">朋友圈</div>
     <button type="button"  style="margin-left:33%;"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发布状态</button>
     <div id="vertmenu">

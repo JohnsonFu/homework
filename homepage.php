@@ -29,7 +29,7 @@ else {
     $dbaddr = "sqlite:DataProcess/AccountInfo/mydatabase.sqlite";
     $account = new Account($id, $dbaddr);
     $nickname = $account->getNick();
-    $level = $account->getLevel();
+
     $money = $account->getMoney();
     $sig = $account->getSig();
 $picid=$account->getPicId();
@@ -38,7 +38,6 @@ $noread=$account->getUnread();
     $_SESSION['nickname'] = $nickname;
     $_SESSION['sig'] = $sig;
     $_SESSION['password'] = $password;
-    $_SESSION['level'] = $level;
     $_SESSION['money'] = $money;
 include('DataProcess/SportInfo/Sport.php');
 $sport=new Sport($id,$dbaddr);
@@ -50,6 +49,8 @@ $heat=$sport->getTotalHeat();
 $quanshu=$sport->getCircle($long*1000);
 $kmrank=$sport->getKmSort();
 $pathrank=$sport->getPathSort();
+$level = $account->getLevel();
+$_SESSION['level'] = $level;
 session_write_close();
 ?>
 <body>
@@ -72,7 +73,6 @@ session_write_close();
         <label><?PHP echo $nickname ?></label><br>
         <img src="headpics/<?PHP echo($picid); ?>.gif"  alt="找不到头像" /><br>
         <label>等级:Level<?PHP echo $level ?></label><br>
-        <label>胜率:</label><br>
         <label>我的金币:<?PHP echo $money ?></label>
         <label>个性签名:</label><br>
         <label style="color:lightskyblue;font-size:15px;"><?PHP echo $sig ?></label>
@@ -179,8 +179,9 @@ session_write_close();
         if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
         {
             alert(xmlHttp.responseText);
-            if(xmlHttp.responseText=='最新数据导入成功!')
+            if(xmlHttp.responseText=='最新数据导入成功!') {
                 window.location.reload();
+            }
         }
     }
 

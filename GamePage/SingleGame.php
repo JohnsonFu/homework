@@ -87,7 +87,7 @@ function cuttime($time){
         <img src="../headpics/<?PHP echo($account->getPicId())?>.gif"><br>
         <label><?PHP echo $nickname ?></label><br>
         <label>等级:Level<?PHP echo $level; ?></label><br>
-        <label style="margin-left:-40px;">胜率:</label><hr>
+        <hr>
         <button type="button"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发起竞赛</button>
         <a href="#" style="font-size:18px;">规则介绍</a>
     </div>

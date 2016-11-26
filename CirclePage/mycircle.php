@@ -49,7 +49,7 @@ if(!isset($_SESSION['userid'])){
     include('../DataProcess/CircleInfo/Post.php');
     $account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
     $nick=$account->getNick();
-
+    $level=$account->getLevel();
     $list=$account->getMyFollowPosts();
 }
 session_write_close();
@@ -72,7 +72,8 @@ session_write_close();
         </div>
         <div id="leftbar">
             <img style="margin-left:32%;" src="../headpics/<?PHP echo($account->getPicId()); ?>.gif"><br>
-            <label style="margin-left:36%;"><?PHP echo($nick); ?></label>
+            <label style="margin-left:36%;font-family:Helvetica;font-size:22px"><?PHP echo($nick); ?></label><br>
+            <label style="margin-left:36%;font-family:Helvetica;font-size:22px">Level<?PHP echo $level; ?></label>
         <div id="header" style="margin-left:33%;">朋友圈</div>
             <button type="button"  style="margin-left:33%;"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发布状态</button>
         <div id="vertmenu">

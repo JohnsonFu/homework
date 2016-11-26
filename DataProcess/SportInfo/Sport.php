@@ -148,6 +148,9 @@ class Sport
                 $this->db->query($sentence);
             }
         }
+        $kms=round($this->getTotalKM());
+        $query="update users set baseexp='$kms' where id='$this->id'";
+        $this->db->query($query);
     }
 
     public function getAllData(){

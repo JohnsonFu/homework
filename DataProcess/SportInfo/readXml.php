@@ -24,7 +24,7 @@
 
     $testdata = array();
     $pathave = rand(5, 8) / 10;//步长为0.5m-0.8
-    for ($i = 0; $i < 300; $i++) {
+    for ($i = 0; $i < 5000; $i++) {
         $single = array();
         $speed = rand(3, 7);
         $time = time() + 8 * 60 * 60 - (300 - $i) * 24 * 60 * 60;
