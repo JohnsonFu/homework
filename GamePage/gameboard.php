@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>竞赛场</title>
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
    <link rel="stylesheet" type="text/css" href="gamecss.css">
@@ -135,7 +135,7 @@ function getNick($id){
                 </tr>
                 <tr style="font-size:13px;">
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">人数</td>
-                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">时间</td>
+                    <td style="border-bottom-style:solid; border-width:1px;border-color:#000;border-right-style:solid;">比赛时间</td>
                     <td style="border-bottom-style:solid; border-width:1px;border-color:#000;">保证金</td>
                 </tr>
                 <tr style="font-size:13px;background-color:#ececec;">

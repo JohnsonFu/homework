@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>我的运动</title>
     <link href="../logregis.css"  rel="stylesheet" type="text/css" />
  <link rel="stylesheet" type="text/css" href="../AccountPage/AccountCss.css">
     <script>

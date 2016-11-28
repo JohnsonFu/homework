@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>我的战绩</title>
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
     <link rel="stylesheet" type="text/css" href="gamecss.css">
@@ -102,6 +102,7 @@ session_write_close();
             $money=$item['money'];
             $start=$item['start'];
             $end=$item['end'];
+            $exp=$item['exp'];
             ?>
         <div class="peopleitem" >
                 <table  style="width:100%;height:50px;;word-break:break-all;"cellspacing="0" cellpadding="0">
@@ -110,7 +111,7 @@ session_write_close();
                         <td style="background-color: #67d0fd;width:16%">比赛人数<br><?PHP echo $count;?></td>
                         <td style="background-color: #8de0ff;width:16%">我的排名<br><?PHP echo $rank;?></td>
                         <td style="background-color: #8dd0ff;width:16%">获得金币<br><?PHP echo $money;?></label></td>
-                        <td style="background-color: #80c4ff;width:16%">获得经验值<br>0</label></td>
+                        <td style="background-color: #80c4ff;width:16%">获得经验值<br><?PHP echo $exp;?></label></td>
                         <td style="background-color: #8dd0ff;width:10%">开始<br><?PHP echo $start;?></label></td>
                         <td style="background-color: #80c4ff;width:10%">结束<br><?PHP echo $end;?></label></td>
                     </tr>

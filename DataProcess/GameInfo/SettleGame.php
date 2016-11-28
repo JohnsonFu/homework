@@ -27,10 +27,12 @@ function settle($list,$singlemoney,$gameid,$s,$e){
     foreach($list as $item){
         $id=$item['id'];
         $masternick=$item['owner'];
-       $winmoney=round(2*($count-$rank+1)/($count+1)*$singlemoney*1.2,1);
+       $winmoney=round(2*($count-$rank+1)/($count+1)*$singlemoney*1.2,1);//比赛金币分配
+        //比赛经验值分配 (1+(x-n)/10)*base x为人数,n为名次
+        $winexp=(1+($count-$rank)*0.1)*20;
        $gameidyourid=$gameid.$id;
-        $db->query("update users set money=money+'$winmoney'where id='$id'");
- $db->query("insert into gameresult(gameid,nick,id,count,rank,money,gameidyourid,start,end) values ('$gameid','$masternick','$id','$count','$rank','$winmoney','$gameidyourid','$s','$e')");
+        $db->query("update users set money=money+'$winmoney',gameexp=gameexp+'$winexp' where id='$id'");
+ $db->query("insert into gameresult(gameid,nick,id,count,rank,money,gameidyourid,start,end,exp) values ('$gameid','$masternick','$id','$count','$rank','$winmoney','$gameidyourid','$s','$e','$winexp')");
 
         $rank++;
 

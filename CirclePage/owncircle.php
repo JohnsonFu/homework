@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>我的动态</title>
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
     <link rel="stylesheet" type="text/css" href="../AccountPage/AccountCss.css">

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>首页</title>
     <link rel="stylesheet" type="text/css"
           href="logregis.css"/>
     <link rel="stylesheet" type="text/css" href="GamePage/gamecss.css">
@@ -39,6 +39,7 @@ $noread=$account->getUnread();
     $_SESSION['sig'] = $sig;
     $_SESSION['password'] = $password;
     $_SESSION['money'] = $money;
+$_SESSION['picid']=$picid;
 include('DataProcess/SportInfo/Sport.php');
 $sport=new Sport($id,$dbaddr);
 $sport->ImportXMLDATA('DataProcess/SportXML/test.xml');

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>注册</title>
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
 </head>

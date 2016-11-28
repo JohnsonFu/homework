@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>身体分析</title>
     <link href="../logregis.css"  rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../GamePage/gamecss.css">
     <script>

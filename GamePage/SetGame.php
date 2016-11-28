@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>发起竞赛</title>
     <link rel="stylesheet" type="text/css"
           href="../logregis.css"/>
    <link rel="stylesheet" type="text/css" href="gamecss.css">
@@ -19,6 +19,7 @@ if(!isset($_SESSION['userid'])){
     $id=$_SESSION['userid'];
     $nickname=$_SESSION['nickname'];
     $level=$_SESSION['level'];
+    $picid=$_SESSION['picid'];
     session_write_close();
 
 ?>
@@ -38,6 +39,7 @@ if(!isset($_SESSION['userid'])){
 </div>
 <div id="leftbar">
     <div align="center" class="infobar">
+        <img src="../headpics/<?PHP echo($picid)?>.gif"><br>
         <label><?PHP echo $nickname ?></label><br>
         <label>等级:Level<?PHP echo $level ?></label><br>
     <hr>
@@ -47,9 +49,9 @@ if(!isset($_SESSION['userid'])){
     <div id="vertmenu">
         <ul>
             <li style="margin-top:10px; "><a href="gameboard.php" >竞赛场</a></li>
-            <li style="margin-top:10px;"><a href="#">我的战绩</a></li>
+            <li style="margin-top:10px;"><a href="myGameResult.php">我的战绩</a></li>
             <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="owngame.php">发起的竞赛</a></li>
-            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="#">参加的竞赛</a></li>
+            <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="myjoingame.php">参加的竞赛</a></li>
         </ul>
     </div>
 

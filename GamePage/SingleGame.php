@@ -94,7 +94,7 @@ function cuttime($time){
     <div id="vertmenu" >
         <ul>
             <li style="margin-top:10px; "><a href="gameboard.php" style="color:#daddf0; background-color: #80c3f7;">竞赛场</a></li>
-            <li style="margin-top:10px;"><a href="#">我的战绩</a></li>
+            <li style="margin-top:10px;"><a href="myGameResult.php">我的战绩</a></li>
             <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="owngame.php">发起的竞赛</a></li>
             <li style="margin-left:-5px;margin-top:10px;font-size:20px;"><a href="myjoingame.php">参加的竞赛</a></li>
         </ul>
