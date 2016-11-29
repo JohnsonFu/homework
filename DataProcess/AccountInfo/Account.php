@@ -215,6 +215,52 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         return $level;
     }
 
+    public function getMyreport(){
+        $result=$this->db->query("select * from report where fromid='$this->id' and hascheck='1'")->fetchAll();
+        $arr=array();
+        foreach($result as $item){
+            if($item['approve']==1){
+                $toid=$item['toid'];
+                $exp=$item['minusexp']*100;
+                $time=$item['time'];
+                $content=$item['reason'];
+                $money=$item['minusmoney']*100;
+                $str='经管理员核实,您于'.$time.'对'.$toid.'账号的举报理由"'.$content.'"被通过,处以没收'.$exp.'%经验'.'以及'.$money.'%金币的处罚';
+                array_push($arr,$str);
+            }
+            if($item['approve']==0){
+                $toid=$item['toid'];
+                $time=$item['time'];
+                $content=$item['reason'];
+                $str='经管理员核实,您于'.$time.'对'.$toid.'账号的举报理由"'.$content.'"被驳回';
+                array_push($arr,$str);
+            }
+        }
+        return $arr;
+    }
+    public function getReportTome(){
+        $result=$this->db->query("select * from report where toid='$this->id' and hascheck='1'")->fetchAll();
+        $arr=array();
+        foreach($result as $item){
+            if($item['approve']==1){
+                $exp=$item['minusexp']*100;
+                $time=$item['time'];
+                $content=$item['reason'];
+                $money=$item['minusmoney']*100;
+                $str='经管理员核实,某用户于'.$time.'对您的举报内容"'.$content.'"被通过,对您处以没收'.$exp.'%经验'.'以及'.$money.'%金币的处罚';
+                array_push($arr,$str);
+            }
+            if($item['approve']==0){
+                $time=$item['time'];
+                $content=$item['reason'];
+                $str='经管理员核实,某用户于'.$time.'对您账号的举报理由"'.$content.'"被驳回';
+                array_push($arr,$str);
+            }
+        }
+        return $arr;
+    }
+
+
     public function JoinOK($gameid){
         $time =time()+8*60*60;
         $date="20".date("y-m-d",$time);
