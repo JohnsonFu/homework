@@ -87,7 +87,7 @@ if(!isset($_SESSION['userid'])){
                         <td style="background-color: #8de0ff;width:20%"><label class="ilabel">个性签名</label><br><label class="ilabel2" style="font-size:15px;"><?PHP echo ($fsig)?></label></td>
                         <td style="background-color: #8dd0ff;width:20%"  ><label class="ilabel"><img id="mypic" src="../img/delete.png" width="40px" height="40px"  name=<?PHP echo $item,'__',$id;?>   onclick="add(this.name)"><br>取消关注</label></td>
                         <td style="background-color: #80c4ff;width:15%"><label class="ilabel"><img src="../img/call.gif" width="40px" height="40px"  name=<?PHP echo($fid.'_'.$fnick)?> onclick="sendMsg(this.name)"><br>发私信</label></td>
-                        <td style="background-color: #8de0ff;width:15%"><label class="ilabel"><img src="../img/jubao.jpg" width="40px" height="40px" name=<?PHP echo($fid)?> onclick="sendMsg(this.name)"><br>举报</label></td>
+                         <td style="background-color: #8de0ff;width:15%"><label class="ilabel"><img src="../img/jubao.jpg" width="40px" height="40px" name=<?PHP echo($id.'_'.$fid.'_'.$fnick)?> onclick="report(this.name)"><br>举报</label></td>
                     </tr>
                 </table>
 
@@ -123,18 +123,21 @@ if(!isset($_SESSION['userid'])){
         var url="../DataProcess/AccountInfo/RemoveFriend.php"
         url=url+"?q="+str
         url=url+"&sid="+Math.random()
-        xmlHttp.onreadystatechange=stateChanged
+        xmlHttp.onreadystatechange=function()
+        {
+            if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+            {
+                window.location.reload();
+            }
+        }
         xmlHttp.open("GET",url,true)
         xmlHttp.send(null)
     }
-
-    function stateChanged()
-    {
-        if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
-        {
-            window.location.reload();
-        }
+    function report(str){
+        var myWindow=window.open('./reportmsg.php?toname='+encodeURIComponent(str),'','width=400,height=400')
+        myWindow.focus();
     }
+
 
     function GetXmlHttpObject()
     {

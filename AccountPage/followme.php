@@ -87,7 +87,7 @@ if(!isset($_SESSION['userid'])){
                         <td style="background-color: #8de0ff;width:20%"><label class="ilabel">个性签名</label><br><label class="ilabel2" style="font-size:15px;"><?PHP echo ($fsig)?></label></td>
                         <td style="background-color: #8dd0ff;width:20%"  ><label class="ilabel"><img id="mypic" src="../img/delete.png" width="40px" height="40px"  name=<?PHP echo $fid.'__'.$id;?>   onclick="add(this.name)"><br>删除好友</label></td>
                         <td style="background-color: #80c4ff;width:15%"><label class="ilabel"><img src="../img/call.gif" width="40px" height="40px" name=<?PHP echo($fid.'_'.$fnick)?> onclick="sendMsg(this.name)"><br>发私信</label></td>
-                        <td style="background-color: #8de0ff;width:15%"><label class="ilabel"><img src="../img/jubao.jpg" width="40px" height="40px" name=<?PHP echo($fid)?> onclick="sendMsg(this.name)"><br>举报</label></td>
+                        <td style="background-color: #8de0ff;width:15%"><label class="ilabel"><img src="../img/jubao.jpg" width="40px" height="40px" name=<?PHP echo($id.'_'.$fid.'_'.$fnick)?> onclick="report(this.name)"><br>举报</label></td>
                     </tr>
                 </table>
 
@@ -103,6 +103,10 @@ if(!isset($_SESSION['userid'])){
     function sendMsg(str){
 
         var myWindow=window.open('./sendmsg.php?toname='+str,'','width=400,height=400')
+        myWindow.focus();
+    }
+    function report(str){
+        var myWindow=window.open('./reportmsg.php?toname='+encodeURIComponent(str),'','width=400,height=400')
         myWindow.focus();
     }
 
