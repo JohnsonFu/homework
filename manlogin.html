@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录 - 爱运动 - isport</title>
+</head>
+<link rel="stylesheet" type="text/css"
+      href="logregis.css"/>
+<body>
+
+<div >
+    <div >
+        <h1 >管理员登录</h1>
+        <h2 >生命在于运动 - isport</h2>
+    </div>
+</div>
+<div class="index-slide-nav">
+    <a href="login.html" class="hover">登录</a>
+    <div class="slide-bar slide-bar1"></div>
+</div>
+<form name="form" action="DataProcess/AccountInfo/managerlogin.php" method="post">
+    <div class="form" align="center">
+        <div class="group">
+            <div class="group-ipt email">
+                <input type="text"  name="username" class="ipt" placeholder="用户名" required>
+            </div>
+            <div class="group-ipt password"><input type="password" name="password" id="password" class="ipt" placeholder="输入您的登录密码" required>
+            </div>
+        </div>
+    </div>
+    <div class="button">
+        <button type="submit" class="login-btn register-btn" id="button">登录</button>
+    </div>
+</form>
+
+
+</body>
+</html>

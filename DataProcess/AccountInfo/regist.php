@@ -20,19 +20,19 @@ if ($db){
   //     echo "该账户名已被注册";
   // }
    if($idcheck>0){
-
-      echo "账户名".$name."已被注册";
+     //  echo "账户名".$name."已被注册";
+       echo "<script>alert('账户名已被注册');location.href='../../AccountPage/register.php';</script>";
 }
    else if($nickcheck>0){
-       echo "昵称".$nickname."已被注册";
+       echo "<script>alert('昵称名已被注册');location.href='../../AccountPage/register.php';</script>";
    }
    else {
        $result = $db->query("insert into users(id,password,sex,age,nickname,height,picid) values ('$name','$password','$sex','$age','$nickname','$height','$picid')");
        if($result){
-           echo "注册成功";
+           echo "<script>alert('注册成功,请重新登录');location.href='../../login.html';</script>";
        }
        else{
-           echo "注册失败";
+           echo "<script>alert('注册失败,请重新注册');location.href='../../AccountPage/register.php';</script>";
        }
 
    }
