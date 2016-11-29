@@ -19,5 +19,9 @@ class Manager
         $result=$this->db->query("select * from report where hascheck='0'")->fetchAll();
         return $result;
     }
+    public function getCheckReport(){
+        $result=$this->db->query("select * from report where hascheck='1' order by rowid desc")->fetchAll();
+        return $result;
+    }
 
 }

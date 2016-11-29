@@ -59,15 +59,14 @@ if(!isset($_SESSION['userid'])){
             <li><a href="friend.php" >互相关注</a></li>
             <li><a href="myfollow.php">我的关注</a></li>
             <li><a href="followme.php">我的粉丝</a></li>
-            <li><a href="people.php" style=" color: #daddf0; background-color: #80c3f7;">用户搜索</a></li>
+            <li><a href="people.php" style=" color: #daddf0; background-color: #80c3f7;">用户列表</a></li>
         </ul>
     </div>
 </div>
 <div id="content">
     <div class="insidecontent">
-        <div class="mylabel">用户搜索</div><hr style="margin-right: 50px;">
-        <div style="margin-left:53%;"><input type="text" class="textview" name="friendname" placeholder="请输入昵称"><input type="button" class="mybutton" value="搜索">
-  </div>
+        <div class="mylabel">用户列表</div><hr style="margin-right: 50px;">
+        <div style="margin-left:53%;height:50px;"></div>
 <?PHP foreach($list as $item){
 ?>
         <div class="peopleitem">

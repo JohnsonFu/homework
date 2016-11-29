@@ -68,7 +68,7 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
         <li><a href="friend.php" >互相关注</a></li>
         <li><a href="myfollow.php">我的关注</a></li>
         <li><a href="followme.php">我的粉丝</a></li>
-        <li><a href="people.php">用户搜索</a></li>
+        <li><a href="people.php">用户列表</a></li>
         </ul>
         </div>
         </div>
