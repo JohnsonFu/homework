@@ -33,7 +33,7 @@ $nick=$_SESSION['nickname'];
         <td ><?PHP echo $date ?><input type="text" style="display:none" name="time" value=<?PHP echo $date ?>></td>
     </tr>
 </table>
-<input  type="submit" value="发送" style="float:right">
+<input  type="submit" value="发送" onclick="refresh()" style="float:right">
     </form>
 <script type="text/javascript">
     urlinfo=decodeURI(window.location.href);  //获取当前页面的url
@@ -45,6 +45,12 @@ $nick=$_SESSION['nickname'];
     info=newsid.split('_');
     document.getElementsByName('toid')[0].value=info[0];
     document.getElementsByName('toname')[0].innerHTML=info[1];
+
+   function refresh(){
+       opener.location.reload();
+
+   }
+
 </script>
 </body>
 </html>

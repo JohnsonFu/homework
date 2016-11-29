@@ -113,6 +113,9 @@ function getNick($id){
                     <?PHP }if($isSettle){echo '已结算';}
                     if(!$isSettle){
                     ?>
+                        <?PHP if($level>17){ ?>
+                            <input type="button" value="邀请好友" name="<?PHP echo($item['id'])?>" onclick="invite(this.name)">
+                            <?PHP } ?>
                     <input type="button" name=<?PHP echo($item['id'])?> onclick="deletegame(this.name)" value="删除" class="tablebutton" style="font-size:20px;width:70px;float:right;height:25px;">
                <?PHP } ?>
                 </div>
@@ -212,6 +215,11 @@ function getNick($id){
         xmlHttp.onreadystatechange=stateChanged1
         xmlHttp.open("GET",url,true)
         xmlHttp.send(null)
+    }
+
+    function invite(str){
+        var myWindow=window.open('./InviteFriend.php?toname='+str,'','width=400,height=400')
+        myWindow.focus();
     }
 
     function Settle(str){

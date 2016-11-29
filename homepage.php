@@ -74,7 +74,7 @@ session_write_close();
         <label><?PHP echo $nickname ?></label><br>
         <img src="headpics/<?PHP echo($picid); ?>.gif"  alt="找不到头像" /><br>
         <label>等级:Level<?PHP echo $level ?></label><br>
-        <label>我的金币:<?PHP echo $money ?></label>
+        <label>金币:<?PHP echo round($money,1) ?></label><br>
         <label>个性签名:</label><br>
         <label style="color:lightskyblue;font-size:15px;"><?PHP echo $sig ?></label>
 

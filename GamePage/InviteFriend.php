@@ -1,95 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="GB2312">
-    <title>举报用户</title>
+    <title>发送私信</title>
 </head>
 <?PHP
 $time =time()+8*60*60;
 $date='20'.date("y-m-d H:i",$time);
 session_start();
-
+$nick=$_SESSION['nickname'];
+$id=$_SESSION['userid'];
+include("../DataProcess/AccountInfo/Account.php");
+$account=new Account($id,'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+$list=$account->getMyfollowDetais();
 ?>
 <?PHP session_write_close(); ?>
-
 <body>
 <div id="main">
-<header style="text-align:center">处理举报</header>
+<header style="text-align:center">邀请好友</header>
     <table style="margin-bottom:15px;width:100%;height:100%;word-break:break-all;"cellspacing="0" cellpadding="0"border="1">
         <tr>
-            <td width="30%">举报者</td>
-            <td><label style="width:40%"  name="fromname" id="fromname"></label>
-                <input type="text" style="display:none" id="toid" name="toid">
-            </td>
-        </tr>
-        <tr>
-            <td width="30%">被举报者</td>
-            <td><label style="width:40%" placeholder="邮件标题" name="toname" id="toname"></label><input type="text" style="display:none" id="reportid" name="reportid"></td>
-        </tr>
-        <tr>
-            <td width="30%">举报内容</td>
-            <td><label id="content" name="content" type="text" style="width:80%" ></td>
-        </tr>
-        <tr>
-            <td width="30%">处罚金币值</td>
+            <td width="30%">好友昵称</td>
             <td>
-                <select  size="1" id="money" name="money"><?PHP for($s=1;$s<7;$s++){
+                <select   id="logo" name="exp" onchange="showlogo()"><?PHP foreach($list as $item){
+                        $temp=new Account($item['friendid'],'sqlite:../DataProcess/AccountInfo/mydatabase.sqlite');
+                        $nickname=$temp->getNick();
+                        $picid=$temp->getPicId();
+                        $value=$picid.'_'.$item['friendid'];
                         ?>
-                        <option value =<?PHP echo($s*0.1) ?>><?PHP echo($s.'0%') ?></option>
+                        <option value =<?PHP echo($value) ?> name='<?PHP echo $picid; ?>' ><?PHP echo ($nickname)?></option>
                     <?PHP } ?>
                 </select>
             </td>
         </tr>
         <tr>
-            <td width="30%">处罚经验值</td>
-            <td>
-                <select  size="1" id="exp" name="exp"><?PHP for($s=1;$s<7;$s++){
-                        ?>
-                        <option value =<?PHP echo($s*0.1) ?>><?PHP echo($s.'0%') ?></option>
-                    <?PHP } ?>
-                </select>
-            </td>
+            <td width="30%">好友头像</td>
+            <td> <img name="img"  width="30px" height="30px"></td>
         </tr>
         <tr>
             <td width="30%">时间</td>
             <td ><?PHP echo $date ?><input type="text" style="display:none" name="time" value=<?PHP echo $date ?>></td>
         </tr>
     </table>
-    <input  type="button" value="处理" style="float:right" onclick="process()" >
+    <input  type="button" value="邀请" onclick="invite()" style="float:right">
     </div>
-</body>
 <script type="text/javascript">
     urlinfo=decodeURI(window.location.href);  //获取当前页面的url
     len=urlinfo.length;//获取url的长度
     offset=urlinfo.indexOf("?");//设置参数字符串开始的位置
     newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
     newsids=newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
-    info=newsids[1].split("_");
-    document.getElementById('fromname').innerHTML=info[0];
-    document.getElementById('toname').innerHTML=info[1];
-    document.getElementById('content').innerHTML=info[2];
-    document.getElementById('reportid').value=info[0]+info[1];
+    newsid=newsids[1];//得到参数值
+    value=document.getElementById('logo').value.split('_');
+    document.images.img.src='../headpics/'+value[0]+'.gif';
+    function showlogo(){
+        value2=document.getElementById('logo').value.split('_');
+        document.images.img.src='../headpics/'+value2[0]+'.gif';
+    }
 
-    function process()
+    function invite()
     {
-        fromid=document.getElementById('reportid').value;
-        toid=document.getElementById('toid').value;
-        exp=document.getElementById('exp').value;
-        money=document.getElementById('money').value;
-        str=fromid+"-"+toid+"-"+exp+"-"+money;
+
+        value2=document.getElementById('logo').value.split('_');
+        str=newsid+'-'+value2[1];
         xmlHttp=GetXmlHttpObject()
         if (xmlHttp==null)
         {
             alert ("Browser does not support HTTP Request")
             return
         }
-        var url="DataProcess/MailInfo/sendReport.php"
+        var url="../DataProcess/GameInfo/Invite.php"
         url=url+"?q="+str
         url=url+"&sid="+Math.random()
         xmlHttp.onreadystatechange=function(){
             if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
             {
-              //  alert(xmlHttp.responseText);
+                  alert(xmlHttp.responseText);
                 document.getElementById('main').innerHTML=xmlHttp.responseText;
                 refresh();
             }
@@ -124,7 +109,10 @@ session_start();
     }
 
     function refresh(){
-        window.opener.location.reload();
+        opener.location.reload();
+
     }
+
 </script>
+</body>
 </html>

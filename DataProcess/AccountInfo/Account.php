@@ -108,6 +108,12 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
 
         return $result;
     }
+    public function getMyfollowDetais(){
+        $res1=$this->db->query("select * from friend where id='$this->id'")->fetchAll();
+
+
+        return $res1;
+    }
     public function getMyfollow(){
         $res1=$this->db->query("select * from friend where id='$this->id'")->fetchAll();
         for($i=0;$i<count($res1);$i++){
