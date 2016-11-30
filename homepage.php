@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="keywords" content="运动分享">
     <title>首页</title>
     <link rel="stylesheet" type="text/css"
           href="logregis.css"/>

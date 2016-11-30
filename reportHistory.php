@@ -72,7 +72,7 @@ if(!isset($_SESSION['managerid'])){
 </div>
 <div id="content">
     <div class="insidecontent">
-        <div class="mylabel">举报处理</div><hr style="margin-right: 50px;">
+        <div class="mylabel">处理历史</div><hr style="margin-right: 50px;">
         <div style="margin-left:53%;height:50px;"></div>
         <?PHP
         foreach($checklist as $item){
