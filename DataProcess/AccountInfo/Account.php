@@ -153,11 +153,11 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         return $res;
     }
     public function getMyFollowPosts(){
-        $result= $this->db->query("select * from post where exists (select * from friend where post.masterid=friend.friendid and friend.id='$this->id')")->fetchAll();
+        $result= $this->db->query("select * from post where exists (select * from friend where post.masterid=friend.friendid and friend.id='$this->id') order by postid desc")->fetchAll();
         return $result;
     }
     public function getMyPosts(){
-        $result= $this->db->query("select * from post where masterid='$this->id'")->fetchAll();
+        $result= $this->db->query("select * from post where masterid='$this->id' order by postid desc")->fetchAll();
         return $result;
     }
     public function isFriend($testid){
@@ -215,9 +215,13 @@ $this->infolist=$this->db->query("select * from users where id='$this->id'")->fe
         return $result;
     }
     public function getLevel(){
-        $result=$this->db->query("select * from users where id='$this->id'")->fetchAll()[0];
-        $exp=$result['baseexp']+$result['gameexp'];
-        $level=floor($exp/100);
+        if($this->db->query("select * from users where id='$this->id'")) {
+            $result = $this->db->query("select * from users where id='$this->id'")->fetchAll()[0];
+            $exp = $result['baseexp'] + $result['gameexp'];
+            $level = floor($exp / 100);
+        }else{
+            $level=0;
+        }
         return $level;
     }
 

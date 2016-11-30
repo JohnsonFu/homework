@@ -44,7 +44,6 @@ if(!isset($_SESSION['userid'])){
         <label>等级:Level<?PHP echo $level ?></label><br>
     <hr>
         <button type="button"  class="login-btn register-btn" id="button" onclick="jump()" style="margin-top:12px;margin-left:0%;width:110px;font-size:20px;">发起竞赛</button>
-        <a href="#" style="font-size:18px;">规则介绍</a>
     </div>
     <div id="vertmenu">
         <ul>

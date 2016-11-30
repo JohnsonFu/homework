@@ -75,8 +75,7 @@ echo "<meta http-equiv='Refresh' content='0;URL=../login.html'>";
         <div id="content">
         <div class="insidecontent">
         <div class="mylabel">邮箱</div><hr style="margin-right: 50px;">
-        <div style="margin-left:53%;"><input type="text" class="textview" name="friendname" placeholder="请输入昵称"><input type="button" class="mybutton" value="搜索">
-</div>
+            <div style="margin-left:53%;height:50px;"></div>
 <div>
     <?PHP
     foreach ($mails as $item) {
